@@ -31,10 +31,12 @@ and Korean, 15 cells of 300 items each.
 | | coverage | selective accuracy | correct yield | generations/item |
 |---|---:|---:|---:|---:|
 | ungated model | 100.0% | 69.5% | 69.5% | 1.00 |
-| log-probability gate, matched coverage | 81.2% | 79.0% | 64.2% | 1.00 |
+| log-probability gate, matched coverage | 81.2% | 76.4% | 62.1% | 1.00 |
 | **MOME** | **81.2%** | **85.8%** | **69.6%** | **4.34** |
 
-Selective accuracy rises by 16.3 points while correct yield is preserved. The
+Selective accuracy rises by 16.3 points while correct yield is preserved.
+Selecting by the model's own log-probability at the same coverage reaches 76.4%
+and loses 7.5 points of yield. The
 preservation is not a wash of large opposing effects: across 4,497 items the
 second stage rescued 116 wrong answers, lost 23 right ones, and declining
 withheld 88 that would have been correct — a net of +5 items, which is the

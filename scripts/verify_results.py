@@ -26,6 +26,8 @@ What it checks, in order:
    intervals are checked to reproduce and to cover their point estimates.
 7. **The file is internally consistent** -- per-cell rows sum to the total,
    served counts agree with coverage, and so on.
+8. **The README's results table** matches the file it summarizes. A README is
+   prose and its numbers were typed, which is exactly where a number drifts.
 
 Every check prints the recomputed value beside the published one.  A
 mismatch is a failure, and the exit code is non-zero.
@@ -265,6 +267,50 @@ def check_internal(a: Audit, ss: dict) -> None:
     a.check("cells whose interval is above zero", up, g.get("cells_up", up))
 
 
+# ---- 8: the README against the results ----------------------------------------
+
+def check_readme(a: Audit, ss: dict) -> None:
+    """The README quotes a results table. Check it, rather than trusting it.
+
+    Every number in the paper is generated from ssot.json, but a README is
+    prose and its table was typed. Typed numbers drift -- two of these were
+    wrong on first publication -- so the same discipline applies here: the
+    figures are read back out of the file and compared.
+    """
+    print("\n## 8. The README's results table against ssot.json\n")
+    readme = paths.ROOT / "README.md"
+    if not readme.exists():
+        a.check("README.md", None, None)
+        return
+    rows = {}
+    for line in readme.read_text(encoding="utf-8").splitlines():
+        if not line.startswith("|") or "---" in line:
+            continue
+        cells = [c.strip().strip("*").strip() for c in line.strip("|").split("|")]
+        if len(cells) != 5 or not cells[1].endswith("%"):
+            continue
+        rows[cells[0].lower()] = cells[1:]
+
+    def pct(x: float) -> str:
+        return f"{x * 100:.1f}%"
+
+    g, o = ss["gate"], ss["gate"]["overall"]
+    lp = ss["curves"]["logprob_at"]["k2"]
+    want = {
+        "ungated model": ["100.0%", pct(g["vanilla"]), pct(g["vanilla"]), "1.00"],
+        "log-probability gate, matched coverage":
+            [pct(lp["coverage"]), pct(lp["acc"]), pct(lp["yield"]), "1.00"],
+        "mome": [pct(o["coverage"]), pct(o["acc"]), pct(o["yield"]),
+                 f"{o['gens']:.2f}"],
+    }
+    for name, expected in want.items():
+        got = rows.get(name)
+        if got is None:
+            a.check(f"README row '{name}'", None, None)
+            continue
+        a.check(f"README row '{name}'", got, expected)
+
+
 def main() -> int:
     if not paths.SSOT.exists():
         print(f"missing: {paths.SSOT}")
@@ -276,6 +322,7 @@ def main() -> int:
     check_strata(a, ss)
     check_bootstrap(a, ss, state["rows"])
     check_internal(a, ss)
+    check_readme(a, ss)
     return a.report()
 
 
