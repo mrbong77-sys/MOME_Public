@@ -1,0 +1,55 @@
+{
+ "constants": {
+  "serve_precision_target": 0.95,
+  "decline_acc_ceiling": 0.2,
+  "k_samples": 4,
+  "sc_temperature": 0.7
+ },
+ "per_backbone": {
+  "gemma4-e2b": {
+   "tau_high": 0.9189,
+   "tau_low": 0.5368,
+   "serve_frac": 0.3433,
+   "retry_frac": 0.4011,
+   "decline_frac": 0.2556,
+   "serve_precision": 0.9579,
+   "decline_band_acc": 0.3652
+  },
+  "gemma4-e4b": {
+   "tau_high": 0.9044,
+   "tau_low": 0.5401,
+   "serve_frac": 0.5078,
+   "retry_frac": 0.3289,
+   "decline_frac": 0.1633,
+   "serve_precision": 0.9497,
+   "decline_band_acc": 0.4286
+  },
+  "qwen3.5-9b": {
+   "tau_high": 0.9104,
+   "tau_low": 0.5191,
+   "serve_frac": 0.1824,
+   "retry_frac": 0.6652,
+   "decline_frac": 0.1524,
+   "serve_precision": 0.9939,
+   "decline_band_acc": 0.3358
+  },
+  "solar-10.7b": {
+   "tau_high": 0.921,
+   "tau_low": 0.3513,
+   "serve_frac": 0.2144,
+   "retry_frac": 0.5167,
+   "decline_frac": 0.2689,
+   "serve_precision": 0.8342,
+   "decline_band_acc": 0.1157
+  },
+  "qwen2-math-1.5b": {
+   "tau_high": 0.9332,
+   "tau_low": 0.2674,
+   "serve_frac": 0.3229,
+   "retry_frac": 0.3719,
+   "decline_frac": 0.3051,
+   "serve_precision": 0.9034,
+   "decline_band_acc": 0.0803
+  }
+ }
+}

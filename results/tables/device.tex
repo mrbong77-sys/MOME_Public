@@ -1,0 +1,15 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Host characterization, for converting generations per item into wall-clock. \textbf{These are properties of the machine and the backbone, not results of this method}: the same policy on a faster host costs the same generations and less time. The machine is a desktop workstation with an NVIDIA GeForce RTX 5090 --- \emph{not} an edge device --- so the table converts, it does not substantiate a handset or board claim. Measured on 20 items per backbone through the same runtime and the same operating point as the campaigns (Windows AMD64, runtime 0.34.2). The last column multiplies the measured median latency by that backbone's generations per item; it is a conversion, not a measurement. Energy was not measured.\label{tab:device}}
+\begin{tabularx}{\textwidth}{lCCCCC}
+\toprule
+\textbf{Backbone} & \textbf{Load (s)} & \textbf{p50 (s)} & \textbf{p95 (s)} & \textbf{Tokens/s} & \textbf{Gated p50 (s)} \\
+\midrule
+\texttt{gemma4-e2b} & 8.4 & 2.0 & 4.4 & 229 & 8.6 \\
+\texttt{gemma4-e4b} & 4.5 & 1.9 & 3.8 & 172 & 7.3 \\
+\texttt{qwen2-math-1.5b} & 1.3 & 0.8 & 1.4 & 425 & 3.3 \\
+\texttt{qwen3.5-9b} & 10.1 & 2.8 & 4.0 & 153 & 12.9 \\
+\texttt{solar-10.7b} & 8.3 & 1.1 & 1.6 & 186 & 4.8 \\
+\bottomrule
+\end{tabularx}
+\end{table}

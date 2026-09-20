@@ -1,0 +1,20 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{External perturbation signal against the model's internal representation, on the answers the gate actually judged. Differences are item-paired bootstrap intervals (2000 replicates); the probe is taken at the median layer, not the best one.\label{tab:xai}}
+\begin{tabularx}{\textwidth}{lCC}
+\toprule
+ & \textbf{\texttt{gemma4-e4b} (897)} & \textbf{\texttt{qwen3.5-9b} (899)} \\
+\midrule
+Output probabilities (5 statistics) & \multicolumn{2}{c}{0.40--0.61 over all 15 cells} \\
+Hidden-state probe, median layer & 0.756 (layer 21/42) & 0.832 (layer 10/32) \\
+External $c_{\mathrm{safe}}$ & 0.741 & 0.855 \\
+Combined (rank average) & 0.797 & 0.871 \\
+\midrule
+Combined $-$ probe & $\mathbf{+0.041}$ ($+0.007$, $+0.076$) & $\mathbf{+0.040}$ ($+0.012$, $+0.069$) \\
+Combined $-$ $c_{\mathrm{safe}}$ & +0.056 ($+0.021$, $+0.091$) & +0.016 ($-0.011$, $+0.043$) \\
+Probe $-$ $c_{\mathrm{safe}}$ & +0.015 ($-0.054$, $+0.081$) & -0.024 ($-0.078$, $+0.028$) \\
+\midrule
+Layers where combined $>$ probe & 35 of 43 & 33 of 33 \\
+\bottomrule
+\end{tabularx}
+\end{table}

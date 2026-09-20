@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generation records: too large for git, published with the archived dataset.
+data/ungated/
+data/probes/
+data/fingerprints/
+data/retry/
+data/benchmarks/
+data/items/
+
+# Regenerated outputs.
+results/reports/

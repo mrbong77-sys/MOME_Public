@@ -1,0 +1,192 @@
+{
+ "measured_at": "2026-09-20T12:34:28",
+ "host": "http://localhost:11434",
+ "runtime_version": "0.34.2",
+ "platform": {
+  "system": "Windows",
+  "release": "11",
+  "version": "10.0.26200",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "node": "redacted",
+  "python": "3.13.2"
+ },
+ "gpu": {
+  "available": true,
+  "command": [
+   "nvidia-smi",
+   "--query-gpu=name,memory.total,driver_version",
+   "--format=csv,noheader,nounits"
+  ],
+  "stdout": "NVIDIA GeForce RTX 5090, 32607, 616.92\n",
+  "error": null
+ },
+ "options": {
+  "num_predict": 2048,
+  "temperature": 0.0,
+  "top_p": 1.0
+ },
+ "top_logprobs": 10,
+ "benchmark_for_timing": "gsm8k",
+ "n_items_per_backbone": 20,
+ "energy": "not measured — no wall-socket meter on this machine",
+ "backbones": [
+  {
+   "backbone": "gemma4-e2b",
+   "model": "gemma4:e2b",
+   "ok": true,
+   "template_id": "format_en",
+   "n_measured": 20,
+   "n_failed": 0,
+   "think_sent": false,
+   "capabilities": [
+    "completion",
+    "vision",
+    "audio",
+    "tools",
+    "thinking"
+   ],
+   "load_seconds": 8.41,
+   "resident": {
+    "size_bytes": 2100056555,
+    "size_vram_bytes": 2100056555
+   },
+   "latency_p50_s": 2.01,
+   "latency_p95_s": 4.42,
+   "latency_mean_s": 2.63,
+   "tokens_per_s_median": 229.0,
+   "generated_tokens_median": 403.0
+  },
+  {
+   "backbone": "gemma4-e4b",
+   "model": "gemma4:e4b",
+   "ok": true,
+   "template_id": "format_en",
+   "n_measured": 20,
+   "n_failed": 0,
+   "think_sent": false,
+   "capabilities": [
+    "completion",
+    "vision",
+    "audio",
+    "tools",
+    "thinking"
+   ],
+   "load_seconds": 4.49,
+   "resident": {
+    "size_bytes": 3356365945,
+    "size_vram_bytes": 3356365945
+   },
+   "latency_p50_s": 1.86,
+   "latency_p95_s": 3.81,
+   "latency_mean_s": 2.02,
+   "tokens_per_s_median": 172.1,
+   "generated_tokens_median": 298.5
+  },
+  {
+   "backbone": "qwen2-math-1.5b",
+   "model": "qwen2-math:1.5b",
+   "ok": true,
+   "template_id": "format_en",
+   "n_measured": 20,
+   "n_failed": 0,
+   "think_sent": null,
+   "capabilities": [
+    "completion"
+   ],
+   "load_seconds": 1.32,
+   "resident": {
+    "size_bytes": 1115139603,
+    "size_vram_bytes": 1115139603
+   },
+   "latency_p50_s": 0.77,
+   "latency_p95_s": 1.43,
+   "latency_mean_s": 1.02,
+   "tokens_per_s_median": 425.4,
+   "generated_tokens_median": 312.5
+  },
+  {
+   "backbone": "qwen3.5-9b",
+   "model": "qwen3.5:9b",
+   "ok": true,
+   "template_id": "format_en",
+   "n_measured": 20,
+   "n_failed": 0,
+   "think_sent": false,
+   "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "load_seconds": 10.13,
+   "resident": {
+    "size_bytes": 10460373973,
+    "size_vram_bytes": 10460373973
+   },
+   "latency_p50_s": 2.8,
+   "latency_p95_s": 4.03,
+   "latency_mean_s": 2.95,
+   "tokens_per_s_median": 152.7,
+   "generated_tokens_median": 406.5
+  },
+  {
+   "backbone": "solar-10.7b",
+   "model": "solar:10.7b",
+   "ok": true,
+   "template_id": "format_en",
+   "n_measured": 20,
+   "n_failed": 0,
+   "think_sent": null,
+   "capabilities": [
+    "completion"
+   ],
+   "load_seconds": 8.3,
+   "resident": {
+    "size_bytes": 6920664513,
+    "size_vram_bytes": 6920664513
+   },
+   "latency_p50_s": 1.05,
+   "latency_p95_s": 1.65,
+   "latency_mean_s": 1.05,
+   "tokens_per_s_median": 186.2,
+   "generated_tokens_median": 181.5
+  }
+ ],
+ "projection": {
+  "note": "conversion only: gens/item from ssot.json x this machine's p50 latency. Not a MOME cost -- the multiplier is the method's, the latency is the host's.",
+  "rows": [
+   {
+    "backbone": "gemma4-e2b",
+    "gens_per_item": 4.278888888888842,
+    "ungated_p50_s": 2.01,
+    "gated_projected_p50_s": 8.6
+   },
+   {
+    "backbone": "gemma4-e4b",
+    "gens_per_item": 3.949999999999953,
+    "ungated_p50_s": 1.86,
+    "gated_projected_p50_s": 7.3
+   },
+   {
+    "backbone": "qwen2-math-1.5b",
+    "gens_per_item": 4.320727542687407,
+    "ungated_p50_s": 0.77,
+    "gated_projected_p50_s": 3.3
+   },
+   {
+    "backbone": "qwen3.5-9b",
+    "gens_per_item": 4.602899517982897,
+    "ungated_p50_s": 2.8,
+    "gated_projected_p50_s": 12.9
+   },
+   {
+    "backbone": "solar-10.7b",
+    "gens_per_item": 4.538888888888842,
+    "ungated_p50_s": 1.05,
+    "gated_projected_p50_s": 4.8
+   }
+  ]
+ },
+ "note": "Host characterization, published so that generations per item can be converted into wall-clock on one machine. These are properties of the machine and the backbone, not results of the method: the same policy on a faster host costs the same generations and less time. The machine name is redacted; nothing else is changed."
+}

@@ -1,0 +1,16 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{What the monitor itself costs, per item, in milliseconds. No model is called in any of these steps and no second network is loaded; the predictor is 2.5~KB of coefficients read by plain Python, with no third-party library at deployment. The generation time of the backbone is not included here and is not a property of this method: it belongs to the model and the host, which is why cost is reported as generations per item throughout.\label{tab:overhead}}
+\begin{tabularx}{\textwidth}{lCC}
+\toprule
+\textbf{Step (per item)} & \textbf{p50 (ms)} & \textbf{p95 (ms)} \\
+\midrule
+Probe generation (rule engine) & 0.100 & 0.174 \\
+Probe observation, numeric answer & 0.001 & 0.001 \\
+Probe observation, expression answer & 0.242 & 2.498 \\
+Score and decision (26-feature logistic) & 0.004 & 0.005 \\
+\midrule
+\textbf{Monitor total, worst case} & \textbf{0.59} & \textbf{5.18} \\
+\bottomrule
+\end{tabularx}
+\end{table}

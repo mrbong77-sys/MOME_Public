@@ -1,0 +1,52 @@
+{
+ "measured_at": "2026-09-20T03:20:33",
+ "python": "3.11.15",
+ "note": "what MOME itself costs on the host: the rule engine, the observation and the logistic score. The generation time of the backbone is not measured here and is not a property of this method.",
+ "probe_generation": {
+  "gsm8k": {
+   "p50_ms": 0.0995,
+   "p95_ms": 0.1743,
+   "mean_ms": 0.1116,
+   "n": 300
+  },
+  "hrm8k-gsm8k-ko": {
+   "p50_ms": 0.0355,
+   "p95_ms": 0.0532,
+   "mean_ms": 0.0381,
+   "n": 300
+  },
+  "math500": {
+   "p50_ms": 0.0781,
+   "p95_ms": 0.2119,
+   "mean_ms": 0.0968,
+   "n": 300
+  }
+ },
+ "observation": {
+  "numeric": {
+   "p50_ms": 0.0007,
+   "p95_ms": 0.0008,
+   "mean_ms": 0.0008,
+   "n": 500
+  },
+  "expression": {
+   "p50_ms": 0.2419,
+   "p95_ms": 2.4984,
+   "mean_ms": 1.3615,
+   "n": 500
+  }
+ },
+ "score_and_decision": {
+  "p50_ms": 0.0035,
+  "p95_ms": 0.005,
+  "mean_ms": 0.0038,
+  "n": 500
+ },
+ "footprint": {
+  "predictor_bytes_on_disk": 13965,
+  "one_predictor_bytes_on_disk": 2548,
+  "python_peak_bytes_loading_and_scoring": 61104,
+  "n_features": 26,
+  "third_party_at_deployment": []
+ }
+}

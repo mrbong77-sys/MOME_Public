@@ -1,0 +1,14 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Where the 4497 items end, and whether the answer at stake was right. For a served row the columns judge \emph{the answer the system returned}; for a declined row they judge \emph{the greedy answer the ungated model would have returned}, which is what declining gave up. The two columns therefore do not add to the ungated correct count, because the second stage changes some answers. Every item that reached the second stage produced a ballot, so the fourth possible state --- a decline for want of any parseable answer --- has no row.\label{tab:confusion}}
+\begin{tabularx}{\textwidth}{lCCC}
+\toprule
+\textbf{Final state} & \textbf{Items} & \textbf{Correct} & \textbf{Wrong} \\
+\multicolumn{4}{l}{\footnotesize\emph{Served rows judge the returned answer; declined rows the withheld greedy answer.}} \\
+\midrule
+Served at stage 1 & 1415 & 1318 & 97 \\
+Served at stage 2, after verification & 2237 & 1814 & 423 \\
+Declined, no working majority & 845 & 88 & 757 \\
+\bottomrule
+\end{tabularx}
+\end{table}

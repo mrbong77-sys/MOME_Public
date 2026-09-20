@@ -1,0 +1,18 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Generations per item by cell, sorted by cost, under Equation~\eqref{eq:cost}. The fixed part is about three generations; the variable part is set entirely by how often the first stage could settle the item. Extremes and the weighted mean are shown; the full table is in the repository.\label{tab:cost}}
+\begin{tabularx}{\textwidth}{lCCC}
+\toprule
+\textbf{Cell} & \textbf{Served immediately} & \textbf{To stage 2} & \textbf{Gen./item} \\
+\midrule
+GSM8K (en) $\times$ \texttt{gemma4-e4b} & 64.7\% & 35.3\% & 3.69 \\
+GSM8K (en) $\times$ \texttt{qwen2-math-1.5b} & 64.0\% & 36.0\% & 3.71 \\
+\multicolumn{4}{c}{\dots} \\
+MATH-500 (en) $\times$ \texttt{solar-10.7b} & 10.3\% & 89.7\% & 4.72 \\
+HRM8K-GSM8K (ko) $\times$ \texttt{qwen3.5-9b} & 2.3\% & 97.7\% & 4.95 \\
+HRM8K-GSM8K (ko) $\times$ \texttt{qwen2-math-1.5b} & 0.7\% & 99.3\% & 4.98 \\
+\midrule
+\textbf{All 15 cells} & \textbf{31.5\%} & \textbf{68.5\%} & \textbf{4.34} \\
+\bottomrule
+\end{tabularx}
+\end{table}

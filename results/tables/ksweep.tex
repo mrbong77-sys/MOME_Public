@@ -1,0 +1,15 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Second-stage sample count. Seeds are bound to sample paths, so using the first $k$ paths is exactly the result of buying $k$ samples; nothing is selected after the fact. An even ballot turns ties into declines.\label{tab:ksweep}}
+\begin{tabularx}{\textwidth}{CCCCCCC}
+\toprule
+$\boldsymbol{k}$ & \textbf{Votes} & \textbf{Cover.} & \textbf{Sel.\ acc.} & \textbf{Yield} & \textbf{$\Delta$ (pp)} & \textbf{Gen./item} \\
+\midrule
+0 & --- & 31.5\% & 93.1\% & 29.3\% & $-40.2$ & 2.97 \\
+1 & 2 (even) & 71.9\% & 89.0\% & 64.0\% & $-5.6$ & 3.65 \\
+\textbf{2} & \textbf{3 (odd)} & \textbf{81.2\%} & \textbf{85.8\%} & \textbf{69.6\%} & \textbf{$+0.1$} & 4.34 \\
+3 & 4 (even) & 73.7\% & 90.1\% & 66.4\% & $-3.1$ & 5.02 \\
+4 & 5 (odd) & 79.0\% & 88.1\% & 69.6\% & $+0.1$ & 5.70 \\
+\bottomrule
+\end{tabularx}
+\end{table}

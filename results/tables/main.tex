@@ -1,0 +1,16 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Main verdict on 15 cells, 4497 items. The log-probability row selects by the model's own mean token log-probability at the \emph{same} coverage as the adopted gate, so the comparison isolates the signal; $k$ is the number of second-stage samples.\label{tab:main}}
+\begin{tabularx}{\textwidth}{lCCCCC}
+\toprule
+\textbf{Configuration} & \textbf{Cover.} & \textbf{Sel.\ acc.} & \textbf{Yield} & \textbf{$\Delta$ (pp)} & \textbf{Gen./item} \\
+\midrule
+Ungated model & 100.0\% & 69.5\% & 69.5\% & --- & 1.00 \\
+Log-probability gate (matched coverage) & 81.2\% & 76.4\% & 62.1\% & $-7.5$ & 1.00 \\
+Stage 1 only (immediate-serve band) & 31.5\% & 93.1\% & 29.3\% & $-40.2$ & 2.97 \\
+\textbf{MOME, $k=2$ (adopted)} & \textbf{81.2\%} & \textbf{85.8\%} & \textbf{69.6\%} & \textbf{$+0.1$} & \textbf{4.34} \\
+\midrule
+MOME, $k=4$ & 79.0\% & 88.1\% & 69.6\% & $+0.1$ & 5.70 \\
+\bottomrule
+\end{tabularx}
+\end{table}

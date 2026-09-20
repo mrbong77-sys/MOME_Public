@@ -1,0 +1,15 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Backbone-out thresholds and the resulting first-stage bands. The values applied to a backbone were selected on the remaining backbones under the registered constraints (serve-band precision $\geq 0.95$, decline-band accuracy $\leq 0.20$). Both constraints bind on the selection set, the four backbones a threshold was chosen on; the last column is the precision realized afterwards on the held-out backbone, which is a measurement and not a constraint.\label{tab:thresholds}}
+\begin{tabularx}{\textwidth}{lCCCCCC}
+\toprule
+\textbf{Backbone} & $\boldsymbol{\tau_{\mathrm{high}}}$ & $\boldsymbol{\tau_{\mathrm{low}}}$ & \textbf{Serve} & \textbf{Verify} & \textbf{Decline} & \textbf{Serve prec.} \\
+\midrule
+\texttt{gemma4-e2b} & 0.919 & 0.537 & 34.3\% & 40.1\% & 25.6\% & 0.958 \\
+\texttt{gemma4-e4b} & 0.904 & 0.540 & 50.8\% & 32.9\% & 16.3\% & 0.950 \\
+\texttt{qwen3.5-9b} & 0.910 & 0.519 & 18.2\% & 66.5\% & 15.2\% & 0.994 \\
+\texttt{solar-10.7b} & 0.921 & 0.351 & 21.4\% & 51.7\% & 26.9\% & 0.834 \\
+\texttt{qwen2-math-1.5b} & 0.933 & 0.267 & 32.3\% & 37.2\% & 30.5\% & 0.903 \\
+\bottomrule
+\end{tabularx}
+\end{table}

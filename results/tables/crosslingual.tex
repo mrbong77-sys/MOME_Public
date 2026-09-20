@@ -1,0 +1,17 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Rate at which a meaning-preserving restatement changes the answer, paired by item across the English and Korean versions of the same 300 problems. Rates are percentages of the 300 paired items and differences are percentage points, as elsewhere in this paper. Intervals are item-paired bootstrap (2000 replicates).\label{tab:crosslingual}}
+\begin{tabularx}{\textwidth}{lCCCCC}
+\toprule
+\textbf{Backbone} & \textbf{Pairs} & \textbf{English} & \textbf{Korean} & \textbf{Diff.\ (pp)} & \textbf{95\% CI (pp)} \\
+\midrule
+\texttt{qwen2-math-1.5b} & 298 & 9.4\% & 77.5\% & $+68.1$ & $+62.8$, $+73.5$ \\
+\texttt{solar-10.7b} & 300 & 29.7\% & 43.7\% & $+14.0$ & $+7.3$, $+20.3$ \\
+\texttt{gemma4-e2b} & 300 & 10.0\% & 23.3\% & $+13.3$ & $+8.0$, $+19.0$ \\
+\texttt{qwen3.5-9b} & 299 & 4.0\% & 4.3\% & $+0.3$ & $-2.7$, $+3.3$ \\
+\texttt{gemma4-e4b} & 300 & 8.0\% & 7.3\% & $-0.7$ & $-4.7$, $+3.0$ \\
+\midrule
+\textbf{All} & \textbf{1497} & \textbf{12.2\%} & \textbf{31.2\%} & \textbf{$+19.0$} & \textbf{$+16.4$}, \textbf{$+21.6$} \\
+\bottomrule
+\end{tabularx}
+\end{table}

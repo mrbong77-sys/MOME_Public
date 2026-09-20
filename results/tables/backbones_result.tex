@@ -1,0 +1,17 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Adopted configuration ($k=2$) per backbone. The generation column is the mean over that backbone's three benchmarks.\label{tab:backbones-result}}
+\begin{tabularx}{\textwidth}{lCCCCCCC}
+\toprule
+\textbf{Backbone} & \textbf{Items} & \textbf{Ungated} & \textbf{Cover.} & \textbf{Sel.\ acc.} & \textbf{Yield} & \textbf{$\Delta$ (pp)} & \textbf{Gen./item} \\
+\midrule
+\texttt{gemma4-e2b} & 900 & 77.4\% & 89.6\% & 87.5\% & 78.3\% & $+0.9$ & 4.28 \\
+\texttt{gemma4-e4b} & 900 & 83.8\% & 93.3\% & 90.1\% & 84.1\% & $+0.3$ & 3.95 \\
+\texttt{qwen2-math-1.5b} & 898 & 52.2\% & 65.1\% & 77.1\% & 50.2\% & $-2.0$ & 4.32 \\
+\texttt{qwen3.5-9b} & 899 & 86.4\% & 92.2\% & 94.2\% & 86.9\% & $+0.4$ & 4.60 \\
+\texttt{solar-10.7b} & 900 & 47.8\% & 65.8\% & 74.0\% & 48.7\% & $+0.9$ & 4.54 \\
+\midrule
+\textbf{All} & \textbf{4497} & \textbf{69.5\%} & \textbf{81.2\%} & \textbf{85.8\%} & \textbf{69.6\%} & \textbf{$+0.1$} & \textbf{4.34} \\
+\bottomrule
+\end{tabularx}
+\end{table}

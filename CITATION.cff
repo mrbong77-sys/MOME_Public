@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite the paper."
+title: "MOME: Metamorphic Evidence as a Runtime Reliability Signal for Small Language Models"
+abstract: >-
+  A black-box, label-free runtime gate for quantized small language models.
+  Each problem is perturbed in two directions by rule -- a restatement whose
+  answer must hold and an edit whose answer must change -- and the responses
+  form a metamorphic fingerprint that a fixed predictor turns into a
+  serve/verify/decline decision. No hidden state is read and no correct answer
+  is used at inference.
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/mrbong77-sys/MOME_Public"
+authors:
+  - family-names: Jung
+    given-names: Bongjin
+    orcid: "https://orcid.org/0009-0009-1463-3320"
+  - family-names: Chang
+    given-names: Joongho
+    orcid: "https://orcid.org/0009-0004-0534-0706"
+keywords:
+  - metamorphic testing
+  - selective prediction
+  - runtime monitoring
+  - label-free confidence
+  - small language model
