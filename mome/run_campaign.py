@@ -429,7 +429,7 @@ def make_record(cfg: dict, item_id: str, prompt: str, template_id: str, payload:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Phase 1 logprob campaign runner (native Ollama routes only).")
-    ap.add_argument("--config", required=True, help="mome/configs/<cell>.json")
+    ap.add_argument("--config", required=True, help="configs/<cell>.json")
     ap.add_argument("--limit", type=int, default=None, help="only the first N item ids (smoke runs)")
     ap.add_argument("--dry-run", action="store_true", help="print the first prompt and payload, send nothing")
     ap.add_argument("--host", default=None, help="override host (default from config)")

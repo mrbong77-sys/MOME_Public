@@ -67,8 +67,10 @@ gate's decision logic:
 PYTHONPATH=mome python3 -m unittest discover -s tests
 ```
 
-Reproducing the experiment from generation onward needs the raw records and a
-local serving runtime; see [REPRODUCE.md](REPRODUCE.md).
+Reproducing the experiment from generation onward needs the generation records
+and a local serving runtime; see [REPRODUCE.md](REPRODUCE.md). The records are
+archived with this repository at
+[doi:10.5281/zenodo.22854894](https://doi.org/10.5281/zenodo.22854894).
 
 ## What is here
 
@@ -108,7 +110,8 @@ standard library only.
 
 ## Citation
 
-See [CITATION.cff](CITATION.cff).
+Archived at [doi:10.5281/zenodo.22854894](https://doi.org/10.5281/zenodo.22854894),
+which resolves to the current version. See [CITATION.cff](CITATION.cff).
 
 ## License
 

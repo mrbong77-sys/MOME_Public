@@ -55,6 +55,11 @@ def eq(a, b, kind: str) -> bool:
 
 OUT = paths.REPORTS
 MANIFEST_DIR = paths.MANIFESTS
+#: `load_cells` binds a local named `paths` for an item's generation paths,
+#: which would make every `paths.` in that function local too. Bind what it
+#: needs out here instead of renaming a well-named local.
+REPO_ROOT = paths.ROOT
+RESULTS_DIR = paths.RESULTS
 
 
 def probes_per_item(bench: str) -> float:
@@ -122,7 +127,7 @@ def load_cells(tag: str = "", k: int | None = None) -> tuple[dict, list[str]]:
     decisions: dict = {}
     k = K if k is None else k
     dec_name = f"stage1_decisions_{tag}.jsonl" if tag else "stage1_decisions.jsonl"
-    for line in (paths.RESULTS / dec_name).read_text(encoding="utf-8").splitlines():
+    for line in (RESULTS_DIR / dec_name).read_text(encoding="utf-8").splitlines():
         d = json.loads(line)
         decisions.setdefault(d["cell"], {})[d["item_id"]] = d
 
@@ -137,7 +142,7 @@ def load_cells(tag: str = "", k: int | None = None) -> tuple[dict, list[str]]:
             continue
         cfg = json.loads(path.read_text(encoding="utf-8"))
         cell = path.stem.replace(f"_retry_sc{k}", "")
-        rdir = paths.ROOT / cfg["out_dir"]
+        rdir = REPO_ROOT / cfg["out_dir"]
         if not (rdir / "grades.jsonl").exists():
             missing.append(cell)
             continue

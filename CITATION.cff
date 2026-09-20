@@ -10,6 +10,7 @@ abstract: >-
   is used at inference.
 type: software
 license: Apache-2.0
+doi: 10.5281/zenodo.22854894
 repository-code: "https://github.com/mrbong77-sys/MOME_Public"
 authors:
   - family-names: Jung

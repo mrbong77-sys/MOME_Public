@@ -525,7 +525,7 @@ class ETA:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Phase 1 pool runner: greedy + sampled paths per item.")
-    ap.add_argument("--config", required=True, help="mome/configs/pool/<cell>.json")
+    ap.add_argument("--config", required=True, help="configs/retry/<cell>.json")
     ap.add_argument("--limit", type=int, default=None, help="only the first N item ids (smoke runs)")
     ap.add_argument("--dry-run", action="store_true", help="print the plan and the payloads, send nothing")
     ap.add_argument("--host", default=None, help="override host (default from config)")

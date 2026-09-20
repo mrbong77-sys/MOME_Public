@@ -11,5 +11,10 @@ data/retry/
 data/benchmarks/
 data/items/
 
+# Probe text is a derivative of the benchmark items and follows the same
+# redistribution policy as they do: the manifests pin it by hash, the text
+# itself is regenerated locally.
+data/manifests/*_probes.jsonl
+
 # Regenerated outputs.
 results/reports/

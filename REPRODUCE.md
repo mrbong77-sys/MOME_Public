@@ -50,8 +50,20 @@ model/                          the frozen predictors and thresholds
 
 - A local serving runtime exposing generated tokens and the top token
   log-probabilities, with the five quantized backbones loaded.
-- The generation records, published with the archived dataset. Unpack them
-  under `data/` following the layout in `mome/paths.py`.
+- The generation records, archived alongside this repository at
+  [doi:10.5281/zenodo.22854894](https://doi.org/10.5281/zenodo.22854894).
+  They are one file, about 2.2 GB, and unpack into the layout this code
+  already expects:
+
+  ```
+  unzip mome-data-v1.0.zip -d /path/to/MOME_Public/
+  ```
+
+  That gives `data/ungated/`, `data/probes/` and `data/retry/`, one directory
+  per cell, for the 15 cells the paper reports. The archive carries a
+  `MANIFEST.json` with a SHA-256 for every file. It holds no benchmark problem
+  text: a record stores `prompt_sha256` and `prompt_chars`, never the prompt,
+  so problems are referenced by item id and nothing is redistributed.
 - The benchmark items. They are not redistributed here; rebuild them from the
   public sources into `data/benchmarks/`. The probe manifests in
   `data/manifests/` carry a SHA-256 of every edited problem, so a rebuild that

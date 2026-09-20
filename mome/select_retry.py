@@ -156,8 +156,8 @@ def main() -> None:
         name = f"{cell}_retry_sc{K_SAMPLES}"
         cfg = {"name": name}
         cfg.update({k: van[k] for k in INHERIT if k in van})
-        cfg["items_file"] = f"mome/retry_items/{cell}.txt"
-        cfg["out_dir"] = f"mome/data/retry/{name}"
+        cfg["items_file"] = f"configs/retry_items/{cell}.txt"
+        cfg["out_dir"] = f"data/retry/{name}"
         cfg["pool"] = {"n_samples": K_SAMPLES, "temperature": SC_TEMPERATURE, "top_p": 1.0,
                        "seed_base": SEED_BASE, "include_greedy": False,
                        "sample_template": "same"}
