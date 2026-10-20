@@ -1,0 +1,36 @@
+{
+ "gemma4-e4b": {
+  "n": 897,
+  "n_correct": 787,
+  "mean_logprob_auroc": 0.6909090909090909,
+  "mean_logprob_auroc_ci": [
+   0.6347494653388347,
+   0.749770532912743
+  ],
+  "probe_auroc_recomputed": 0.7562088483308306,
+  "probe_auroc_recorded": 0.7562088483308306,
+  "probe_minus_mean_logprob": 0.06529975742173966,
+  "probe_minus_mean_logprob_ci": [
+   -0.01311572623320148,
+   0.14203382100858597
+  ],
+  "mome_auroc_recorded": 0.7408628855261638
+ },
+ "qwen3.5-9b": {
+  "n": 899,
+  "n_correct": 824,
+  "mean_logprob_auroc": 0.7770873786407767,
+  "mean_logprob_auroc_ci": [
+   0.7233792879872494,
+   0.8271422779185282
+  ],
+  "probe_auroc_recomputed": 0.8315533980582525,
+  "probe_auroc_recorded": 0.8314724919093851,
+  "probe_minus_mean_logprob": 0.05446601941747575,
+  "probe_minus_mean_logprob_ci": [
+   -0.009842017435149128,
+   0.11638473303075672
+  ],
+  "mome_auroc_recorded": 0.8550970873786408
+ }
+}

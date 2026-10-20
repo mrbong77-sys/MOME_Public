@@ -54,7 +54,15 @@ This recomputes rather than re-reads. It re-derives `c_safe` for every item
 from the 26 fingerprint features and the frozen coefficients, puts the scores
 through the registered thresholds, recounts every rate from the per-item
 outcomes, reruns the stratified bootstrap, and checks all of it against
-`results/ssot.json`. 53 checks; any mismatch is a failure.
+`results/ssot.json`. 86 checks; any mismatch is a failure.
+
+The analyses added in the revision -- held-out problems, families and
+benchmarks, feature groups, sensitivity, latency, four backbones of further
+families and stage-2 sampling at temperature 0.3 -- are checked the same way:
+
+```
+python3 scripts/verify_revision.py
+```
 
 Redraw every figure in the paper from the published results:
 
@@ -69,10 +77,8 @@ gate's decision logic:
 PYTHONPATH=mome python3 -m unittest discover -s tests
 ```
 
-Reproducing the experiment from generation onward needs the generation records
-and a local serving runtime; see [REPRODUCE.md](REPRODUCE.md). The records are
-archived with this repository at
-[doi:10.5281/zenodo.22854894](https://doi.org/10.5281/zenodo.22854894).
+Reproducing the experiment from generation onward needs a local serving
+runtime and the benchmark datasets; see [REPRODUCE.md](REPRODUCE.md).
 
 ## What is here
 
@@ -91,9 +97,11 @@ mome/       the method
   grade.py            the grader every campaign used
 model/      the frozen predictors and the registered thresholds
 results/    the published outputs, and the per-item records behind them
+  revision/   the analyses added in the revision, and their per-item inputs
 scripts/    verification, the figures, and the tools that regenerate results
+  revision/   one script per analysis added in the revision
 tests/      unit tests, no data files needed
-data/       probe manifests; the generation records go here (see REPRODUCE.md)
+data/       probe manifests; a rerun writes its generation records here
 ```
 
 `results/ssot.json` is the single source of truth. Every table and every number

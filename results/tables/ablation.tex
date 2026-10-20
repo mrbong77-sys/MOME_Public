@@ -1,0 +1,18 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\caption{Contribution of the feature groups to the MOME score. Every row is re-fitted backbone-out exactly as the registered predictor and scores all 4497 greedy answers. \emph{Alone} uses only the group; \emph{without} uses the other 26 features minus the group, with the item-paired 95\% interval of the change against all 26 features. Sel.\ acc.\ is the accuracy of the answers that the score alone selects at the coverage of the gate with $k=2$ (81.2\%), for the group alone / without the group. The features were rebuilt from the committed records (Section~\ref{sec:disjoint}), so the first row differs slightly from the registered AUROC.\label{tab:ablation}}
+\begin{tabularx}{\textwidth}{lcCCC}
+\toprule
+\textbf{Feature group} & \textbf{Features} & \textbf{AUROC alone} & \textbf{AUROC without} & \textbf{Sel. acc. alone / without} \\
+\midrule
+All 26 features & 26 & 0.858 & --- & 81.5\% \\
+\midrule
+Invariant probe & 4 & 0.751 & 0.764 $[-0.106, -0.083]$ & 78.5\% / 77.7\% \\
+Must-change probe & 10 & 0.513 & 0.851 $[-0.011, -0.003]$ & 69.3\% / 81.5\% \\
+Both probe groups & 14 & 0.793 & 0.754 $[-0.116, -0.093]$ & 78.5\% / 77.6\% \\
+Probe vs.\ original text & 4 & 0.729 & 0.850 $[-0.012, -0.004]$ & 76.0\% / 80.9\% \\
+Original-answer statistics & 3 & 0.647 & 0.837 $[-0.029, -0.014]$ & 75.5\% / 79.8\% \\
+Counts and truncation & 5 & 0.405 & 0.848 $[-0.014, -0.005]$ & 71.5\% / 80.2\% \\
+\bottomrule
+\end{tabularx}
+\end{table}

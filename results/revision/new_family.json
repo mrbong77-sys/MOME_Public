@@ -1,0 +1,6298 @@
+{
+ "written_at": "2026-10-11T00:02:29+00:00",
+ "status": "P3_PREREG sec. 27 (stage-2 votes counted on Linux; owner decision 2026-10-10); sec. 28 k = 4 at 0.3",
+ "platform": "linux",
+ "tau_high_frozen": 0.9106079900223278,
+ "tau_high_registered": {
+  "gemma4-e2b": 0.9189,
+  "gemma4-e4b": 0.9044,
+  "qwen3.5-9b": 0.9104,
+  "solar-10.7b": 0.921,
+  "qwen2-math-1.5b": 0.9332
+ },
+ "k4_at_0.3": {
+  "new_family": true,
+  "registered": true
+ },
+ "stage1_check": {
+  "items": 1800,
+  "max_abs_c_safe_diff": 1.1102230246251565e-16,
+  "stage1_decisions_changed": 0,
+  "votes_changed_vs_gpu_machine": {
+   "math500_llama3.2-3b": {
+    "k=2": 15,
+    "k=4": 34
+   },
+   "math500_phi4-mini": {
+    "k=2": 20,
+    "k=4": 25
+   }
+  }
+ },
+ "results": {
+  "T0.7": {
+   "sec23": {
+    "per_backbone": {
+     "llama3.2-3b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 464,
+      "auroc_mome": 0.8225640620056944,
+      "auroc_mome_ci": [
+       0.7934020241778842,
+       0.8496300661201386
+      ],
+      "auroc_mean_logprob": 0.5467415374881367,
+      "auroc_mean_logprob_ci": [
+       0.5068672829493982,
+       0.5819949481027652
+      ],
+      "auroc_diff": 0.27582252451755773,
+      "auroc_diff_ci": [
+       0.23977929949990298,
+       0.3186108303064092
+      ],
+      "ungated_acc": 0.5155555555555555,
+      "stage1_serve_frac": 0.10555555555555556,
+      "stage1_serve_precision": 0.8526315789473684,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.5833333333333334,
+        "selective_acc": 0.7790476190476191,
+        "correct_yield": 0.45444444444444443,
+        "ungated_acc": 0.5155555555555555,
+        "delta_yield_pp": -6.111111111111112,
+        "delta_yield_ci_pp": [
+         -8.444444444444445,
+         -4.0
+        ],
+        "sel_minus_ungated_pp": 26.349206349206355,
+        "sel_minus_ungated_ci_pp": [
+         23.172158218125965,
+         29.58616938616938
+        ],
+        "gens_per_item": 4.756666666666667,
+        "stage2_frac": 0.8944444444444445,
+        "n_unobserved": 0,
+        "served": 525,
+        "correct": 409
+       },
+       "k=4": {
+        "coverage": 0.5555555555555556,
+        "selective_acc": 0.842,
+        "correct_yield": 0.4677777777777778,
+        "ungated_acc": 0.5155555555555555,
+        "delta_yield_pp": -4.777777777777775,
+        "delta_yield_ci_pp": [
+         -7.000000000000001,
+         -2.555555555555556
+        ],
+        "sel_minus_ungated_pp": 32.644444444444446,
+        "sel_minus_ungated_ci_pp": [
+         29.666976958455166,
+         35.72858263598326
+        ],
+        "gens_per_item": 6.545555555555556,
+        "stage2_frac": 0.8944444444444445,
+        "n_unobserved": 0,
+        "served": 500,
+        "correct": 421
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "phi4-mini": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 588,
+      "auroc_mome": 0.8522915576487005,
+      "auroc_mome_ci": [
+       0.8228120262480931,
+       0.8805006443012552
+      ],
+      "auroc_mean_logprob": 0.628837432408861,
+      "auroc_mean_logprob_ci": [
+       0.5907915449671239,
+       0.6670140119365973
+      ],
+      "auroc_diff": 0.22345412523983943,
+      "auroc_diff_ci": [
+       0.1830517015918141,
+       0.2641372235581319
+      ],
+      "ungated_acc": 0.6533333333333333,
+      "stage1_serve_frac": 0.08777777777777777,
+      "stage1_serve_precision": 0.8860759493670886,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7611111111111111,
+        "selective_acc": 0.8408759124087591,
+        "correct_yield": 0.64,
+        "ungated_acc": 0.6533333333333333,
+        "delta_yield_pp": -1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -3.111111111111111,
+         0.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 18.75425790754258,
+        "sel_minus_ungated_ci_pp": [
+         16.19775434621968,
+         21.455221755654883
+        ],
+        "gens_per_item": 4.792222222222223,
+        "stage2_frac": 0.9122222222222223,
+        "n_unobserved": 0,
+        "served": 685,
+        "correct": 576
+       },
+       "k=4": {
+        "coverage": 0.7388888888888889,
+        "selective_acc": 0.8646616541353384,
+        "correct_yield": 0.6388888888888888,
+        "ungated_acc": 0.6533333333333333,
+        "delta_yield_pp": -1.4444444444444482,
+        "delta_yield_ci_pp": [
+         -3.5555555555555554,
+         0.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 21.132832080200505,
+        "sel_minus_ungated_ci_pp": [
+         18.61447961760462,
+         23.97267261052501
+        ],
+        "gens_per_item": 6.616666666666666,
+        "stage2_frac": 0.9122222222222223,
+        "n_unobserved": 0,
+        "served": 665,
+        "correct": 575
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     }
+    },
+    "pooled": {
+     "n": 1800,
+     "n_cells": 6,
+     "n_correct": 1052,
+     "auroc_mome": 0.8386381427787154,
+     "auroc_mome_ci": [
+      0.8183670076751651,
+      0.8585743471080104
+     ],
+     "auroc_mean_logprob": 0.5751827433358411,
+     "auroc_mean_logprob_ci": [
+      0.5465007902767867,
+      0.6027048438759821
+     ],
+     "auroc_diff": 0.2634553994428743,
+     "auroc_diff_ci": [
+      0.23536799513504153,
+      0.2919272576506818
+     ],
+     "ungated_acc": 0.5844444444444444,
+     "stage1_serve_frac": 0.09666666666666666,
+     "stage1_serve_precision": 0.867816091954023,
+     "no_samples": 0,
+     "gate": {
+      "k=2": {
+       "coverage": 0.6722222222222223,
+       "selective_acc": 0.8140495867768595,
+       "correct_yield": 0.5472222222222223,
+       "ungated_acc": 0.5844444444444444,
+       "delta_yield_pp": -3.7222222222222157,
+       "delta_yield_ci_pp": [
+        -5.279166666666667,
+        -2.2777777777777777
+       ],
+       "sel_minus_ungated_pp": 22.960514233241504,
+       "sel_minus_ungated_ci_pp": [
+        20.97449811294062,
+        25.000189498983183
+       ],
+       "gens_per_item": 4.774444444444445,
+       "stage2_frac": 0.9033333333333333,
+       "n_unobserved": 0,
+       "served": 1210,
+       "correct": 985
+      },
+      "k=4": {
+       "coverage": 0.6472222222222223,
+       "selective_acc": 0.8549356223175966,
+       "correct_yield": 0.5533333333333333,
+       "ungated_acc": 0.5844444444444444,
+       "delta_yield_pp": -3.111111111111109,
+       "delta_yield_ci_pp": [
+        -4.666666666666667,
+        -1.5555555555555556
+       ],
+       "sel_minus_ungated_pp": 27.049117787315215,
+       "sel_minus_ungated_ci_pp": [
+        25.015784609942386,
+        29.114176525682733
+       ],
+       "gens_per_item": 6.581111111111111,
+       "stage2_frac": 0.9033333333333333,
+       "n_unobserved": 0,
+       "served": 1165,
+       "correct": 996
+      }
+     },
+     "adoption": {
+      "pick": null,
+      "eligible": [],
+      "note": "no variant reaches the ungated yield"
+     }
+    },
+    "criteria": {
+     "1_discrimination_per_backbone": {
+      "rule": "item-paired AUROC difference (MOME - mean log-probability), 95% CI above 0, each new backbone",
+      "per_backbone": {
+       "llama3.2-3b": {
+        "auroc_diff": 0.27582252451755773,
+        "ci": [
+         0.23977929949990298,
+         0.3186108303064092
+        ],
+        "met": true
+       },
+       "phi4-mini": {
+        "auroc_diff": 0.22345412523983943,
+        "ci": [
+         0.1830517015918141,
+         0.2641372235581319
+        ],
+        "met": true
+       }
+      },
+      "met": true
+     },
+     "2_yield_preserved_pooled": {
+      "rule": "pooled, k=2: delta correct yield point >= 0 and 95% CI lower bound >= -2.0 points",
+      "delta_yield_pp": -3.7222222222222157,
+      "ci_pp": [
+       -5.279166666666667,
+       -2.2777777777777777
+      ],
+      "met": false
+     },
+     "3_selective_accuracy_pooled": {
+      "rule": "pooled, k=2: selective accuracy - ungated accuracy, 95% CI above 0",
+      "diff_pp": 22.960514233241504,
+      "ci_pp": [
+       20.97449811294062,
+       25.000189498983183
+      ],
+      "met": true
+     },
+     "4_k_report_only": {
+      "rule": "report k=2 and k=4 and the pick of the registered adoption rule",
+      "k2": {
+       "correct_yield": 0.5472222222222223,
+       "selective_acc": 0.8140495867768595,
+       "gens_per_item": 4.774444444444445
+      },
+      "k4": {
+       "correct_yield": 0.5533333333333333,
+       "selective_acc": 0.8549356223175966,
+       "gens_per_item": 6.581111111111111
+      },
+      "rule_pick": null,
+      "met": null
+     }
+    },
+    "per_cell": {
+     "gsm8k_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 227,
+      "auroc_mome": 0.7887272946714139,
+      "auroc_mome_ci": [
+       0.7129364273776038,
+       0.8538908237277802
+      ],
+      "auroc_mean_logprob": 0.6071450123710096,
+      "auroc_mean_logprob_ci": [
+       0.5280146848042011,
+       0.6887638319122501
+      ],
+      "auroc_diff": 0.1815822823004043,
+      "auroc_diff_ci": [
+       0.08740436385900303,
+       0.2722522834173747
+      ],
+      "ungated_acc": 0.7566666666666667,
+      "stage1_serve_frac": 0.21333333333333335,
+      "stage1_serve_precision": 0.890625,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8366666666666667,
+        "selective_acc": 0.8685258964143426,
+        "correct_yield": 0.7266666666666667,
+        "ungated_acc": 0.7566666666666667,
+        "delta_yield_pp": -3.0000000000000027,
+        "delta_yield_ci_pp": [
+         -6.666666666666667,
+         0.33333333333333337
+        ],
+        "sel_minus_ungated_pp": 11.185922974767593,
+        "sel_minus_ungated_ci_pp": [
+         7.254820584360224,
+         15.388744985173547
+        ],
+        "gens_per_item": 4.559999999999999,
+        "stage2_frac": 0.7866666666666666,
+        "n_unobserved": 0,
+        "served": 251,
+        "correct": 218
+       },
+       "k=4": {
+        "coverage": 0.8466666666666667,
+        "selective_acc": 0.8779527559055118,
+        "correct_yield": 0.7433333333333333,
+        "ungated_acc": 0.7566666666666667,
+        "delta_yield_pp": -1.333333333333342,
+        "delta_yield_ci_pp": [
+         -5.0,
+         2.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 12.12860892388451,
+        "sel_minus_ungated_ci_pp": [
+         8.503179676730332,
+         16.034979423868307
+        ],
+        "gens_per_item": 6.133333333333332,
+        "stage2_frac": 0.7866666666666666,
+        "n_unobserved": 0,
+        "served": 254,
+        "correct": 223
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "gsm8k_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 263,
+      "auroc_mome": 0.7305518446202857,
+      "auroc_mome_ci": [
+       0.6161016467064248,
+       0.835769218525796
+      ],
+      "auroc_mean_logprob": 0.6897543931764464,
+      "auroc_mean_logprob_ci": [
+       0.578649370335821,
+       0.791489429543612
+      ],
+      "auroc_diff": 0.04079745144383928,
+      "auroc_diff_ci": [
+       -0.045673436210234154,
+       0.13211331935201795
+      ],
+      "ungated_acc": 0.8766666666666667,
+      "stage1_serve_frac": 0.15,
+      "stage1_serve_precision": 0.9333333333333333,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9633333333333334,
+        "selective_acc": 0.9204152249134948,
+        "correct_yield": 0.8866666666666667,
+        "ungated_acc": 0.8766666666666667,
+        "delta_yield_pp": 1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -1.3333333333333335,
+         3.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 4.374855824682811,
+        "sel_minus_ungated_ci_pp": [
+         1.7532672020154259,
+         7.333362369337982
+        ],
+        "gens_per_item": 4.686666666666665,
+        "stage2_frac": 0.85,
+        "n_unobserved": 0,
+        "served": 289,
+        "correct": 266
+       },
+       "k=4": {
+        "coverage": 0.9533333333333334,
+        "selective_acc": 0.9405594405594405,
+        "correct_yield": 0.8966666666666666,
+        "ungated_acc": 0.8766666666666667,
+        "delta_yield_pp": 1.9999999999999907,
+        "delta_yield_ci_pp": [
+         -0.33333333333333337,
+         4.666666666666667
+        ],
+        "sel_minus_ungated_pp": 6.389277389277382,
+        "sel_minus_ungated_ci_pp": [
+         3.5536621235948527,
+         9.396204033214717
+        ],
+        "gens_per_item": 6.386666666666665,
+        "stage2_frac": 0.85,
+        "n_unobserved": 0,
+        "served": 286,
+        "correct": 269
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 124,
+      "auroc_mome": 0.766449780058651,
+      "auroc_mome_ci": [
+       0.7103063940093925,
+       0.8230609377436592
+      ],
+      "auroc_mean_logprob": 0.45110887096774194,
+      "auroc_mean_logprob_ci": [
+       0.3881820614781186,
+       0.5154198790260329
+      ],
+      "auroc_diff": 0.3153409090909091,
+      "auroc_diff_ci": [
+       0.24253273330201006,
+       0.3885776171955437
+      ],
+      "ungated_acc": 0.41333333333333333,
+      "stage1_serve_frac": 0.006666666666666667,
+      "stage1_serve_precision": 0.5,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.43,
+        "selective_acc": 0.7286821705426356,
+        "correct_yield": 0.31333333333333335,
+        "ungated_acc": 0.41333333333333333,
+        "delta_yield_pp": -9.999999999999998,
+        "delta_yield_ci_pp": [
+         -15.0,
+         -5.333333333333334
+        ],
+        "sel_minus_ungated_pp": 31.534883720930228,
+        "sel_minus_ungated_ci_pp": [
+         24.078825536062375,
+         38.693832571138195
+        ],
+        "gens_per_item": 4.98,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 129,
+        "correct": 94
+       },
+       "k=4": {
+        "coverage": 0.38666666666666666,
+        "selective_acc": 0.8362068965517241,
+        "correct_yield": 0.3233333333333333,
+        "ungated_acc": 0.41333333333333333,
+        "delta_yield_pp": -9.000000000000002,
+        "delta_yield_ci_pp": [
+         -14.000000000000002,
+         -4.0
+        ],
+        "sel_minus_ungated_pp": 42.28735632183908,
+        "sel_minus_ungated_ci_pp": [
+         35.33279816513762,
+         49.32695281522601
+        ],
+        "gens_per_item": 6.966666666666667,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 116,
+        "correct": 97
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "hrm8k-gsm8k-ko_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 164,
+      "auroc_mome": 0.8262195121951219,
+      "auroc_mome_ci": [
+       0.7789928959034519,
+       0.8701787401370432
+      ],
+      "auroc_mean_logprob": 0.707855093256815,
+      "auroc_mean_logprob_ci": [
+       0.646183825614426,
+       0.7655697378231751
+      ],
+      "auroc_diff": 0.11836441893830696,
+      "auroc_diff_ci": [
+       0.06002347531786732,
+       0.18061556589974503
+      ],
+      "ungated_acc": 0.5466666666666666,
+      "stage1_serve_frac": 0.006666666666666667,
+      "stage1_serve_precision": 1.0,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.6666666666666666,
+        "selective_acc": 0.79,
+        "correct_yield": 0.5266666666666666,
+        "ungated_acc": 0.5466666666666666,
+        "delta_yield_pp": -2.0000000000000018,
+        "delta_yield_ci_pp": [
+         -6.0,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 24.33333333333334,
+        "sel_minus_ungated_ci_pp": [
+         19.170086603039938,
+         29.63213025580711
+        ],
+        "gens_per_item": 4.98,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 200,
+        "correct": 158
+       },
+       "k=4": {
+        "coverage": 0.6533333333333333,
+        "selective_acc": 0.8010204081632653,
+        "correct_yield": 0.5233333333333333,
+        "ungated_acc": 0.5466666666666666,
+        "delta_yield_pp": -2.3333333333333317,
+        "delta_yield_ci_pp": [
+         -6.666666666666667,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 25.43537414965986,
+        "sel_minus_ungated_ci_pp": [
+         20.34669631937813,
+         30.97790956041316
+        ],
+        "gens_per_item": 6.966666666666667,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 196,
+        "correct": 157
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "math500_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 113,
+      "auroc_mome": 0.8082438124083101,
+      "auroc_mome_ci": [
+       0.7579855469496282,
+       0.8594912484330748
+      ],
+      "auroc_mean_logprob": 0.5484359471865979,
+      "auroc_mean_logprob_ci": [
+       0.4848479690898481,
+       0.6132145336300717
+      ],
+      "auroc_diff": 0.2598078652217122,
+      "auroc_diff_ci": [
+       0.18896236126029353,
+       0.32973414432262266
+      ],
+      "ungated_acc": 0.37666666666666665,
+      "stage1_serve_frac": 0.09666666666666666,
+      "stage1_serve_precision": 0.7931034482758621,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.48333333333333334,
+        "selective_acc": 0.6689655172413793,
+        "correct_yield": 0.3233333333333333,
+        "ungated_acc": 0.37666666666666665,
+        "delta_yield_pp": -5.333333333333334,
+        "delta_yield_ci_pp": [
+         -8.666666666666668,
+         -2.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 29.229885057471268,
+        "sel_minus_ungated_ci_pp": [
+         23.597282269149066,
+         35.61605332118036
+        ],
+        "gens_per_item": 4.73,
+        "stage2_frac": 0.9033333333333333,
+        "n_unobserved": 0,
+        "served": 145,
+        "correct": 97
+       },
+       "k=4": {
+        "coverage": 0.43333333333333335,
+        "selective_acc": 0.7769230769230769,
+        "correct_yield": 0.33666666666666667,
+        "ungated_acc": 0.37666666666666665,
+        "delta_yield_pp": -3.9999999999999982,
+        "delta_yield_ci_pp": [
+         -7.333333333333333,
+         -1.0
+        ],
+        "sel_minus_ungated_pp": 40.02564102564103,
+        "sel_minus_ungated_ci_pp": [
+         34.18800213986967,
+         46.303011376779594
+        ],
+        "gens_per_item": 6.536666666666665,
+        "stage2_frac": 0.9033333333333333,
+        "n_unobserved": 0,
+        "served": 130,
+        "correct": 101
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "math500_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 161,
+      "auroc_mome": 0.8594217793467089,
+      "auroc_mome_ci": [
+       0.8101748842604528,
+       0.9028064508711353
+      ],
+      "auroc_mean_logprob": 0.5184324590017427,
+      "auroc_mean_logprob_ci": [
+       0.4522322963242843,
+       0.5833191201910157
+      ],
+      "auroc_diff": 0.3409893203449662,
+      "auroc_diff_ci": [
+       0.268771894653104,
+       0.41165945352300326
+      ],
+      "ungated_acc": 0.5366666666666666,
+      "stage1_serve_frac": 0.10666666666666667,
+      "stage1_serve_precision": 0.8125,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.6533333333333333,
+        "selective_acc": 0.7755102040816326,
+        "correct_yield": 0.5066666666666667,
+        "ungated_acc": 0.5366666666666666,
+        "delta_yield_pp": -2.9999999999999916,
+        "delta_yield_ci_pp": [
+         -6.333333333333334,
+         0.33333333333333337
+        ],
+        "sel_minus_ungated_pp": 23.8843537414966,
+        "sel_minus_ungated_ci_pp": [
+         18.93468767608468,
+         29.28256658595641
+        ],
+        "gens_per_item": 4.71,
+        "stage2_frac": 0.8933333333333333,
+        "n_unobserved": 0,
+        "served": 196,
+        "correct": 152
+       },
+       "k=4": {
+        "coverage": 0.61,
+        "selective_acc": 0.8142076502732241,
+        "correct_yield": 0.49666666666666665,
+        "ungated_acc": 0.5366666666666666,
+        "delta_yield_pp": -3.9999999999999982,
+        "delta_yield_ci_pp": [
+         -7.666666666666666,
+         -0.33333333333333337
+        ],
+        "sel_minus_ungated_pp": 27.754098360655743,
+        "sel_minus_ungated_ci_pp": [
+         22.553011204481795,
+         33.17416904083571
+        ],
+        "gens_per_item": 6.496666666666667,
+        "stage2_frac": 0.8933333333333333,
+        "n_unobserved": 0,
+        "served": 183,
+        "correct": 149
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     }
+    },
+    "criteria_by_k": {
+     "k=2": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": -3.7222222222222157,
+       "ci_pp": [
+        -5.279166666666667,
+        -2.2777777777777777
+       ],
+       "met": false
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 22.960514233241504,
+       "ci_pp": [
+        20.97449811294062,
+        25.000189498983183
+       ],
+       "met": true
+      }
+     },
+     "k=4": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": -3.111111111111109,
+       "ci_pp": [
+        -4.666666666666667,
+        -1.5555555555555556
+       ],
+       "met": false
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 27.049117787315215,
+       "ci_pp": [
+        25.015784609942386,
+        29.114176525682733
+       ],
+       "met": true
+      }
+     }
+    }
+   },
+   "ext": {
+    "per_backbone": {
+     "exaone3.5-7.8b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 734,
+      "auroc_mome": 0.7853895144611142,
+      "auroc_mome_ci": [
+       0.7382274850524401,
+       0.8292593363430721
+      ],
+      "auroc_mean_logprob": 0.6616082860050556,
+      "auroc_mean_logprob_ci": [
+       0.6136055547141864,
+       0.7098789647672661
+      ],
+      "auroc_diff": 0.12378122845605855,
+      "auroc_diff_ci": [
+       0.07462014702544201,
+       0.17143549454488283
+      ],
+      "ungated_acc": 0.8155555555555556,
+      "stage1_serve_frac": 0.5088888888888888,
+      "stage1_serve_precision": 0.9235807860262009,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9233333333333333,
+        "selective_acc": 0.8904933814681107,
+        "correct_yield": 0.8222222222222222,
+        "ungated_acc": 0.8155555555555556,
+        "delta_yield_pp": 0.6666666666666599,
+        "delta_yield_ci_pp": [
+         -0.4444444444444444,
+         1.7777777777777777
+        ],
+        "sel_minus_ungated_pp": 7.493782591255515,
+        "sel_minus_ungated_ci_pp": [
+         5.845873039130043,
+         9.320332040581176
+        ],
+        "gens_per_item": 3.949999999999999,
+        "stage2_frac": 0.4911111111111111,
+        "n_unobserved": 0,
+        "served": 831,
+        "correct": 740
+       },
+       "k=4": {
+        "coverage": 0.9155555555555556,
+        "selective_acc": 0.9004854368932039,
+        "correct_yield": 0.8244444444444444,
+        "ungated_acc": 0.8155555555555556,
+        "delta_yield_pp": 0.8888888888888835,
+        "delta_yield_ci_pp": [
+         -0.2222222222222222,
+         2.111111111111111
+        ],
+        "sel_minus_ungated_pp": 8.492988133764834,
+        "sel_minus_ungated_ci_pp": [
+         6.746911807434983,
+         10.261943426961931
+        ],
+        "gens_per_item": 4.932222222222222,
+        "stage2_frac": 0.4911111111111111,
+        "n_unobserved": 0,
+        "served": 824,
+        "correct": 742
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "granite3.3-8b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 661,
+      "auroc_mome": 0.7817368131207313,
+      "auroc_mome_ci": [
+       0.7434054067345632,
+       0.8207132465213584
+      ],
+      "auroc_mean_logprob": 0.5505478576266466,
+      "auroc_mean_logprob_ci": [
+       0.5053444141716332,
+       0.5938462902731638
+      ],
+      "auroc_diff": 0.2311889554940847,
+      "auroc_diff_ci": [
+       0.18686692177619474,
+       0.2761959594783924
+      ],
+      "ungated_acc": 0.7344444444444445,
+      "stage1_serve_frac": 0.22444444444444445,
+      "stage1_serve_precision": 0.8861386138613861,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8477777777777777,
+        "selective_acc": 0.8610747051114024,
+        "correct_yield": 0.73,
+        "ungated_acc": 0.7344444444444445,
+        "delta_yield_pp": -0.4444444444444473,
+        "delta_yield_ci_pp": [
+         -2.3333333333333335,
+         1.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 12.663026066695792,
+        "sel_minus_ungated_ci_pp": [
+         10.527837333492146,
+         14.894417538272966
+        ],
+        "gens_per_item": 4.518888888888889,
+        "stage2_frac": 0.7755555555555556,
+        "n_unobserved": 0,
+        "served": 763,
+        "correct": 657
+       },
+       "k=4": {
+        "coverage": 0.8277777777777777,
+        "selective_acc": 0.8832214765100671,
+        "correct_yield": 0.7311111111111112,
+        "ungated_acc": 0.7344444444444445,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -2.3333333333333335,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 14.877703206562265,
+        "sel_minus_ungated_ci_pp": [
+         12.53797798677593,
+         17.372888995721144
+        ],
+        "gens_per_item": 6.07,
+        "stage2_frac": 0.7755555555555556,
+        "n_unobserved": 0,
+        "served": 745,
+        "correct": 658
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     }
+    },
+    "pooled": {
+     "n": 1800,
+     "n_cells": 6,
+     "n_correct": 1395,
+     "auroc_mome": 0.7845798486658702,
+     "auroc_mome_ci": [
+      0.7532841288455037,
+      0.8118538166495383
+     ],
+     "auroc_mean_logprob": 0.6202522235497145,
+     "auroc_mean_logprob_ci": [
+      0.5893651588176975,
+      0.6509140292448189
+     ],
+     "auroc_diff": 0.16432762511615562,
+     "auroc_diff_ci": [
+      0.1323209861288265,
+      0.19469454165914774
+     ],
+     "ungated_acc": 0.775,
+     "stage1_serve_frac": 0.36666666666666664,
+     "stage1_serve_precision": 0.9121212121212121,
+     "no_samples": 0,
+     "gate": {
+      "k=2": {
+       "coverage": 0.8855555555555555,
+       "selective_acc": 0.8764115432873275,
+       "correct_yield": 0.7761111111111111,
+       "ungated_acc": 0.775,
+       "delta_yield_pp": 0.11111111111110628,
+       "delta_yield_ci_pp": [
+        -0.9444444444444444,
+        1.1666666666666667
+       ],
+       "sel_minus_ungated_pp": 10.14115432873275,
+       "sel_minus_ungated_ci_pp": [
+        8.72011087526838,
+        11.648209344806167
+       ],
+       "gens_per_item": 4.234444444444444,
+       "stage2_frac": 0.6333333333333333,
+       "n_unobserved": 0,
+       "served": 1594,
+       "correct": 1397
+      },
+      "k=4": {
+       "coverage": 0.8716666666666667,
+       "selective_acc": 0.8922880815806246,
+       "correct_yield": 0.7777777777777778,
+       "ungated_acc": 0.775,
+       "delta_yield_pp": 0.2777777777777768,
+       "delta_yield_ci_pp": [
+        -0.8902777777777776,
+        1.4444444444444444
+       ],
+       "sel_minus_ungated_pp": 11.728808158062453,
+       "sel_minus_ungated_ci_pp": [
+        10.233181103448423,
+        13.28268073283769
+       ],
+       "gens_per_item": 5.501111111111111,
+       "stage2_frac": 0.6333333333333333,
+       "n_unobserved": 0,
+       "served": 1569,
+       "correct": 1400
+      }
+     },
+     "adoption": {
+      "pick": "k=4",
+      "eligible": [
+       "k=2",
+       "k=4"
+      ]
+     }
+    },
+    "criteria": {
+     "1_discrimination_per_backbone": {
+      "rule": "item-paired AUROC difference (MOME - mean log-probability), 95% CI above 0, each new backbone",
+      "per_backbone": {
+       "exaone3.5-7.8b": {
+        "auroc_diff": 0.12378122845605855,
+        "ci": [
+         0.07462014702544201,
+         0.17143549454488283
+        ],
+        "met": true
+       },
+       "granite3.3-8b": {
+        "auroc_diff": 0.2311889554940847,
+        "ci": [
+         0.18686692177619474,
+         0.2761959594783924
+        ],
+        "met": true
+       }
+      },
+      "met": true
+     },
+     "2_yield_preserved_pooled": {
+      "rule": "pooled, k=2: delta correct yield point >= 0 and 95% CI lower bound >= -2.0 points",
+      "delta_yield_pp": 0.11111111111110628,
+      "ci_pp": [
+       -0.9444444444444444,
+       1.1666666666666667
+      ],
+      "met": true
+     },
+     "3_selective_accuracy_pooled": {
+      "rule": "pooled, k=2: selective accuracy - ungated accuracy, 95% CI above 0",
+      "diff_pp": 10.14115432873275,
+      "ci_pp": [
+       8.72011087526838,
+       11.648209344806167
+      ],
+      "met": true
+     },
+     "4_k_report_only": {
+      "rule": "report k=2 and k=4 and the pick of the registered adoption rule",
+      "k2": {
+       "correct_yield": 0.7761111111111111,
+       "selective_acc": 0.8764115432873275,
+       "gens_per_item": 4.234444444444444
+      },
+      "k4": {
+       "correct_yield": 0.7777777777777778,
+       "selective_acc": 0.8922880815806246,
+       "gens_per_item": 5.501111111111111
+      },
+      "rule_pick": "k=4",
+      "met": null
+     }
+    },
+    "per_cell": {
+     "gsm8k_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 277,
+      "auroc_mome": 0.717312823732538,
+      "auroc_mome_ci": [
+       0.5821646817037361,
+       0.8430012242485646
+      ],
+      "auroc_mean_logprob": 0.680897818238895,
+      "auroc_mean_logprob_ci": [
+       0.5558839285714287,
+       0.8023137567576173
+      ],
+      "auroc_diff": 0.03641500549364307,
+      "auroc_diff_ci": [
+       -0.09638784793072779,
+       0.17273156767947445
+      ],
+      "ungated_acc": 0.9233333333333333,
+      "stage1_serve_frac": 0.6733333333333333,
+      "stage1_serve_precision": 0.9554455445544554,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9766666666666667,
+        "selective_acc": 0.9419795221843004,
+        "correct_yield": 0.92,
+        "ungated_acc": 0.9233333333333333,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -1.0,
+         0.0
+        ],
+        "sel_minus_ungated_pp": 1.8646188850967027,
+        "sel_minus_ungated_ci_pp": [
+         0.5959254709254693,
+         3.45833333333333
+        ],
+        "gens_per_item": 3.6399999999999983,
+        "stage2_frac": 0.32666666666666666,
+        "n_unobserved": 0,
+        "served": 293,
+        "correct": 276
+       },
+       "k=4": {
+        "coverage": 0.98,
+        "selective_acc": 0.9455782312925171,
+        "correct_yield": 0.9266666666666666,
+        "ungated_acc": 0.9233333333333333,
+        "delta_yield_pp": 0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -0.6666666666666667,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 2.224489795918372,
+        "sel_minus_ungated_ci_pp": [
+         0.6477146042363491,
+         3.896626515509368
+        ],
+        "gens_per_item": 4.293333333333333,
+        "stage2_frac": 0.32666666666666666,
+        "n_unobserved": 0,
+        "served": 294,
+        "correct": 278
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "gsm8k_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 270,
+      "auroc_mome": 0.7616049382716049,
+      "auroc_mome_ci": [
+       0.6486699143696092,
+       0.8628010357621638
+      ],
+      "auroc_mean_logprob": 0.6082716049382716,
+      "auroc_mean_logprob_ci": [
+       0.4943906486588795,
+       0.7229640515301894
+      ],
+      "auroc_diff": 0.15333333333333332,
+      "auroc_diff_ci": [
+       0.019036644609415905,
+       0.28312561803357916
+      ],
+      "ungated_acc": 0.9,
+      "stage1_serve_frac": 0.36,
+      "stage1_serve_precision": 0.9537037037037037,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9633333333333334,
+        "selective_acc": 0.9307958477508651,
+        "correct_yield": 0.8966666666666666,
+        "ungated_acc": 0.9,
+        "delta_yield_pp": -0.33333333333334103,
+        "delta_yield_ci_pp": [
+         -2.3333333333333335,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 3.079584775086508,
+        "sel_minus_ungated_ci_pp": [
+         0.8485628381045311,
+         5.574777744481073
+        ],
+        "gens_per_item": 4.266666666666665,
+        "stage2_frac": 0.64,
+        "n_unobserved": 0,
+        "served": 289,
+        "correct": 269
+       },
+       "k=4": {
+        "coverage": 0.9666666666666667,
+        "selective_acc": 0.9379310344827586,
+        "correct_yield": 0.9066666666666666,
+        "ungated_acc": 0.9,
+        "delta_yield_pp": 0.6666666666666599,
+        "delta_yield_ci_pp": [
+         -1.6666666666666667,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 3.7931034482758585,
+        "sel_minus_ungated_ci_pp": [
+         1.4597661919893279,
+         6.45549413452611
+        ],
+        "gens_per_item": 5.546666666666665,
+        "stage2_frac": 0.64,
+        "n_unobserved": 0,
+        "served": 290,
+        "correct": 272
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 248,
+      "auroc_mome": 0.7929590570719603,
+      "auroc_mome_ci": [
+       0.7141238606557377,
+       0.8690546784409786
+      ],
+      "auroc_mean_logprob": 0.6933933002481389,
+      "auroc_mean_logprob_ci": [
+       0.609352709530507,
+       0.7775393014607144
+      ],
+      "auroc_diff": 0.0995657568238214,
+      "auroc_diff_ci": [
+       0.03238588700234201,
+       0.16976200000000002
+      ],
+      "ungated_acc": 0.8266666666666667,
+      "stage1_serve_frac": 0.44666666666666666,
+      "stage1_serve_precision": 0.9253731343283582,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9233333333333333,
+        "selective_acc": 0.9061371841155235,
+        "correct_yield": 0.8366666666666667,
+        "ungated_acc": 0.8266666666666667,
+        "delta_yield_pp": 1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -0.6666666666666667,
+         2.666666666666667
+        ],
+        "sel_minus_ungated_pp": 7.94705174488568,
+        "sel_minus_ungated_ci_pp": [
+         4.832744405182576,
+         11.262322238179713
+        ],
+        "gens_per_item": 4.1,
+        "stage2_frac": 0.5533333333333333,
+        "n_unobserved": 0,
+        "served": 277,
+        "correct": 251
+       },
+       "k=4": {
+        "coverage": 0.9233333333333333,
+        "selective_acc": 0.8989169675090253,
+        "correct_yield": 0.83,
+        "ungated_acc": 0.8266666666666667,
+        "delta_yield_pp": 0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -1.3333333333333335,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 7.225030084235861,
+        "sel_minus_ungated_ci_pp": [
+         4.409127735291888,
+         10.475639978213506
+        ],
+        "gens_per_item": 5.206666666666667,
+        "stage2_frac": 0.5533333333333333,
+        "n_unobserved": 0,
+        "served": 277,
+        "correct": 249
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 202,
+      "auroc_mome": 0.7780359668619923,
+      "auroc_mome_ci": [
+       0.7178817775861852,
+       0.8329958622685185
+      ],
+      "auroc_mean_logprob": 0.5803192564154375,
+      "auroc_mean_logprob_ci": [
+       0.5103531956810531,
+       0.6526222128695189
+      ],
+      "auroc_diff": 0.1977167104465548,
+      "auroc_diff_ci": [
+       0.11428382313669785,
+       0.27902765483124214
+      ],
+      "ungated_acc": 0.6733333333333333,
+      "stage1_serve_frac": 0.0,
+      "stage1_serve_precision": null,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7833333333333333,
+        "selective_acc": 0.825531914893617,
+        "correct_yield": 0.6466666666666666,
+        "ungated_acc": 0.6733333333333333,
+        "delta_yield_pp": -2.6666666666666727,
+        "delta_yield_ci_pp": [
+         -6.666666666666667,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 15.219858156028366,
+        "sel_minus_ungated_ci_pp": [
+         10.916061827956986,
+         19.782603085782583
+        ],
+        "gens_per_item": 4.993333333333333,
+        "stage2_frac": 1.0,
+        "n_unobserved": 0,
+        "served": 235,
+        "correct": 194
+       },
+       "k=4": {
+        "coverage": 0.7666666666666667,
+        "selective_acc": 0.8347826086956521,
+        "correct_yield": 0.64,
+        "ungated_acc": 0.6733333333333333,
+        "delta_yield_pp": -3.3333333333333326,
+        "delta_yield_ci_pp": [
+         -8.0,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 16.14492753623188,
+        "sel_minus_ungated_ci_pp": [
+         11.392374551033935,
+         21.125337438576835
+        ],
+        "gens_per_item": 6.993333333333333,
+        "stage2_frac": 1.0,
+        "n_unobserved": 0,
+        "served": 230,
+        "correct": 192
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "math500_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 209,
+      "auroc_mome": 0.7651296072348704,
+      "auroc_mome_ci": [
+       0.6974420933143233,
+       0.8266796985357604
+      ],
+      "auroc_mean_logprob": 0.7326883642673117,
+      "auroc_mean_logprob_ci": [
+       0.6683127295290834,
+       0.7933884719860895
+      ],
+      "auroc_diff": 0.03244124296755879,
+      "auroc_diff_ci": [
+       -0.03475879522601119,
+       0.09923049933213353
+      ],
+      "ungated_acc": 0.6966666666666667,
+      "stage1_serve_frac": 0.4066666666666667,
+      "stage1_serve_precision": 0.8688524590163934,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.87,
+        "selective_acc": 0.8160919540229885,
+        "correct_yield": 0.71,
+        "ungated_acc": 0.6966666666666667,
+        "delta_yield_pp": 1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -1.0,
+         4.0
+        ],
+        "sel_minus_ungated_pp": 11.942528735632186,
+        "sel_minus_ungated_ci_pp": [
+         8.481429463171034,
+         15.651432291666664
+        ],
+        "gens_per_item": 4.11,
+        "stage2_frac": 0.5933333333333334,
+        "n_unobserved": 0,
+        "served": 261,
+        "correct": 213
+       },
+       "k=4": {
+        "coverage": 0.8433333333333334,
+        "selective_acc": 0.849802371541502,
+        "correct_yield": 0.7166666666666667,
+        "ungated_acc": 0.6966666666666667,
+        "delta_yield_pp": 2.0000000000000018,
+        "delta_yield_ci_pp": [
+         -1.0,
+         5.333333333333334
+        ],
+        "sel_minus_ungated_pp": 15.31357048748353,
+        "sel_minus_ungated_ci_pp": [
+         11.394402035623408,
+         19.417258230452667
+        ],
+        "gens_per_item": 5.296666666666667,
+        "stage2_frac": 0.5933333333333334,
+        "n_unobserved": 0,
+        "served": 253,
+        "correct": 215
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "math500_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 189,
+      "auroc_mome": 0.7722484389151055,
+      "auroc_mome_ci": [
+       0.7070228008464472,
+       0.8350245759132847
+      ],
+      "auroc_mean_logprob": 0.5647552314218981,
+      "auroc_mean_logprob_ci": [
+       0.49732035550753717,
+       0.6316622938530734
+      ],
+      "auroc_diff": 0.20749320749320743,
+      "auroc_diff_ci": [
+       0.13484865535594387,
+       0.2839984673273618
+      ],
+      "ungated_acc": 0.63,
+      "stage1_serve_frac": 0.31333333333333335,
+      "stage1_serve_precision": 0.8085106382978723,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7966666666666666,
+        "selective_acc": 0.8117154811715481,
+        "correct_yield": 0.6466666666666666,
+        "ungated_acc": 0.63,
+        "delta_yield_pp": 1.6666666666666607,
+        "delta_yield_ci_pp": [
+         -1.3333333333333335,
+         4.666666666666667
+        ],
+        "sel_minus_ungated_pp": 18.171548117154813,
+        "sel_minus_ungated_ci_pp": [
+         13.676194385114817,
+         22.654529737206083
+        ],
+        "gens_per_item": 4.296666666666667,
+        "stage2_frac": 0.6866666666666666,
+        "n_unobserved": 0,
+        "served": 239,
+        "correct": 194
+       },
+       "k=4": {
+        "coverage": 0.75,
+        "selective_acc": 0.8622222222222222,
+        "correct_yield": 0.6466666666666666,
+        "ungated_acc": 0.63,
+        "delta_yield_pp": 1.6666666666666607,
+        "delta_yield_ci_pp": [
+         -1.3416666666666663,
+         5.0
+        ],
+        "sel_minus_ungated_pp": 23.22222222222222,
+        "sel_minus_ungated_ci_pp": [
+         18.439514120701535,
+         28.058156507870457
+        ],
+        "gens_per_item": 5.67,
+        "stage2_frac": 0.6866666666666666,
+        "n_unobserved": 0,
+        "served": 225,
+        "correct": 194
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     }
+    },
+    "criteria_by_k": {
+     "k=2": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": 0.11111111111110628,
+       "ci_pp": [
+        -0.9444444444444444,
+        1.1666666666666667
+       ],
+       "met": true
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 10.14115432873275,
+       "ci_pp": [
+        8.72011087526838,
+        11.648209344806167
+       ],
+       "met": true
+      }
+     },
+     "k=4": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": 0.2777777777777768,
+       "ci_pp": [
+        -0.8902777777777776,
+        1.4444444444444444
+       ],
+       "met": true
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 11.728808158062453,
+       "ci_pp": [
+        10.233181103448423,
+        13.28268073283769
+       ],
+       "met": true
+      }
+     }
+    }
+   },
+   "all4": {
+    "per_backbone": {
+     "llama3.2-3b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 464,
+      "auroc_mome": 0.8225640620056944,
+      "auroc_mome_ci": [
+       0.7934020241778842,
+       0.8496300661201386
+      ],
+      "auroc_mean_logprob": 0.5467415374881367,
+      "auroc_mean_logprob_ci": [
+       0.5068672829493982,
+       0.5819949481027652
+      ],
+      "auroc_diff": 0.27582252451755773,
+      "auroc_diff_ci": [
+       0.23977929949990298,
+       0.3186108303064092
+      ],
+      "ungated_acc": 0.5155555555555555,
+      "stage1_serve_frac": 0.10555555555555556,
+      "stage1_serve_precision": 0.8526315789473684,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.5833333333333334,
+        "selective_acc": 0.7790476190476191,
+        "correct_yield": 0.45444444444444443,
+        "ungated_acc": 0.5155555555555555,
+        "delta_yield_pp": -6.111111111111112,
+        "delta_yield_ci_pp": [
+         -8.444444444444445,
+         -4.0
+        ],
+        "sel_minus_ungated_pp": 26.349206349206355,
+        "sel_minus_ungated_ci_pp": [
+         23.172158218125965,
+         29.58616938616938
+        ],
+        "gens_per_item": 4.756666666666667,
+        "stage2_frac": 0.8944444444444445,
+        "n_unobserved": 0,
+        "served": 525,
+        "correct": 409
+       },
+       "k=4": {
+        "coverage": 0.5555555555555556,
+        "selective_acc": 0.842,
+        "correct_yield": 0.4677777777777778,
+        "ungated_acc": 0.5155555555555555,
+        "delta_yield_pp": -4.777777777777775,
+        "delta_yield_ci_pp": [
+         -7.000000000000001,
+         -2.555555555555556
+        ],
+        "sel_minus_ungated_pp": 32.644444444444446,
+        "sel_minus_ungated_ci_pp": [
+         29.666976958455166,
+         35.72858263598326
+        ],
+        "gens_per_item": 6.545555555555556,
+        "stage2_frac": 0.8944444444444445,
+        "n_unobserved": 0,
+        "served": 500,
+        "correct": 421
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "phi4-mini": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 588,
+      "auroc_mome": 0.8522915576487005,
+      "auroc_mome_ci": [
+       0.8228120262480931,
+       0.8805006443012552
+      ],
+      "auroc_mean_logprob": 0.628837432408861,
+      "auroc_mean_logprob_ci": [
+       0.5907915449671239,
+       0.6670140119365973
+      ],
+      "auroc_diff": 0.22345412523983943,
+      "auroc_diff_ci": [
+       0.1830517015918141,
+       0.2641372235581319
+      ],
+      "ungated_acc": 0.6533333333333333,
+      "stage1_serve_frac": 0.08777777777777777,
+      "stage1_serve_precision": 0.8860759493670886,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7611111111111111,
+        "selective_acc": 0.8408759124087591,
+        "correct_yield": 0.64,
+        "ungated_acc": 0.6533333333333333,
+        "delta_yield_pp": -1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -3.111111111111111,
+         0.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 18.75425790754258,
+        "sel_minus_ungated_ci_pp": [
+         16.19775434621968,
+         21.455221755654883
+        ],
+        "gens_per_item": 4.792222222222223,
+        "stage2_frac": 0.9122222222222223,
+        "n_unobserved": 0,
+        "served": 685,
+        "correct": 576
+       },
+       "k=4": {
+        "coverage": 0.7388888888888889,
+        "selective_acc": 0.8646616541353384,
+        "correct_yield": 0.6388888888888888,
+        "ungated_acc": 0.6533333333333333,
+        "delta_yield_pp": -1.4444444444444482,
+        "delta_yield_ci_pp": [
+         -3.5555555555555554,
+         0.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 21.132832080200505,
+        "sel_minus_ungated_ci_pp": [
+         18.61447961760462,
+         23.97267261052501
+        ],
+        "gens_per_item": 6.616666666666666,
+        "stage2_frac": 0.9122222222222223,
+        "n_unobserved": 0,
+        "served": 665,
+        "correct": 575
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "exaone3.5-7.8b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 734,
+      "auroc_mome": 0.7853895144611142,
+      "auroc_mome_ci": [
+       0.7382274850524401,
+       0.8292593363430721
+      ],
+      "auroc_mean_logprob": 0.6616082860050556,
+      "auroc_mean_logprob_ci": [
+       0.6136055547141864,
+       0.7098789647672661
+      ],
+      "auroc_diff": 0.12378122845605855,
+      "auroc_diff_ci": [
+       0.07462014702544201,
+       0.17143549454488283
+      ],
+      "ungated_acc": 0.8155555555555556,
+      "stage1_serve_frac": 0.5088888888888888,
+      "stage1_serve_precision": 0.9235807860262009,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9233333333333333,
+        "selective_acc": 0.8904933814681107,
+        "correct_yield": 0.8222222222222222,
+        "ungated_acc": 0.8155555555555556,
+        "delta_yield_pp": 0.6666666666666599,
+        "delta_yield_ci_pp": [
+         -0.4444444444444444,
+         1.7777777777777777
+        ],
+        "sel_minus_ungated_pp": 7.493782591255515,
+        "sel_minus_ungated_ci_pp": [
+         5.845873039130043,
+         9.320332040581176
+        ],
+        "gens_per_item": 3.949999999999999,
+        "stage2_frac": 0.4911111111111111,
+        "n_unobserved": 0,
+        "served": 831,
+        "correct": 740
+       },
+       "k=4": {
+        "coverage": 0.9155555555555556,
+        "selective_acc": 0.9004854368932039,
+        "correct_yield": 0.8244444444444444,
+        "ungated_acc": 0.8155555555555556,
+        "delta_yield_pp": 0.8888888888888835,
+        "delta_yield_ci_pp": [
+         -0.2222222222222222,
+         2.111111111111111
+        ],
+        "sel_minus_ungated_pp": 8.492988133764834,
+        "sel_minus_ungated_ci_pp": [
+         6.746911807434983,
+         10.261943426961931
+        ],
+        "gens_per_item": 4.932222222222222,
+        "stage2_frac": 0.4911111111111111,
+        "n_unobserved": 0,
+        "served": 824,
+        "correct": 742
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "granite3.3-8b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 661,
+      "auroc_mome": 0.7817368131207313,
+      "auroc_mome_ci": [
+       0.7434054067345632,
+       0.8207132465213584
+      ],
+      "auroc_mean_logprob": 0.5505478576266466,
+      "auroc_mean_logprob_ci": [
+       0.5053444141716332,
+       0.5938462902731638
+      ],
+      "auroc_diff": 0.2311889554940847,
+      "auroc_diff_ci": [
+       0.18686692177619474,
+       0.2761959594783924
+      ],
+      "ungated_acc": 0.7344444444444445,
+      "stage1_serve_frac": 0.22444444444444445,
+      "stage1_serve_precision": 0.8861386138613861,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8477777777777777,
+        "selective_acc": 0.8610747051114024,
+        "correct_yield": 0.73,
+        "ungated_acc": 0.7344444444444445,
+        "delta_yield_pp": -0.4444444444444473,
+        "delta_yield_ci_pp": [
+         -2.3333333333333335,
+         1.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 12.663026066695792,
+        "sel_minus_ungated_ci_pp": [
+         10.527837333492146,
+         14.894417538272966
+        ],
+        "gens_per_item": 4.518888888888889,
+        "stage2_frac": 0.7755555555555556,
+        "n_unobserved": 0,
+        "served": 763,
+        "correct": 657
+       },
+       "k=4": {
+        "coverage": 0.8277777777777777,
+        "selective_acc": 0.8832214765100671,
+        "correct_yield": 0.7311111111111112,
+        "ungated_acc": 0.7344444444444445,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -2.3333333333333335,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 14.877703206562265,
+        "sel_minus_ungated_ci_pp": [
+         12.53797798677593,
+         17.372888995721144
+        ],
+        "gens_per_item": 6.07,
+        "stage2_frac": 0.7755555555555556,
+        "n_unobserved": 0,
+        "served": 745,
+        "correct": 658
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     }
+    },
+    "pooled": {
+     "n": 3600,
+     "n_cells": 12,
+     "n_correct": 2447,
+     "auroc_mome": 0.8287298711876517,
+     "auroc_mome_ci": [
+      0.812774249927831,
+      0.8440425841857231
+     ],
+     "auroc_mean_logprob": 0.6287260432885764,
+     "auroc_mean_logprob_ci": [
+      0.6084089234496416,
+      0.6478827689962232
+     ],
+     "auroc_diff": 0.20000382789907534,
+     "auroc_diff_ci": [
+      0.1803944226769571,
+      0.21906485408838133
+     ],
+     "ungated_acc": 0.6797222222222222,
+     "stage1_serve_frac": 0.23166666666666666,
+     "stage1_serve_precision": 0.9028776978417267,
+     "no_samples": 0,
+     "gate": {
+      "k=2": {
+       "coverage": 0.7788888888888889,
+       "selective_acc": 0.8495007132667618,
+       "correct_yield": 0.6616666666666666,
+       "ungated_acc": 0.6797222222222222,
+       "delta_yield_pp": -1.8055555555555602,
+       "delta_yield_ci_pp": [
+        -2.722222222222222,
+        -0.8888888888888888
+       ],
+       "sel_minus_ungated_pp": 16.977849104453956,
+       "sel_minus_ungated_ci_pp": [
+        15.760816743522119,
+        18.287534203415074
+       ],
+       "gens_per_item": 4.504444444444444,
+       "stage2_frac": 0.7683333333333333,
+       "n_unobserved": 0,
+       "served": 2804,
+       "correct": 2382
+      },
+      "k=4": {
+       "coverage": 0.7594444444444445,
+       "selective_acc": 0.8763716166788588,
+       "correct_yield": 0.6655555555555556,
+       "ungated_acc": 0.6797222222222222,
+       "delta_yield_pp": -1.416666666666666,
+       "delta_yield_ci_pp": [
+        -2.3618055555555557,
+        -0.4722222222222222
+       ],
+       "sel_minus_ungated_pp": 19.664939445663656,
+       "sel_minus_ungated_ci_pp": [
+        18.409046446302806,
+        20.974647944033123
+       ],
+       "gens_per_item": 6.041111111111111,
+       "stage2_frac": 0.7683333333333333,
+       "n_unobserved": 0,
+       "served": 2734,
+       "correct": 2396
+      }
+     },
+     "adoption": {
+      "pick": null,
+      "eligible": [],
+      "note": "no variant reaches the ungated yield"
+     }
+    },
+    "criteria": {
+     "1_discrimination_per_backbone": {
+      "rule": "item-paired AUROC difference (MOME - mean log-probability), 95% CI above 0, each new backbone",
+      "per_backbone": {
+       "llama3.2-3b": {
+        "auroc_diff": 0.27582252451755773,
+        "ci": [
+         0.23977929949990298,
+         0.3186108303064092
+        ],
+        "met": true
+       },
+       "phi4-mini": {
+        "auroc_diff": 0.22345412523983943,
+        "ci": [
+         0.1830517015918141,
+         0.2641372235581319
+        ],
+        "met": true
+       },
+       "exaone3.5-7.8b": {
+        "auroc_diff": 0.12378122845605855,
+        "ci": [
+         0.07462014702544201,
+         0.17143549454488283
+        ],
+        "met": true
+       },
+       "granite3.3-8b": {
+        "auroc_diff": 0.2311889554940847,
+        "ci": [
+         0.18686692177619474,
+         0.2761959594783924
+        ],
+        "met": true
+       }
+      },
+      "met": true
+     },
+     "2_yield_preserved_pooled": {
+      "rule": "pooled, k=2: delta correct yield point >= 0 and 95% CI lower bound >= -2.0 points",
+      "delta_yield_pp": -1.8055555555555602,
+      "ci_pp": [
+       -2.722222222222222,
+       -0.8888888888888888
+      ],
+      "met": false
+     },
+     "3_selective_accuracy_pooled": {
+      "rule": "pooled, k=2: selective accuracy - ungated accuracy, 95% CI above 0",
+      "diff_pp": 16.977849104453956,
+      "ci_pp": [
+       15.760816743522119,
+       18.287534203415074
+      ],
+      "met": true
+     },
+     "4_k_report_only": {
+      "rule": "report k=2 and k=4 and the pick of the registered adoption rule",
+      "k2": {
+       "correct_yield": 0.6616666666666666,
+       "selective_acc": 0.8495007132667618,
+       "gens_per_item": 4.504444444444444
+      },
+      "k4": {
+       "correct_yield": 0.6655555555555556,
+       "selective_acc": 0.8763716166788588,
+       "gens_per_item": 6.041111111111111
+      },
+      "rule_pick": null,
+      "met": null
+     }
+    },
+    "per_cell": {
+     "gsm8k_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 277,
+      "auroc_mome": 0.717312823732538,
+      "auroc_mome_ci": [
+       0.5821646817037361,
+       0.8430012242485646
+      ],
+      "auroc_mean_logprob": 0.680897818238895,
+      "auroc_mean_logprob_ci": [
+       0.5558839285714287,
+       0.8023137567576173
+      ],
+      "auroc_diff": 0.03641500549364307,
+      "auroc_diff_ci": [
+       -0.09638784793072779,
+       0.17273156767947445
+      ],
+      "ungated_acc": 0.9233333333333333,
+      "stage1_serve_frac": 0.6733333333333333,
+      "stage1_serve_precision": 0.9554455445544554,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9766666666666667,
+        "selective_acc": 0.9419795221843004,
+        "correct_yield": 0.92,
+        "ungated_acc": 0.9233333333333333,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -1.0,
+         0.0
+        ],
+        "sel_minus_ungated_pp": 1.8646188850967027,
+        "sel_minus_ungated_ci_pp": [
+         0.5959254709254693,
+         3.45833333333333
+        ],
+        "gens_per_item": 3.6399999999999983,
+        "stage2_frac": 0.32666666666666666,
+        "n_unobserved": 0,
+        "served": 293,
+        "correct": 276
+       },
+       "k=4": {
+        "coverage": 0.98,
+        "selective_acc": 0.9455782312925171,
+        "correct_yield": 0.9266666666666666,
+        "ungated_acc": 0.9233333333333333,
+        "delta_yield_pp": 0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -0.6666666666666667,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 2.224489795918372,
+        "sel_minus_ungated_ci_pp": [
+         0.6477146042363491,
+         3.896626515509368
+        ],
+        "gens_per_item": 4.293333333333333,
+        "stage2_frac": 0.32666666666666666,
+        "n_unobserved": 0,
+        "served": 294,
+        "correct": 278
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "gsm8k_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 270,
+      "auroc_mome": 0.7616049382716049,
+      "auroc_mome_ci": [
+       0.6486699143696092,
+       0.8628010357621638
+      ],
+      "auroc_mean_logprob": 0.6082716049382716,
+      "auroc_mean_logprob_ci": [
+       0.4943906486588795,
+       0.7229640515301894
+      ],
+      "auroc_diff": 0.15333333333333332,
+      "auroc_diff_ci": [
+       0.019036644609415905,
+       0.28312561803357916
+      ],
+      "ungated_acc": 0.9,
+      "stage1_serve_frac": 0.36,
+      "stage1_serve_precision": 0.9537037037037037,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9633333333333334,
+        "selective_acc": 0.9307958477508651,
+        "correct_yield": 0.8966666666666666,
+        "ungated_acc": 0.9,
+        "delta_yield_pp": -0.33333333333334103,
+        "delta_yield_ci_pp": [
+         -2.3333333333333335,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 3.079584775086508,
+        "sel_minus_ungated_ci_pp": [
+         0.8485628381045311,
+         5.574777744481073
+        ],
+        "gens_per_item": 4.266666666666665,
+        "stage2_frac": 0.64,
+        "n_unobserved": 0,
+        "served": 289,
+        "correct": 269
+       },
+       "k=4": {
+        "coverage": 0.9666666666666667,
+        "selective_acc": 0.9379310344827586,
+        "correct_yield": 0.9066666666666666,
+        "ungated_acc": 0.9,
+        "delta_yield_pp": 0.6666666666666599,
+        "delta_yield_ci_pp": [
+         -1.6666666666666667,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 3.7931034482758585,
+        "sel_minus_ungated_ci_pp": [
+         1.4597661919893279,
+         6.45549413452611
+        ],
+        "gens_per_item": 5.546666666666665,
+        "stage2_frac": 0.64,
+        "n_unobserved": 0,
+        "served": 290,
+        "correct": 272
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "gsm8k_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 227,
+      "auroc_mome": 0.7887272946714139,
+      "auroc_mome_ci": [
+       0.7129364273776038,
+       0.8538908237277802
+      ],
+      "auroc_mean_logprob": 0.6071450123710096,
+      "auroc_mean_logprob_ci": [
+       0.5280146848042011,
+       0.6887638319122501
+      ],
+      "auroc_diff": 0.1815822823004043,
+      "auroc_diff_ci": [
+       0.08740436385900303,
+       0.2722522834173747
+      ],
+      "ungated_acc": 0.7566666666666667,
+      "stage1_serve_frac": 0.21333333333333335,
+      "stage1_serve_precision": 0.890625,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8366666666666667,
+        "selective_acc": 0.8685258964143426,
+        "correct_yield": 0.7266666666666667,
+        "ungated_acc": 0.7566666666666667,
+        "delta_yield_pp": -3.0000000000000027,
+        "delta_yield_ci_pp": [
+         -6.666666666666667,
+         0.33333333333333337
+        ],
+        "sel_minus_ungated_pp": 11.185922974767593,
+        "sel_minus_ungated_ci_pp": [
+         7.254820584360224,
+         15.388744985173547
+        ],
+        "gens_per_item": 4.559999999999999,
+        "stage2_frac": 0.7866666666666666,
+        "n_unobserved": 0,
+        "served": 251,
+        "correct": 218
+       },
+       "k=4": {
+        "coverage": 0.8466666666666667,
+        "selective_acc": 0.8779527559055118,
+        "correct_yield": 0.7433333333333333,
+        "ungated_acc": 0.7566666666666667,
+        "delta_yield_pp": -1.333333333333342,
+        "delta_yield_ci_pp": [
+         -5.0,
+         2.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 12.12860892388451,
+        "sel_minus_ungated_ci_pp": [
+         8.503179676730332,
+         16.034979423868307
+        ],
+        "gens_per_item": 6.133333333333332,
+        "stage2_frac": 0.7866666666666666,
+        "n_unobserved": 0,
+        "served": 254,
+        "correct": 223
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "gsm8k_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 263,
+      "auroc_mome": 0.7305518446202857,
+      "auroc_mome_ci": [
+       0.6161016467064248,
+       0.835769218525796
+      ],
+      "auroc_mean_logprob": 0.6897543931764464,
+      "auroc_mean_logprob_ci": [
+       0.578649370335821,
+       0.791489429543612
+      ],
+      "auroc_diff": 0.04079745144383928,
+      "auroc_diff_ci": [
+       -0.045673436210234154,
+       0.13211331935201795
+      ],
+      "ungated_acc": 0.8766666666666667,
+      "stage1_serve_frac": 0.15,
+      "stage1_serve_precision": 0.9333333333333333,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9633333333333334,
+        "selective_acc": 0.9204152249134948,
+        "correct_yield": 0.8866666666666667,
+        "ungated_acc": 0.8766666666666667,
+        "delta_yield_pp": 1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -1.3333333333333335,
+         3.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 4.374855824682811,
+        "sel_minus_ungated_ci_pp": [
+         1.7532672020154259,
+         7.333362369337982
+        ],
+        "gens_per_item": 4.686666666666665,
+        "stage2_frac": 0.85,
+        "n_unobserved": 0,
+        "served": 289,
+        "correct": 266
+       },
+       "k=4": {
+        "coverage": 0.9533333333333334,
+        "selective_acc": 0.9405594405594405,
+        "correct_yield": 0.8966666666666666,
+        "ungated_acc": 0.8766666666666667,
+        "delta_yield_pp": 1.9999999999999907,
+        "delta_yield_ci_pp": [
+         -0.33333333333333337,
+         4.666666666666667
+        ],
+        "sel_minus_ungated_pp": 6.389277389277382,
+        "sel_minus_ungated_ci_pp": [
+         3.5536621235948527,
+         9.396204033214717
+        ],
+        "gens_per_item": 6.386666666666665,
+        "stage2_frac": 0.85,
+        "n_unobserved": 0,
+        "served": 286,
+        "correct": 269
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 248,
+      "auroc_mome": 0.7929590570719603,
+      "auroc_mome_ci": [
+       0.7141238606557377,
+       0.8690546784409786
+      ],
+      "auroc_mean_logprob": 0.6933933002481389,
+      "auroc_mean_logprob_ci": [
+       0.609352709530507,
+       0.7775393014607144
+      ],
+      "auroc_diff": 0.0995657568238214,
+      "auroc_diff_ci": [
+       0.03238588700234201,
+       0.16976200000000002
+      ],
+      "ungated_acc": 0.8266666666666667,
+      "stage1_serve_frac": 0.44666666666666666,
+      "stage1_serve_precision": 0.9253731343283582,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9233333333333333,
+        "selective_acc": 0.9061371841155235,
+        "correct_yield": 0.8366666666666667,
+        "ungated_acc": 0.8266666666666667,
+        "delta_yield_pp": 1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -0.6666666666666667,
+         2.666666666666667
+        ],
+        "sel_minus_ungated_pp": 7.94705174488568,
+        "sel_minus_ungated_ci_pp": [
+         4.832744405182576,
+         11.262322238179713
+        ],
+        "gens_per_item": 4.1,
+        "stage2_frac": 0.5533333333333333,
+        "n_unobserved": 0,
+        "served": 277,
+        "correct": 251
+       },
+       "k=4": {
+        "coverage": 0.9233333333333333,
+        "selective_acc": 0.8989169675090253,
+        "correct_yield": 0.83,
+        "ungated_acc": 0.8266666666666667,
+        "delta_yield_pp": 0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -1.3333333333333335,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 7.225030084235861,
+        "sel_minus_ungated_ci_pp": [
+         4.409127735291888,
+         10.475639978213506
+        ],
+        "gens_per_item": 5.206666666666667,
+        "stage2_frac": 0.5533333333333333,
+        "n_unobserved": 0,
+        "served": 277,
+        "correct": 249
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 202,
+      "auroc_mome": 0.7780359668619923,
+      "auroc_mome_ci": [
+       0.7178817775861852,
+       0.8329958622685185
+      ],
+      "auroc_mean_logprob": 0.5803192564154375,
+      "auroc_mean_logprob_ci": [
+       0.5103531956810531,
+       0.6526222128695189
+      ],
+      "auroc_diff": 0.1977167104465548,
+      "auroc_diff_ci": [
+       0.11428382313669785,
+       0.27902765483124214
+      ],
+      "ungated_acc": 0.6733333333333333,
+      "stage1_serve_frac": 0.0,
+      "stage1_serve_precision": null,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7833333333333333,
+        "selective_acc": 0.825531914893617,
+        "correct_yield": 0.6466666666666666,
+        "ungated_acc": 0.6733333333333333,
+        "delta_yield_pp": -2.6666666666666727,
+        "delta_yield_ci_pp": [
+         -6.666666666666667,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 15.219858156028366,
+        "sel_minus_ungated_ci_pp": [
+         10.916061827956986,
+         19.782603085782583
+        ],
+        "gens_per_item": 4.993333333333333,
+        "stage2_frac": 1.0,
+        "n_unobserved": 0,
+        "served": 235,
+        "correct": 194
+       },
+       "k=4": {
+        "coverage": 0.7666666666666667,
+        "selective_acc": 0.8347826086956521,
+        "correct_yield": 0.64,
+        "ungated_acc": 0.6733333333333333,
+        "delta_yield_pp": -3.3333333333333326,
+        "delta_yield_ci_pp": [
+         -8.0,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 16.14492753623188,
+        "sel_minus_ungated_ci_pp": [
+         11.392374551033935,
+         21.125337438576835
+        ],
+        "gens_per_item": 6.993333333333333,
+        "stage2_frac": 1.0,
+        "n_unobserved": 0,
+        "served": 230,
+        "correct": 192
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "hrm8k-gsm8k-ko_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 124,
+      "auroc_mome": 0.766449780058651,
+      "auroc_mome_ci": [
+       0.7103063940093925,
+       0.8230609377436592
+      ],
+      "auroc_mean_logprob": 0.45110887096774194,
+      "auroc_mean_logprob_ci": [
+       0.3881820614781186,
+       0.5154198790260329
+      ],
+      "auroc_diff": 0.3153409090909091,
+      "auroc_diff_ci": [
+       0.24253273330201006,
+       0.3885776171955437
+      ],
+      "ungated_acc": 0.41333333333333333,
+      "stage1_serve_frac": 0.006666666666666667,
+      "stage1_serve_precision": 0.5,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.43,
+        "selective_acc": 0.7286821705426356,
+        "correct_yield": 0.31333333333333335,
+        "ungated_acc": 0.41333333333333333,
+        "delta_yield_pp": -9.999999999999998,
+        "delta_yield_ci_pp": [
+         -15.0,
+         -5.333333333333334
+        ],
+        "sel_minus_ungated_pp": 31.534883720930228,
+        "sel_minus_ungated_ci_pp": [
+         24.078825536062375,
+         38.693832571138195
+        ],
+        "gens_per_item": 4.98,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 129,
+        "correct": 94
+       },
+       "k=4": {
+        "coverage": 0.38666666666666666,
+        "selective_acc": 0.8362068965517241,
+        "correct_yield": 0.3233333333333333,
+        "ungated_acc": 0.41333333333333333,
+        "delta_yield_pp": -9.000000000000002,
+        "delta_yield_ci_pp": [
+         -14.000000000000002,
+         -4.0
+        ],
+        "sel_minus_ungated_pp": 42.28735632183908,
+        "sel_minus_ungated_ci_pp": [
+         35.33279816513762,
+         49.32695281522601
+        ],
+        "gens_per_item": 6.966666666666667,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 116,
+        "correct": 97
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "hrm8k-gsm8k-ko_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 164,
+      "auroc_mome": 0.8262195121951219,
+      "auroc_mome_ci": [
+       0.7789928959034519,
+       0.8701787401370432
+      ],
+      "auroc_mean_logprob": 0.707855093256815,
+      "auroc_mean_logprob_ci": [
+       0.646183825614426,
+       0.7655697378231751
+      ],
+      "auroc_diff": 0.11836441893830696,
+      "auroc_diff_ci": [
+       0.06002347531786732,
+       0.18061556589974503
+      ],
+      "ungated_acc": 0.5466666666666666,
+      "stage1_serve_frac": 0.006666666666666667,
+      "stage1_serve_precision": 1.0,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.6666666666666666,
+        "selective_acc": 0.79,
+        "correct_yield": 0.5266666666666666,
+        "ungated_acc": 0.5466666666666666,
+        "delta_yield_pp": -2.0000000000000018,
+        "delta_yield_ci_pp": [
+         -6.0,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 24.33333333333334,
+        "sel_minus_ungated_ci_pp": [
+         19.170086603039938,
+         29.63213025580711
+        ],
+        "gens_per_item": 4.98,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 200,
+        "correct": 158
+       },
+       "k=4": {
+        "coverage": 0.6533333333333333,
+        "selective_acc": 0.8010204081632653,
+        "correct_yield": 0.5233333333333333,
+        "ungated_acc": 0.5466666666666666,
+        "delta_yield_pp": -2.3333333333333317,
+        "delta_yield_ci_pp": [
+         -6.666666666666667,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 25.43537414965986,
+        "sel_minus_ungated_ci_pp": [
+         20.34669631937813,
+         30.97790956041316
+        ],
+        "gens_per_item": 6.966666666666667,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 196,
+        "correct": 157
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "math500_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 209,
+      "auroc_mome": 0.7651296072348704,
+      "auroc_mome_ci": [
+       0.6974420933143233,
+       0.8266796985357604
+      ],
+      "auroc_mean_logprob": 0.7326883642673117,
+      "auroc_mean_logprob_ci": [
+       0.6683127295290834,
+       0.7933884719860895
+      ],
+      "auroc_diff": 0.03244124296755879,
+      "auroc_diff_ci": [
+       -0.03475879522601119,
+       0.09923049933213353
+      ],
+      "ungated_acc": 0.6966666666666667,
+      "stage1_serve_frac": 0.4066666666666667,
+      "stage1_serve_precision": 0.8688524590163934,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.87,
+        "selective_acc": 0.8160919540229885,
+        "correct_yield": 0.71,
+        "ungated_acc": 0.6966666666666667,
+        "delta_yield_pp": 1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -1.0,
+         4.0
+        ],
+        "sel_minus_ungated_pp": 11.942528735632186,
+        "sel_minus_ungated_ci_pp": [
+         8.481429463171034,
+         15.651432291666664
+        ],
+        "gens_per_item": 4.11,
+        "stage2_frac": 0.5933333333333334,
+        "n_unobserved": 0,
+        "served": 261,
+        "correct": 213
+       },
+       "k=4": {
+        "coverage": 0.8433333333333334,
+        "selective_acc": 0.849802371541502,
+        "correct_yield": 0.7166666666666667,
+        "ungated_acc": 0.6966666666666667,
+        "delta_yield_pp": 2.0000000000000018,
+        "delta_yield_ci_pp": [
+         -1.0,
+         5.333333333333334
+        ],
+        "sel_minus_ungated_pp": 15.31357048748353,
+        "sel_minus_ungated_ci_pp": [
+         11.394402035623408,
+         19.417258230452667
+        ],
+        "gens_per_item": 5.296666666666667,
+        "stage2_frac": 0.5933333333333334,
+        "n_unobserved": 0,
+        "served": 253,
+        "correct": 215
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "math500_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 189,
+      "auroc_mome": 0.7722484389151055,
+      "auroc_mome_ci": [
+       0.7070228008464472,
+       0.8350245759132847
+      ],
+      "auroc_mean_logprob": 0.5647552314218981,
+      "auroc_mean_logprob_ci": [
+       0.49732035550753717,
+       0.6316622938530734
+      ],
+      "auroc_diff": 0.20749320749320743,
+      "auroc_diff_ci": [
+       0.13484865535594387,
+       0.2839984673273618
+      ],
+      "ungated_acc": 0.63,
+      "stage1_serve_frac": 0.31333333333333335,
+      "stage1_serve_precision": 0.8085106382978723,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7966666666666666,
+        "selective_acc": 0.8117154811715481,
+        "correct_yield": 0.6466666666666666,
+        "ungated_acc": 0.63,
+        "delta_yield_pp": 1.6666666666666607,
+        "delta_yield_ci_pp": [
+         -1.3333333333333335,
+         4.666666666666667
+        ],
+        "sel_minus_ungated_pp": 18.171548117154813,
+        "sel_minus_ungated_ci_pp": [
+         13.676194385114817,
+         22.654529737206083
+        ],
+        "gens_per_item": 4.296666666666667,
+        "stage2_frac": 0.6866666666666666,
+        "n_unobserved": 0,
+        "served": 239,
+        "correct": 194
+       },
+       "k=4": {
+        "coverage": 0.75,
+        "selective_acc": 0.8622222222222222,
+        "correct_yield": 0.6466666666666666,
+        "ungated_acc": 0.63,
+        "delta_yield_pp": 1.6666666666666607,
+        "delta_yield_ci_pp": [
+         -1.3416666666666663,
+         5.0
+        ],
+        "sel_minus_ungated_pp": 23.22222222222222,
+        "sel_minus_ungated_ci_pp": [
+         18.439514120701535,
+         28.058156507870457
+        ],
+        "gens_per_item": 5.67,
+        "stage2_frac": 0.6866666666666666,
+        "n_unobserved": 0,
+        "served": 225,
+        "correct": 194
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "math500_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 113,
+      "auroc_mome": 0.8082438124083101,
+      "auroc_mome_ci": [
+       0.7579855469496282,
+       0.8594912484330748
+      ],
+      "auroc_mean_logprob": 0.5484359471865979,
+      "auroc_mean_logprob_ci": [
+       0.4848479690898481,
+       0.6132145336300717
+      ],
+      "auroc_diff": 0.2598078652217122,
+      "auroc_diff_ci": [
+       0.18896236126029353,
+       0.32973414432262266
+      ],
+      "ungated_acc": 0.37666666666666665,
+      "stage1_serve_frac": 0.09666666666666666,
+      "stage1_serve_precision": 0.7931034482758621,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.48333333333333334,
+        "selective_acc": 0.6689655172413793,
+        "correct_yield": 0.3233333333333333,
+        "ungated_acc": 0.37666666666666665,
+        "delta_yield_pp": -5.333333333333334,
+        "delta_yield_ci_pp": [
+         -8.666666666666668,
+         -2.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 29.229885057471268,
+        "sel_minus_ungated_ci_pp": [
+         23.597282269149066,
+         35.61605332118036
+        ],
+        "gens_per_item": 4.73,
+        "stage2_frac": 0.9033333333333333,
+        "n_unobserved": 0,
+        "served": 145,
+        "correct": 97
+       },
+       "k=4": {
+        "coverage": 0.43333333333333335,
+        "selective_acc": 0.7769230769230769,
+        "correct_yield": 0.33666666666666667,
+        "ungated_acc": 0.37666666666666665,
+        "delta_yield_pp": -3.9999999999999982,
+        "delta_yield_ci_pp": [
+         -7.333333333333333,
+         -1.0
+        ],
+        "sel_minus_ungated_pp": 40.02564102564103,
+        "sel_minus_ungated_ci_pp": [
+         34.18800213986967,
+         46.303011376779594
+        ],
+        "gens_per_item": 6.536666666666665,
+        "stage2_frac": 0.9033333333333333,
+        "n_unobserved": 0,
+        "served": 130,
+        "correct": 101
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "math500_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 161,
+      "auroc_mome": 0.8594217793467089,
+      "auroc_mome_ci": [
+       0.8101748842604528,
+       0.9028064508711353
+      ],
+      "auroc_mean_logprob": 0.5184324590017427,
+      "auroc_mean_logprob_ci": [
+       0.4522322963242843,
+       0.5833191201910157
+      ],
+      "auroc_diff": 0.3409893203449662,
+      "auroc_diff_ci": [
+       0.268771894653104,
+       0.41165945352300326
+      ],
+      "ungated_acc": 0.5366666666666666,
+      "stage1_serve_frac": 0.10666666666666667,
+      "stage1_serve_precision": 0.8125,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.6533333333333333,
+        "selective_acc": 0.7755102040816326,
+        "correct_yield": 0.5066666666666667,
+        "ungated_acc": 0.5366666666666666,
+        "delta_yield_pp": -2.9999999999999916,
+        "delta_yield_ci_pp": [
+         -6.333333333333334,
+         0.33333333333333337
+        ],
+        "sel_minus_ungated_pp": 23.8843537414966,
+        "sel_minus_ungated_ci_pp": [
+         18.93468767608468,
+         29.28256658595641
+        ],
+        "gens_per_item": 4.71,
+        "stage2_frac": 0.8933333333333333,
+        "n_unobserved": 0,
+        "served": 196,
+        "correct": 152
+       },
+       "k=4": {
+        "coverage": 0.61,
+        "selective_acc": 0.8142076502732241,
+        "correct_yield": 0.49666666666666665,
+        "ungated_acc": 0.5366666666666666,
+        "delta_yield_pp": -3.9999999999999982,
+        "delta_yield_ci_pp": [
+         -7.666666666666666,
+         -0.33333333333333337
+        ],
+        "sel_minus_ungated_pp": 27.754098360655743,
+        "sel_minus_ungated_ci_pp": [
+         22.553011204481795,
+         33.17416904083571
+        ],
+        "gens_per_item": 6.496666666666667,
+        "stage2_frac": 0.8933333333333333,
+        "n_unobserved": 0,
+        "served": 183,
+        "correct": 149
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     }
+    },
+    "criteria_by_k": {
+     "k=2": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": -1.8055555555555602,
+       "ci_pp": [
+        -2.722222222222222,
+        -0.8888888888888888
+       ],
+       "met": false
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 16.977849104453956,
+       "ci_pp": [
+        15.760816743522119,
+        18.287534203415074
+       ],
+       "met": true
+      }
+     },
+     "k=4": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": -1.416666666666666,
+       "ci_pp": [
+        -2.3618055555555557,
+        -0.4722222222222222
+       ],
+       "met": false
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 19.664939445663656,
+       "ci_pp": [
+        18.409046446302806,
+        20.974647944033123
+       ],
+       "met": true
+      }
+     }
+    }
+   }
+  },
+  "T0.3": {
+   "sec23": {
+    "per_backbone": {
+     "llama3.2-3b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 464,
+      "auroc_mome": 0.8225640620056944,
+      "auroc_mome_ci": [
+       0.7934020241778842,
+       0.8496300661201386
+      ],
+      "auroc_mean_logprob": 0.5467415374881367,
+      "auroc_mean_logprob_ci": [
+       0.5068672829493982,
+       0.5819949481027652
+      ],
+      "auroc_diff": 0.27582252451755773,
+      "auroc_diff_ci": [
+       0.23977929949990298,
+       0.3186108303064092
+      ],
+      "ungated_acc": 0.5155555555555555,
+      "stage1_serve_frac": 0.10555555555555556,
+      "stage1_serve_precision": 0.8526315789473684,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.6944444444444444,
+        "selective_acc": 0.7424,
+        "correct_yield": 0.5155555555555555,
+        "ungated_acc": 0.5155555555555555,
+        "delta_yield_pp": 0.0,
+        "delta_yield_ci_pp": [
+         -2.0,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 22.68444444444444,
+        "sel_minus_ungated_ci_pp": [
+         19.82428133460742,
+         25.43413248806229
+        ],
+        "gens_per_item": 4.756666666666667,
+        "stage2_frac": 0.8944444444444445,
+        "n_unobserved": 0,
+        "served": 625,
+        "correct": 464
+       },
+       "k=4": {
+        "coverage": 0.6544444444444445,
+        "selective_acc": 0.7741935483870968,
+        "correct_yield": 0.5066666666666667,
+        "ungated_acc": 0.5155555555555555,
+        "delta_yield_pp": -0.8888888888888835,
+        "delta_yield_ci_pp": [
+         -3.0,
+         1.1111111111111112
+        ],
+        "sel_minus_ungated_pp": 25.863799283154123,
+        "sel_minus_ungated_ci_pp": [
+         22.979531164167444,
+         28.955788655788655
+        ],
+        "gens_per_item": 6.545555555555556,
+        "stage2_frac": 0.8944444444444445,
+        "n_unobserved": 0,
+        "served": 589,
+        "correct": 456
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2"
+       ]
+      }
+     },
+     "phi4-mini": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 588,
+      "auroc_mome": 0.8522915576487005,
+      "auroc_mome_ci": [
+       0.8228120262480931,
+       0.8805006443012552
+      ],
+      "auroc_mean_logprob": 0.628837432408861,
+      "auroc_mean_logprob_ci": [
+       0.5907915449671239,
+       0.6670140119365973
+      ],
+      "auroc_diff": 0.22345412523983943,
+      "auroc_diff_ci": [
+       0.1830517015918141,
+       0.2641372235581319
+      ],
+      "ungated_acc": 0.6533333333333333,
+      "stage1_serve_frac": 0.08777777777777777,
+      "stage1_serve_precision": 0.8860759493670886,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8044444444444444,
+        "selective_acc": 0.7997237569060773,
+        "correct_yield": 0.6433333333333333,
+        "ungated_acc": 0.6533333333333333,
+        "delta_yield_pp": -1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -2.7777777777777777,
+         0.8888888888888888
+        ],
+        "sel_minus_ungated_pp": 14.639042357274402,
+        "sel_minus_ungated_ci_pp": [
+         12.317999407728877,
+         17.142448049943937
+        ],
+        "gens_per_item": 4.792222222222223,
+        "stage2_frac": 0.9122222222222223,
+        "n_unobserved": 0,
+        "served": 724,
+        "correct": 579
+       },
+       "k=4": {
+        "coverage": 0.7911111111111111,
+        "selective_acc": 0.8398876404494382,
+        "correct_yield": 0.6644444444444444,
+        "ungated_acc": 0.6533333333333333,
+        "delta_yield_pp": 1.1111111111111072,
+        "delta_yield_ci_pp": [
+         -0.7777777777777778,
+         3.111111111111111
+        ],
+        "sel_minus_ungated_pp": 18.65543071161049,
+        "sel_minus_ungated_ci_pp": [
+         16.21946821826055,
+         21.272681005706005
+        ],
+        "gens_per_item": 6.616666666666666,
+        "stage2_frac": 0.9122222222222223,
+        "n_unobserved": 0,
+        "served": 712,
+        "correct": 598
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     }
+    },
+    "pooled": {
+     "n": 1800,
+     "n_cells": 6,
+     "n_correct": 1052,
+     "auroc_mome": 0.8386381427787154,
+     "auroc_mome_ci": [
+      0.8183670076751651,
+      0.8585743471080104
+     ],
+     "auroc_mean_logprob": 0.5751827433358411,
+     "auroc_mean_logprob_ci": [
+      0.5465007902767867,
+      0.6027048438759821
+     ],
+     "auroc_diff": 0.2634553994428743,
+     "auroc_diff_ci": [
+      0.23536799513504153,
+      0.2919272576506818
+     ],
+     "ungated_acc": 0.5844444444444444,
+     "stage1_serve_frac": 0.09666666666666666,
+     "stage1_serve_precision": 0.867816091954023,
+     "no_samples": 0,
+     "gate": {
+      "k=2": {
+       "coverage": 0.7494444444444445,
+       "selective_acc": 0.7731653076352853,
+       "correct_yield": 0.5794444444444444,
+       "ungated_acc": 0.5844444444444444,
+       "delta_yield_pp": -0.5000000000000004,
+       "delta_yield_ci_pp": [
+        -1.7236111111111112,
+        0.8888888888888888
+       ],
+       "sel_minus_ungated_pp": 18.87208631908409,
+       "sel_minus_ungated_ci_pp": [
+        17.02431690102685,
+        20.787523182487337
+       ],
+       "gens_per_item": 4.774444444444445,
+       "stage2_frac": 0.9033333333333333,
+       "n_unobserved": 0,
+       "served": 1349,
+       "correct": 1043
+      },
+      "k=4": {
+       "coverage": 0.7227777777777777,
+       "selective_acc": 0.8101460415065335,
+       "correct_yield": 0.5855555555555556,
+       "ungated_acc": 0.5844444444444444,
+       "delta_yield_pp": 0.11111111111111738,
+       "delta_yield_ci_pp": [
+        -1.277777777777778,
+        1.5555555555555556
+       ],
+       "sel_minus_ungated_pp": 22.570159706208905,
+       "sel_minus_ungated_ci_pp": [
+        20.64365399486801,
+        24.57257948167845
+       ],
+       "gens_per_item": 6.581111111111111,
+       "stage2_frac": 0.9033333333333333,
+       "n_unobserved": 0,
+       "served": 1301,
+       "correct": 1054
+      }
+     },
+     "adoption": {
+      "pick": "k=4",
+      "eligible": [
+       "k=4"
+      ]
+     }
+    },
+    "criteria": {
+     "1_discrimination_per_backbone": {
+      "rule": "item-paired AUROC difference (MOME - mean log-probability), 95% CI above 0, each new backbone",
+      "per_backbone": {
+       "llama3.2-3b": {
+        "auroc_diff": 0.27582252451755773,
+        "ci": [
+         0.23977929949990298,
+         0.3186108303064092
+        ],
+        "met": true
+       },
+       "phi4-mini": {
+        "auroc_diff": 0.22345412523983943,
+        "ci": [
+         0.1830517015918141,
+         0.2641372235581319
+        ],
+        "met": true
+       }
+      },
+      "met": true
+     },
+     "2_yield_preserved_pooled": {
+      "rule": "pooled, k=2: delta correct yield point >= 0 and 95% CI lower bound >= -2.0 points",
+      "delta_yield_pp": -0.5000000000000004,
+      "ci_pp": [
+       -1.7236111111111112,
+       0.8888888888888888
+      ],
+      "met": false
+     },
+     "3_selective_accuracy_pooled": {
+      "rule": "pooled, k=2: selective accuracy - ungated accuracy, 95% CI above 0",
+      "diff_pp": 18.87208631908409,
+      "ci_pp": [
+       17.02431690102685,
+       20.787523182487337
+      ],
+      "met": true
+     },
+     "4_k_report_only": {
+      "rule": "report k=2 and k=4 and the pick of the registered adoption rule",
+      "k2": {
+       "correct_yield": 0.5794444444444444,
+       "selective_acc": 0.7731653076352853,
+       "gens_per_item": 4.774444444444445
+      },
+      "k4": {
+       "correct_yield": 0.5855555555555556,
+       "selective_acc": 0.8101460415065335,
+       "gens_per_item": 6.581111111111111
+      },
+      "rule_pick": "k=4",
+      "met": null
+     }
+    },
+    "per_cell": {
+     "gsm8k_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 227,
+      "auroc_mome": 0.7887272946714139,
+      "auroc_mome_ci": [
+       0.7129364273776038,
+       0.8538908237277802
+      ],
+      "auroc_mean_logprob": 0.6071450123710096,
+      "auroc_mean_logprob_ci": [
+       0.5280146848042011,
+       0.6887638319122501
+      ],
+      "auroc_diff": 0.1815822823004043,
+      "auroc_diff_ci": [
+       0.08740436385900303,
+       0.2722522834173747
+      ],
+      "ungated_acc": 0.7566666666666667,
+      "stage1_serve_frac": 0.21333333333333335,
+      "stage1_serve_precision": 0.890625,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9266666666666666,
+        "selective_acc": 0.8381294964028777,
+        "correct_yield": 0.7766666666666666,
+        "ungated_acc": 0.7566666666666667,
+        "delta_yield_pp": 1.9999999999999907,
+        "delta_yield_ci_pp": [
+         -1.0,
+         5.0
+        ],
+        "sel_minus_ungated_pp": 8.1462829736211,
+        "sel_minus_ungated_ci_pp": [
+         4.713160603980788,
+         11.672168767971684
+        ],
+        "gens_per_item": 4.559999999999999,
+        "stage2_frac": 0.7866666666666666,
+        "n_unobserved": 0,
+        "served": 278,
+        "correct": 233
+       },
+       "k=4": {
+        "coverage": 0.8933333333333333,
+        "selective_acc": 0.8656716417910447,
+        "correct_yield": 0.7733333333333333,
+        "ungated_acc": 0.7566666666666667,
+        "delta_yield_pp": 1.6666666666666607,
+        "delta_yield_ci_pp": [
+         -1.6666666666666667,
+         4.666666666666667
+        ],
+        "sel_minus_ungated_pp": 10.900497512437802,
+        "sel_minus_ungated_ci_pp": [
+         7.269148454541706,
+         14.459283666296704
+        ],
+        "gens_per_item": 6.133333333333332,
+        "stage2_frac": 0.7866666666666666,
+        "n_unobserved": 0,
+        "served": 268,
+        "correct": 232
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "gsm8k_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 263,
+      "auroc_mome": 0.7305518446202857,
+      "auroc_mome_ci": [
+       0.6161016467064248,
+       0.835769218525796
+      ],
+      "auroc_mean_logprob": 0.6897543931764464,
+      "auroc_mean_logprob_ci": [
+       0.578649370335821,
+       0.791489429543612
+      ],
+      "auroc_diff": 0.04079745144383928,
+      "auroc_diff_ci": [
+       -0.045673436210234154,
+       0.13211331935201795
+      ],
+      "ungated_acc": 0.8766666666666667,
+      "stage1_serve_frac": 0.15,
+      "stage1_serve_precision": 0.9333333333333333,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9533333333333334,
+        "selective_acc": 0.9230769230769231,
+        "correct_yield": 0.88,
+        "ungated_acc": 0.8766666666666667,
+        "delta_yield_pp": 0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -2.0,
+         2.666666666666667
+        ],
+        "sel_minus_ungated_pp": 4.641025641025642,
+        "sel_minus_ungated_ci_pp": [
+         2.298019438841006,
+         7.339429992732365
+        ],
+        "gens_per_item": 4.686666666666665,
+        "stage2_frac": 0.85,
+        "n_unobserved": 0,
+        "served": 286,
+        "correct": 264
+       },
+       "k=4": {
+        "coverage": 0.97,
+        "selective_acc": 0.9278350515463918,
+        "correct_yield": 0.9,
+        "ungated_acc": 0.8766666666666667,
+        "delta_yield_pp": 2.3333333333333317,
+        "delta_yield_ci_pp": [
+         0.33333333333333337,
+         4.666666666666667
+        ],
+        "sel_minus_ungated_pp": 5.116838487972508,
+        "sel_minus_ungated_ci_pp": [
+         2.836635439158599,
+         7.7468858131487845
+        ],
+        "gens_per_item": 6.386666666666665,
+        "stage2_frac": 0.85,
+        "n_unobserved": 0,
+        "served": 291,
+        "correct": 270
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 124,
+      "auroc_mome": 0.766449780058651,
+      "auroc_mome_ci": [
+       0.7103063940093925,
+       0.8230609377436592
+      ],
+      "auroc_mean_logprob": 0.45110887096774194,
+      "auroc_mean_logprob_ci": [
+       0.3881820614781186,
+       0.5154198790260329
+      ],
+      "auroc_diff": 0.3153409090909091,
+      "auroc_diff_ci": [
+       0.24253273330201006,
+       0.3885776171955437
+      ],
+      "ungated_acc": 0.41333333333333333,
+      "stage1_serve_frac": 0.006666666666666667,
+      "stage1_serve_precision": 0.5,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.61,
+        "selective_acc": 0.6557377049180327,
+        "correct_yield": 0.4,
+        "ungated_acc": 0.41333333333333333,
+        "delta_yield_pp": -1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -5.333333333333334,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 24.24043715846994,
+        "sel_minus_ungated_ci_pp": [
+         18.8734555984556,
+         29.828766201127344
+        ],
+        "gens_per_item": 4.98,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 183,
+        "correct": 120
+       },
+       "k=4": {
+        "coverage": 0.5633333333333334,
+        "selective_acc": 0.6804733727810651,
+        "correct_yield": 0.38333333333333336,
+        "ungated_acc": 0.41333333333333333,
+        "delta_yield_pp": -2.9999999999999973,
+        "delta_yield_ci_pp": [
+         -7.333333333333333,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 26.71400394477318,
+        "sel_minus_ungated_ci_pp": [
+         20.90832496233049,
+         32.36821984577331
+        ],
+        "gens_per_item": 6.966666666666667,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 169,
+        "correct": 115
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "hrm8k-gsm8k-ko_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 164,
+      "auroc_mome": 0.8262195121951219,
+      "auroc_mome_ci": [
+       0.7789928959034519,
+       0.8701787401370432
+      ],
+      "auroc_mean_logprob": 0.707855093256815,
+      "auroc_mean_logprob_ci": [
+       0.646183825614426,
+       0.7655697378231751
+      ],
+      "auroc_diff": 0.11836441893830696,
+      "auroc_diff_ci": [
+       0.06002347531786732,
+       0.18061556589974503
+      ],
+      "ungated_acc": 0.5466666666666666,
+      "stage1_serve_frac": 0.006666666666666667,
+      "stage1_serve_precision": 1.0,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.76,
+        "selective_acc": 0.7017543859649122,
+        "correct_yield": 0.5333333333333333,
+        "ungated_acc": 0.5466666666666666,
+        "delta_yield_pp": -1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -5.0,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 15.508771929824562,
+        "sel_minus_ungated_ci_pp": [
+         11.041810344827585,
+         20.113447270800204
+        ],
+        "gens_per_item": 4.98,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 228,
+        "correct": 160
+       },
+       "k=4": {
+        "coverage": 0.74,
+        "selective_acc": 0.7657657657657657,
+        "correct_yield": 0.5666666666666667,
+        "ungated_acc": 0.5466666666666666,
+        "delta_yield_pp": 2.0000000000000018,
+        "delta_yield_ci_pp": [
+         -1.3333333333333335,
+         5.666666666666666
+        ],
+        "sel_minus_ungated_pp": 21.909909909909906,
+        "sel_minus_ungated_ci_pp": [
+         17.220601620601624,
+         26.807850164595937
+        ],
+        "gens_per_item": 6.966666666666667,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 222,
+        "correct": 170
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "math500_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 113,
+      "auroc_mome": 0.8082438124083101,
+      "auroc_mome_ci": [
+       0.7579855469496282,
+       0.8594912484330748
+      ],
+      "auroc_mean_logprob": 0.5484359471865979,
+      "auroc_mean_logprob_ci": [
+       0.4848479690898481,
+       0.6132145336300717
+      ],
+      "auroc_diff": 0.2598078652217122,
+      "auroc_diff_ci": [
+       0.18896236126029353,
+       0.32973414432262266
+      ],
+      "ungated_acc": 0.37666666666666665,
+      "stage1_serve_frac": 0.09666666666666666,
+      "stage1_serve_precision": 0.7931034482758621,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.5466666666666666,
+        "selective_acc": 0.676829268292683,
+        "correct_yield": 0.37,
+        "ungated_acc": 0.37666666666666665,
+        "delta_yield_pp": -0.6666666666666654,
+        "delta_yield_ci_pp": [
+         -3.6666666666666665,
+         2.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 30.016260162601633,
+        "sel_minus_ungated_ci_pp": [
+         24.83322072072072,
+         35.81962444463072
+        ],
+        "gens_per_item": 4.73,
+        "stage2_frac": 0.9033333333333333,
+        "n_unobserved": 0,
+        "served": 164,
+        "correct": 111
+       },
+       "k=4": {
+        "coverage": 0.5066666666666667,
+        "selective_acc": 0.7171052631578947,
+        "correct_yield": 0.36333333333333334,
+        "ungated_acc": 0.37666666666666665,
+        "delta_yield_pp": -1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -4.666666666666667,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 34.0438596491228,
+        "sel_minus_ungated_ci_pp": [
+         28.332947976878607,
+         40.21783930355358
+        ],
+        "gens_per_item": 6.536666666666665,
+        "stage2_frac": 0.9033333333333333,
+        "n_unobserved": 0,
+        "served": 152,
+        "correct": 109
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "math500_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 161,
+      "auroc_mome": 0.8594217793467089,
+      "auroc_mome_ci": [
+       0.8101748842604528,
+       0.9028064508711353
+      ],
+      "auroc_mean_logprob": 0.5184324590017427,
+      "auroc_mean_logprob_ci": [
+       0.4522322963242843,
+       0.5833191201910157
+      ],
+      "auroc_diff": 0.3409893203449662,
+      "auroc_diff_ci": [
+       0.268771894653104,
+       0.41165945352300326
+      ],
+      "ungated_acc": 0.5366666666666666,
+      "stage1_serve_frac": 0.10666666666666667,
+      "stage1_serve_precision": 0.8125,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7,
+        "selective_acc": 0.7380952380952381,
+        "correct_yield": 0.5166666666666667,
+        "ungated_acc": 0.5366666666666666,
+        "delta_yield_pp": -1.9999999999999907,
+        "delta_yield_ci_pp": [
+         -5.0,
+         1.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 20.142857142857153,
+        "sel_minus_ungated_ci_pp": [
+         15.301751373626374,
+         25.228147644927525
+        ],
+        "gens_per_item": 4.71,
+        "stage2_frac": 0.8933333333333333,
+        "n_unobserved": 0,
+        "served": 210,
+        "correct": 155
+       },
+       "k=4": {
+        "coverage": 0.6633333333333333,
+        "selective_acc": 0.7939698492462312,
+        "correct_yield": 0.5266666666666666,
+        "ungated_acc": 0.5366666666666666,
+        "delta_yield_pp": -1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -4.666666666666667,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 25.73031825795645,
+        "sel_minus_ungated_ci_pp": [
+         20.587095303237568,
+         31.08129930448584
+        ],
+        "gens_per_item": 6.496666666666667,
+        "stage2_frac": 0.8933333333333333,
+        "n_unobserved": 0,
+        "served": 199,
+        "correct": 158
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     }
+    },
+    "criteria_by_k": {
+     "k=2": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": -0.5000000000000004,
+       "ci_pp": [
+        -1.7236111111111112,
+        0.8888888888888888
+       ],
+       "met": false
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 18.87208631908409,
+       "ci_pp": [
+        17.02431690102685,
+        20.787523182487337
+       ],
+       "met": true
+      }
+     },
+     "k=4": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": 0.11111111111111738,
+       "ci_pp": [
+        -1.277777777777778,
+        1.5555555555555556
+       ],
+       "met": true
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 22.570159706208905,
+       "ci_pp": [
+        20.64365399486801,
+        24.57257948167845
+       ],
+       "met": true
+      }
+     }
+    }
+   },
+   "ext": {
+    "per_backbone": {
+     "exaone3.5-7.8b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 734,
+      "auroc_mome": 0.7853895144611142,
+      "auroc_mome_ci": [
+       0.7382274850524401,
+       0.8292593363430721
+      ],
+      "auroc_mean_logprob": 0.6616082860050556,
+      "auroc_mean_logprob_ci": [
+       0.6136055547141864,
+       0.7098789647672661
+      ],
+      "auroc_diff": 0.12378122845605855,
+      "auroc_diff_ci": [
+       0.07462014702544201,
+       0.17143549454488283
+      ],
+      "ungated_acc": 0.8155555555555556,
+      "stage1_serve_frac": 0.5088888888888888,
+      "stage1_serve_precision": 0.9235807860262009,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9433333333333334,
+        "selective_acc": 0.866902237926973,
+        "correct_yield": 0.8177777777777778,
+        "ungated_acc": 0.8155555555555556,
+        "delta_yield_pp": 0.22222222222222365,
+        "delta_yield_ci_pp": [
+         -0.8888888888888888,
+         1.2222222222222223
+        ],
+        "sel_minus_ungated_pp": 5.134668237141737,
+        "sel_minus_ungated_ci_pp": [
+         3.6441020531352173,
+         6.63168357821329
+        ],
+        "gens_per_item": 3.949999999999999,
+        "stage2_frac": 0.4911111111111111,
+        "n_unobserved": 0,
+        "served": 849,
+        "correct": 736
+       },
+       "k=4": {
+        "coverage": 0.9377777777777778,
+        "selective_acc": 0.8755924170616114,
+        "correct_yield": 0.8211111111111111,
+        "ungated_acc": 0.8155555555555556,
+        "delta_yield_pp": 0.5555555555555536,
+        "delta_yield_ci_pp": [
+         -0.4444444444444444,
+         1.5555555555555556
+        ],
+        "sel_minus_ungated_pp": 6.0036861506055805,
+        "sel_minus_ungated_ci_pp": [
+         4.467221314206498,
+         7.633342380066164
+        ],
+        "gens_per_item": 4.932222222222222,
+        "stage2_frac": 0.4911111111111111,
+        "n_unobserved": 0,
+        "served": 844,
+        "correct": 739
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "granite3.3-8b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 661,
+      "auroc_mome": 0.7817368131207313,
+      "auroc_mome_ci": [
+       0.7434054067345632,
+       0.8207132465213584
+      ],
+      "auroc_mean_logprob": 0.5505478576266466,
+      "auroc_mean_logprob_ci": [
+       0.5053444141716332,
+       0.5938462902731638
+      ],
+      "auroc_diff": 0.2311889554940847,
+      "auroc_diff_ci": [
+       0.18686692177619474,
+       0.2761959594783924
+      ],
+      "ungated_acc": 0.7344444444444445,
+      "stage1_serve_frac": 0.22444444444444445,
+      "stage1_serve_precision": 0.8861386138613861,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8744444444444445,
+        "selective_acc": 0.8398983481575604,
+        "correct_yield": 0.7344444444444445,
+        "ungated_acc": 0.7344444444444445,
+        "delta_yield_pp": 0.0,
+        "delta_yield_ci_pp": [
+         -1.6666666666666667,
+         1.5555555555555556
+        ],
+        "sel_minus_ungated_pp": 10.54539037131159,
+        "sel_minus_ungated_ci_pp": [
+         8.503443422830935,
+         12.666838487972502
+        ],
+        "gens_per_item": 4.518888888888889,
+        "stage2_frac": 0.7755555555555556,
+        "n_unobserved": 0,
+        "served": 787,
+        "correct": 661
+       },
+       "k=4": {
+        "coverage": 0.8477777777777777,
+        "selective_acc": 0.8558322411533421,
+        "correct_yield": 0.7255555555555555,
+        "ungated_acc": 0.7344444444444445,
+        "delta_yield_pp": -0.8888888888888946,
+        "delta_yield_ci_pp": [
+         -2.7777777777777777,
+         0.8888888888888888
+        ],
+        "sel_minus_ungated_pp": 12.138779670889765,
+        "sel_minus_ungated_ci_pp": [
+         9.947760264927364,
+         14.408470383134805
+        ],
+        "gens_per_item": 6.07,
+        "stage2_frac": 0.7755555555555556,
+        "n_unobserved": 0,
+        "served": 763,
+        "correct": 653
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2"
+       ]
+      }
+     }
+    },
+    "pooled": {
+     "n": 1800,
+     "n_cells": 6,
+     "n_correct": 1395,
+     "auroc_mome": 0.7845798486658702,
+     "auroc_mome_ci": [
+      0.7532841288455037,
+      0.8118538166495383
+     ],
+     "auroc_mean_logprob": 0.6202522235497145,
+     "auroc_mean_logprob_ci": [
+      0.5893651588176975,
+      0.6509140292448189
+     ],
+     "auroc_diff": 0.16432762511615562,
+     "auroc_diff_ci": [
+      0.1323209861288265,
+      0.19469454165914774
+     ],
+     "ungated_acc": 0.775,
+     "stage1_serve_frac": 0.36666666666666664,
+     "stage1_serve_precision": 0.9121212121212121,
+     "no_samples": 0,
+     "gate": {
+      "k=2": {
+       "coverage": 0.9088888888888889,
+       "selective_acc": 0.8539119804400978,
+       "correct_yield": 0.7761111111111111,
+       "ungated_acc": 0.775,
+       "delta_yield_pp": 0.11111111111110628,
+       "delta_yield_ci_pp": [
+        -0.8347222222222221,
+        1.0555555555555556
+       ],
+       "sel_minus_ungated_pp": 7.891198044009773,
+       "sel_minus_ungated_ci_pp": [
+        6.655461012672095,
+        9.09975437358732
+       ],
+       "gens_per_item": 4.234444444444444,
+       "stage2_frac": 0.6333333333333333,
+       "n_unobserved": 0,
+       "served": 1636,
+       "correct": 1397
+      },
+      "k=4": {
+       "coverage": 0.8927777777777778,
+       "selective_acc": 0.866210329807094,
+       "correct_yield": 0.7733333333333333,
+       "ungated_acc": 0.775,
+       "delta_yield_pp": -0.16666666666667052,
+       "delta_yield_ci_pp": [
+        -1.2222222222222223,
+        0.8888888888888888
+       ],
+       "sel_minus_ungated_pp": 9.121032980709398,
+       "sel_minus_ungated_ci_pp": [
+        7.7149226732200145,
+        10.502318054134832
+       ],
+       "gens_per_item": 5.501111111111111,
+       "stage2_frac": 0.6333333333333333,
+       "n_unobserved": 0,
+       "served": 1607,
+       "correct": 1392
+      }
+     },
+     "adoption": {
+      "pick": "k=2",
+      "eligible": [
+       "k=2"
+      ]
+     }
+    },
+    "criteria": {
+     "1_discrimination_per_backbone": {
+      "rule": "item-paired AUROC difference (MOME - mean log-probability), 95% CI above 0, each new backbone",
+      "per_backbone": {
+       "exaone3.5-7.8b": {
+        "auroc_diff": 0.12378122845605855,
+        "ci": [
+         0.07462014702544201,
+         0.17143549454488283
+        ],
+        "met": true
+       },
+       "granite3.3-8b": {
+        "auroc_diff": 0.2311889554940847,
+        "ci": [
+         0.18686692177619474,
+         0.2761959594783924
+        ],
+        "met": true
+       }
+      },
+      "met": true
+     },
+     "2_yield_preserved_pooled": {
+      "rule": "pooled, k=2: delta correct yield point >= 0 and 95% CI lower bound >= -2.0 points",
+      "delta_yield_pp": 0.11111111111110628,
+      "ci_pp": [
+       -0.8347222222222221,
+       1.0555555555555556
+      ],
+      "met": true
+     },
+     "3_selective_accuracy_pooled": {
+      "rule": "pooled, k=2: selective accuracy - ungated accuracy, 95% CI above 0",
+      "diff_pp": 7.891198044009773,
+      "ci_pp": [
+       6.655461012672095,
+       9.09975437358732
+      ],
+      "met": true
+     },
+     "4_k_report_only": {
+      "rule": "report k=2 and k=4 and the pick of the registered adoption rule",
+      "k2": {
+       "correct_yield": 0.7761111111111111,
+       "selective_acc": 0.8539119804400978,
+       "gens_per_item": 4.234444444444444
+      },
+      "k4": {
+       "correct_yield": 0.7733333333333333,
+       "selective_acc": 0.866210329807094,
+       "gens_per_item": 5.501111111111111
+      },
+      "rule_pick": "k=2",
+      "met": null
+     }
+    },
+    "per_cell": {
+     "gsm8k_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 277,
+      "auroc_mome": 0.717312823732538,
+      "auroc_mome_ci": [
+       0.5821646817037361,
+       0.8430012242485646
+      ],
+      "auroc_mean_logprob": 0.680897818238895,
+      "auroc_mean_logprob_ci": [
+       0.5558839285714287,
+       0.8023137567576173
+      ],
+      "auroc_diff": 0.03641500549364307,
+      "auroc_diff_ci": [
+       -0.09638784793072779,
+       0.17273156767947445
+      ],
+      "ungated_acc": 0.9233333333333333,
+      "stage1_serve_frac": 0.6733333333333333,
+      "stage1_serve_precision": 0.9554455445544554,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9966666666666667,
+        "selective_acc": 0.9264214046822743,
+        "correct_yield": 0.9233333333333333,
+        "ungated_acc": 0.9233333333333333,
+        "delta_yield_pp": 0.0,
+        "delta_yield_ci_pp": [
+         -1.0,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 0.3088071348940957,
+        "sel_minus_ungated_ci_pp": [
+         -0.6945652173913105,
+         1.5500000000000036
+        ],
+        "gens_per_item": 3.6399999999999983,
+        "stage2_frac": 0.32666666666666666,
+        "n_unobserved": 0,
+        "served": 299,
+        "correct": 277
+       },
+       "k=4": {
+        "coverage": 0.9833333333333333,
+        "selective_acc": 0.9355932203389831,
+        "correct_yield": 0.92,
+        "ungated_acc": 0.9233333333333333,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -1.6666666666666667,
+         0.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 1.2259887005649728,
+        "sel_minus_ungated_ci_pp": [
+         0.22596961368147847,
+         2.549966061952357
+        ],
+        "gens_per_item": 4.293333333333333,
+        "stage2_frac": 0.32666666666666666,
+        "n_unobserved": 0,
+        "served": 295,
+        "correct": 276
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2"
+       ]
+      }
+     },
+     "gsm8k_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 270,
+      "auroc_mome": 0.7616049382716049,
+      "auroc_mome_ci": [
+       0.6486699143696092,
+       0.8628010357621638
+      ],
+      "auroc_mean_logprob": 0.6082716049382716,
+      "auroc_mean_logprob_ci": [
+       0.4943906486588795,
+       0.7229640515301894
+      ],
+      "auroc_diff": 0.15333333333333332,
+      "auroc_diff_ci": [
+       0.019036644609415905,
+       0.28312561803357916
+      ],
+      "ungated_acc": 0.9,
+      "stage1_serve_frac": 0.36,
+      "stage1_serve_precision": 0.9537037037037037,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9833333333333333,
+        "selective_acc": 0.911864406779661,
+        "correct_yield": 0.8966666666666666,
+        "ungated_acc": 0.9,
+        "delta_yield_pp": -0.33333333333334103,
+        "delta_yield_ci_pp": [
+         -2.3333333333333335,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 1.186440677966094,
+        "sel_minus_ungated_ci_pp": [
+         -0.49152542372881136,
+         2.974712130236248
+        ],
+        "gens_per_item": 4.266666666666665,
+        "stage2_frac": 0.64,
+        "n_unobserved": 0,
+        "served": 295,
+        "correct": 269
+       },
+       "k=4": {
+        "coverage": 0.9733333333333334,
+        "selective_acc": 0.9315068493150684,
+        "correct_yield": 0.9066666666666666,
+        "ungated_acc": 0.9,
+        "delta_yield_pp": 0.6666666666666599,
+        "delta_yield_ci_pp": [
+         -1.0,
+         2.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 3.150684931506842,
+        "sel_minus_ungated_ci_pp": [
+         1.1492744538088335,
+         5.430021329541404
+        ],
+        "gens_per_item": 5.546666666666665,
+        "stage2_frac": 0.64,
+        "n_unobserved": 0,
+        "served": 292,
+        "correct": 272
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 248,
+      "auroc_mome": 0.7929590570719603,
+      "auroc_mome_ci": [
+       0.7141238606557377,
+       0.8690546784409786
+      ],
+      "auroc_mean_logprob": 0.6933933002481389,
+      "auroc_mean_logprob_ci": [
+       0.609352709530507,
+       0.7775393014607144
+      ],
+      "auroc_diff": 0.0995657568238214,
+      "auroc_diff_ci": [
+       0.03238588700234201,
+       0.16976200000000002
+      ],
+      "ungated_acc": 0.8266666666666667,
+      "stage1_serve_frac": 0.44666666666666666,
+      "stage1_serve_precision": 0.9253731343283582,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9466666666666667,
+        "selective_acc": 0.8838028169014085,
+        "correct_yield": 0.8366666666666667,
+        "ungated_acc": 0.8266666666666667,
+        "delta_yield_pp": 1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -0.6666666666666667,
+         2.666666666666667
+        ],
+        "sel_minus_ungated_pp": 5.713615023474183,
+        "sel_minus_ungated_ci_pp": [
+         3.260251905492331,
+         8.50547087321281
+        ],
+        "gens_per_item": 4.1,
+        "stage2_frac": 0.5533333333333333,
+        "n_unobserved": 0,
+        "served": 284,
+        "correct": 251
+       },
+       "k=4": {
+        "coverage": 0.96,
+        "selective_acc": 0.875,
+        "correct_yield": 0.84,
+        "ungated_acc": 0.8266666666666667,
+        "delta_yield_pp": 1.3333333333333308,
+        "delta_yield_ci_pp": [
+         0.0,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 4.833333333333334,
+        "sel_minus_ungated_ci_pp": [
+         2.4234463276836165,
+         7.4143039005377265
+        ],
+        "gens_per_item": 5.206666666666667,
+        "stage2_frac": 0.5533333333333333,
+        "n_unobserved": 0,
+        "served": 288,
+        "correct": 252
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 202,
+      "auroc_mome": 0.7780359668619923,
+      "auroc_mome_ci": [
+       0.7178817775861852,
+       0.8329958622685185
+      ],
+      "auroc_mean_logprob": 0.5803192564154375,
+      "auroc_mean_logprob_ci": [
+       0.5103531956810531,
+       0.6526222128695189
+      ],
+      "auroc_diff": 0.1977167104465548,
+      "auroc_diff_ci": [
+       0.11428382313669785,
+       0.27902765483124214
+      ],
+      "ungated_acc": 0.6733333333333333,
+      "stage1_serve_frac": 0.0,
+      "stage1_serve_precision": null,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8533333333333334,
+        "selective_acc": 0.78515625,
+        "correct_yield": 0.67,
+        "ungated_acc": 0.6733333333333333,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -4.333333333333334,
+         3.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 11.182291666666666,
+        "sel_minus_ungated_ci_pp": [
+         7.260327469852866,
+         15.129378960709758
+        ],
+        "gens_per_item": 4.993333333333333,
+        "stage2_frac": 1.0,
+        "n_unobserved": 0,
+        "served": 256,
+        "correct": 201
+       },
+       "k=4": {
+        "coverage": 0.8166666666666667,
+        "selective_acc": 0.7877551020408163,
+        "correct_yield": 0.6433333333333333,
+        "ungated_acc": 0.6733333333333333,
+        "delta_yield_pp": -3.0000000000000027,
+        "delta_yield_ci_pp": [
+         -7.333333333333333,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 11.4421768707483,
+        "sel_minus_ungated_ci_pp": [
+         6.936224489795922,
+         16.070388455811507
+        ],
+        "gens_per_item": 6.993333333333333,
+        "stage2_frac": 1.0,
+        "n_unobserved": 0,
+        "served": 245,
+        "correct": 193
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "math500_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 209,
+      "auroc_mome": 0.7651296072348704,
+      "auroc_mome_ci": [
+       0.6974420933143233,
+       0.8266796985357604
+      ],
+      "auroc_mean_logprob": 0.7326883642673117,
+      "auroc_mean_logprob_ci": [
+       0.6683127295290834,
+       0.7933884719860895
+      ],
+      "auroc_diff": 0.03244124296755879,
+      "auroc_diff_ci": [
+       -0.03475879522601119,
+       0.09923049933213353
+      ],
+      "ungated_acc": 0.6966666666666667,
+      "stage1_serve_frac": 0.4066666666666667,
+      "stage1_serve_precision": 0.8688524590163934,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8866666666666667,
+        "selective_acc": 0.7819548872180451,
+        "correct_yield": 0.6933333333333334,
+        "ungated_acc": 0.6966666666666667,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -2.666666666666667,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 8.52882205513784,
+        "sel_minus_ungated_ci_pp": [
+         5.348093480934812,
+         11.783333333333337
+        ],
+        "gens_per_item": 4.11,
+        "stage2_frac": 0.5933333333333334,
+        "n_unobserved": 0,
+        "served": 266,
+        "correct": 208
+       },
+       "k=4": {
+        "coverage": 0.87,
+        "selective_acc": 0.8084291187739464,
+        "correct_yield": 0.7033333333333334,
+        "ungated_acc": 0.6966666666666667,
+        "delta_yield_pp": 0.666666666666671,
+        "delta_yield_ci_pp": [
+         -1.3416666666666663,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 11.176245210727975,
+        "sel_minus_ungated_ci_pp": [
+         7.647183483729836,
+         14.799397590361444
+        ],
+        "gens_per_item": 5.296666666666667,
+        "stage2_frac": 0.5933333333333334,
+        "n_unobserved": 0,
+        "served": 261,
+        "correct": 211
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "math500_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 189,
+      "auroc_mome": 0.7722484389151055,
+      "auroc_mome_ci": [
+       0.7070228008464472,
+       0.8350245759132847
+      ],
+      "auroc_mean_logprob": 0.5647552314218981,
+      "auroc_mean_logprob_ci": [
+       0.49732035550753717,
+       0.6316622938530734
+      ],
+      "auroc_diff": 0.20749320749320743,
+      "auroc_diff_ci": [
+       0.13484865535594387,
+       0.2839984673273618
+      ],
+      "ungated_acc": 0.63,
+      "stage1_serve_frac": 0.31333333333333335,
+      "stage1_serve_precision": 0.8085106382978723,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7866666666666666,
+        "selective_acc": 0.809322033898305,
+        "correct_yield": 0.6366666666666667,
+        "ungated_acc": 0.63,
+        "delta_yield_pp": 0.666666666666671,
+        "delta_yield_ci_pp": [
+         -2.0,
+         3.6666666666666665
+        ],
+        "sel_minus_ungated_pp": 17.932203389830505,
+        "sel_minus_ungated_ci_pp": [
+         13.677316540290457,
+         21.894736842105267
+        ],
+        "gens_per_item": 4.296666666666667,
+        "stage2_frac": 0.6866666666666666,
+        "n_unobserved": 0,
+        "served": 236,
+        "correct": 191
+       },
+       "k=4": {
+        "coverage": 0.7533333333333333,
+        "selective_acc": 0.831858407079646,
+        "correct_yield": 0.6266666666666667,
+        "ungated_acc": 0.63,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -3.6666666666666665,
+         2.666666666666667
+        ],
+        "sel_minus_ungated_pp": 20.185840707964598,
+        "sel_minus_ungated_ci_pp": [
+         15.852308644775903,
+         24.651376146788994
+        ],
+        "gens_per_item": 5.67,
+        "stage2_frac": 0.6866666666666666,
+        "n_unobserved": 0,
+        "served": 226,
+        "correct": 188
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2"
+       ]
+      }
+     }
+    },
+    "criteria_by_k": {
+     "k=2": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": 0.11111111111110628,
+       "ci_pp": [
+        -0.8347222222222221,
+        1.0555555555555556
+       ],
+       "met": true
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 7.891198044009773,
+       "ci_pp": [
+        6.655461012672095,
+        9.09975437358732
+       ],
+       "met": true
+      }
+     },
+     "k=4": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": -0.16666666666667052,
+       "ci_pp": [
+        -1.2222222222222223,
+        0.8888888888888888
+       ],
+       "met": false
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 9.121032980709398,
+       "ci_pp": [
+        7.7149226732200145,
+        10.502318054134832
+       ],
+       "met": true
+      }
+     }
+    }
+   },
+   "all4": {
+    "per_backbone": {
+     "llama3.2-3b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 464,
+      "auroc_mome": 0.8225640620056944,
+      "auroc_mome_ci": [
+       0.7934020241778842,
+       0.8496300661201386
+      ],
+      "auroc_mean_logprob": 0.5467415374881367,
+      "auroc_mean_logprob_ci": [
+       0.5068672829493982,
+       0.5819949481027652
+      ],
+      "auroc_diff": 0.27582252451755773,
+      "auroc_diff_ci": [
+       0.23977929949990298,
+       0.3186108303064092
+      ],
+      "ungated_acc": 0.5155555555555555,
+      "stage1_serve_frac": 0.10555555555555556,
+      "stage1_serve_precision": 0.8526315789473684,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.6944444444444444,
+        "selective_acc": 0.7424,
+        "correct_yield": 0.5155555555555555,
+        "ungated_acc": 0.5155555555555555,
+        "delta_yield_pp": 0.0,
+        "delta_yield_ci_pp": [
+         -2.0,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 22.68444444444444,
+        "sel_minus_ungated_ci_pp": [
+         19.82428133460742,
+         25.43413248806229
+        ],
+        "gens_per_item": 4.756666666666667,
+        "stage2_frac": 0.8944444444444445,
+        "n_unobserved": 0,
+        "served": 625,
+        "correct": 464
+       },
+       "k=4": {
+        "coverage": 0.6544444444444445,
+        "selective_acc": 0.7741935483870968,
+        "correct_yield": 0.5066666666666667,
+        "ungated_acc": 0.5155555555555555,
+        "delta_yield_pp": -0.8888888888888835,
+        "delta_yield_ci_pp": [
+         -3.0,
+         1.1111111111111112
+        ],
+        "sel_minus_ungated_pp": 25.863799283154123,
+        "sel_minus_ungated_ci_pp": [
+         22.979531164167444,
+         28.955788655788655
+        ],
+        "gens_per_item": 6.545555555555556,
+        "stage2_frac": 0.8944444444444445,
+        "n_unobserved": 0,
+        "served": 589,
+        "correct": 456
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2"
+       ]
+      }
+     },
+     "phi4-mini": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 588,
+      "auroc_mome": 0.8522915576487005,
+      "auroc_mome_ci": [
+       0.8228120262480931,
+       0.8805006443012552
+      ],
+      "auroc_mean_logprob": 0.628837432408861,
+      "auroc_mean_logprob_ci": [
+       0.5907915449671239,
+       0.6670140119365973
+      ],
+      "auroc_diff": 0.22345412523983943,
+      "auroc_diff_ci": [
+       0.1830517015918141,
+       0.2641372235581319
+      ],
+      "ungated_acc": 0.6533333333333333,
+      "stage1_serve_frac": 0.08777777777777777,
+      "stage1_serve_precision": 0.8860759493670886,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8044444444444444,
+        "selective_acc": 0.7997237569060773,
+        "correct_yield": 0.6433333333333333,
+        "ungated_acc": 0.6533333333333333,
+        "delta_yield_pp": -1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -2.7777777777777777,
+         0.8888888888888888
+        ],
+        "sel_minus_ungated_pp": 14.639042357274402,
+        "sel_minus_ungated_ci_pp": [
+         12.317999407728877,
+         17.142448049943937
+        ],
+        "gens_per_item": 4.792222222222223,
+        "stage2_frac": 0.9122222222222223,
+        "n_unobserved": 0,
+        "served": 724,
+        "correct": 579
+       },
+       "k=4": {
+        "coverage": 0.7911111111111111,
+        "selective_acc": 0.8398876404494382,
+        "correct_yield": 0.6644444444444444,
+        "ungated_acc": 0.6533333333333333,
+        "delta_yield_pp": 1.1111111111111072,
+        "delta_yield_ci_pp": [
+         -0.7777777777777778,
+         3.111111111111111
+        ],
+        "sel_minus_ungated_pp": 18.65543071161049,
+        "sel_minus_ungated_ci_pp": [
+         16.21946821826055,
+         21.272681005706005
+        ],
+        "gens_per_item": 6.616666666666666,
+        "stage2_frac": 0.9122222222222223,
+        "n_unobserved": 0,
+        "served": 712,
+        "correct": 598
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "exaone3.5-7.8b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 734,
+      "auroc_mome": 0.7853895144611142,
+      "auroc_mome_ci": [
+       0.7382274850524401,
+       0.8292593363430721
+      ],
+      "auroc_mean_logprob": 0.6616082860050556,
+      "auroc_mean_logprob_ci": [
+       0.6136055547141864,
+       0.7098789647672661
+      ],
+      "auroc_diff": 0.12378122845605855,
+      "auroc_diff_ci": [
+       0.07462014702544201,
+       0.17143549454488283
+      ],
+      "ungated_acc": 0.8155555555555556,
+      "stage1_serve_frac": 0.5088888888888888,
+      "stage1_serve_precision": 0.9235807860262009,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9433333333333334,
+        "selective_acc": 0.866902237926973,
+        "correct_yield": 0.8177777777777778,
+        "ungated_acc": 0.8155555555555556,
+        "delta_yield_pp": 0.22222222222222365,
+        "delta_yield_ci_pp": [
+         -0.8888888888888888,
+         1.2222222222222223
+        ],
+        "sel_minus_ungated_pp": 5.134668237141737,
+        "sel_minus_ungated_ci_pp": [
+         3.6441020531352173,
+         6.63168357821329
+        ],
+        "gens_per_item": 3.949999999999999,
+        "stage2_frac": 0.4911111111111111,
+        "n_unobserved": 0,
+        "served": 849,
+        "correct": 736
+       },
+       "k=4": {
+        "coverage": 0.9377777777777778,
+        "selective_acc": 0.8755924170616114,
+        "correct_yield": 0.8211111111111111,
+        "ungated_acc": 0.8155555555555556,
+        "delta_yield_pp": 0.5555555555555536,
+        "delta_yield_ci_pp": [
+         -0.4444444444444444,
+         1.5555555555555556
+        ],
+        "sel_minus_ungated_pp": 6.0036861506055805,
+        "sel_minus_ungated_ci_pp": [
+         4.467221314206498,
+         7.633342380066164
+        ],
+        "gens_per_item": 4.932222222222222,
+        "stage2_frac": 0.4911111111111111,
+        "n_unobserved": 0,
+        "served": 844,
+        "correct": 739
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "granite3.3-8b": {
+      "n": 900,
+      "n_cells": 3,
+      "n_correct": 661,
+      "auroc_mome": 0.7817368131207313,
+      "auroc_mome_ci": [
+       0.7434054067345632,
+       0.8207132465213584
+      ],
+      "auroc_mean_logprob": 0.5505478576266466,
+      "auroc_mean_logprob_ci": [
+       0.5053444141716332,
+       0.5938462902731638
+      ],
+      "auroc_diff": 0.2311889554940847,
+      "auroc_diff_ci": [
+       0.18686692177619474,
+       0.2761959594783924
+      ],
+      "ungated_acc": 0.7344444444444445,
+      "stage1_serve_frac": 0.22444444444444445,
+      "stage1_serve_precision": 0.8861386138613861,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8744444444444445,
+        "selective_acc": 0.8398983481575604,
+        "correct_yield": 0.7344444444444445,
+        "ungated_acc": 0.7344444444444445,
+        "delta_yield_pp": 0.0,
+        "delta_yield_ci_pp": [
+         -1.6666666666666667,
+         1.5555555555555556
+        ],
+        "sel_minus_ungated_pp": 10.54539037131159,
+        "sel_minus_ungated_ci_pp": [
+         8.503443422830935,
+         12.666838487972502
+        ],
+        "gens_per_item": 4.518888888888889,
+        "stage2_frac": 0.7755555555555556,
+        "n_unobserved": 0,
+        "served": 787,
+        "correct": 661
+       },
+       "k=4": {
+        "coverage": 0.8477777777777777,
+        "selective_acc": 0.8558322411533421,
+        "correct_yield": 0.7255555555555555,
+        "ungated_acc": 0.7344444444444445,
+        "delta_yield_pp": -0.8888888888888946,
+        "delta_yield_ci_pp": [
+         -2.7777777777777777,
+         0.8888888888888888
+        ],
+        "sel_minus_ungated_pp": 12.138779670889765,
+        "sel_minus_ungated_ci_pp": [
+         9.947760264927364,
+         14.408470383134805
+        ],
+        "gens_per_item": 6.07,
+        "stage2_frac": 0.7755555555555556,
+        "n_unobserved": 0,
+        "served": 763,
+        "correct": 653
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2"
+       ]
+      }
+     }
+    },
+    "pooled": {
+     "n": 3600,
+     "n_cells": 12,
+     "n_correct": 2447,
+     "auroc_mome": 0.8287298711876517,
+     "auroc_mome_ci": [
+      0.812774249927831,
+      0.8440425841857231
+     ],
+     "auroc_mean_logprob": 0.6287260432885764,
+     "auroc_mean_logprob_ci": [
+      0.6084089234496416,
+      0.6478827689962232
+     ],
+     "auroc_diff": 0.20000382789907534,
+     "auroc_diff_ci": [
+      0.1803944226769571,
+      0.21906485408838133
+     ],
+     "ungated_acc": 0.6797222222222222,
+     "stage1_serve_frac": 0.23166666666666666,
+     "stage1_serve_precision": 0.9028776978417267,
+     "no_samples": 0,
+     "gate": {
+      "k=2": {
+       "coverage": 0.8291666666666667,
+       "selective_acc": 0.8174204355108877,
+       "correct_yield": 0.6777777777777778,
+       "ungated_acc": 0.6797222222222222,
+       "delta_yield_pp": -0.19444444444444153,
+       "delta_yield_ci_pp": [
+        -1.0,
+        0.6111111111111112
+       ],
+       "sel_minus_ungated_pp": 13.769821328866549,
+       "sel_minus_ungated_ci_pp": [
+        12.696750977928811,
+        14.876995705287952
+       ],
+       "gens_per_item": 4.504444444444444,
+       "stage2_frac": 0.7683333333333333,
+       "n_unobserved": 0,
+       "served": 2985,
+       "correct": 2440
+      },
+      "k=4": {
+       "coverage": 0.8077777777777778,
+       "selective_acc": 0.8411279229711142,
+       "correct_yield": 0.6794444444444444,
+       "ungated_acc": 0.6797222222222222,
+       "delta_yield_pp": -0.02777777777778212,
+       "delta_yield_ci_pp": [
+        -0.9166666666666666,
+        0.8611111111111112
+       ],
+       "sel_minus_ungated_pp": 16.140570074889194,
+       "sel_minus_ungated_ci_pp": [
+        14.999198243513534,
+        17.3854311384747
+       ],
+       "gens_per_item": 6.041111111111111,
+       "stage2_frac": 0.7683333333333333,
+       "n_unobserved": 0,
+       "served": 2908,
+       "correct": 2446
+      }
+     },
+     "adoption": {
+      "pick": null,
+      "eligible": [],
+      "note": "no variant reaches the ungated yield"
+     }
+    },
+    "criteria": {
+     "1_discrimination_per_backbone": {
+      "rule": "item-paired AUROC difference (MOME - mean log-probability), 95% CI above 0, each new backbone",
+      "per_backbone": {
+       "llama3.2-3b": {
+        "auroc_diff": 0.27582252451755773,
+        "ci": [
+         0.23977929949990298,
+         0.3186108303064092
+        ],
+        "met": true
+       },
+       "phi4-mini": {
+        "auroc_diff": 0.22345412523983943,
+        "ci": [
+         0.1830517015918141,
+         0.2641372235581319
+        ],
+        "met": true
+       },
+       "exaone3.5-7.8b": {
+        "auroc_diff": 0.12378122845605855,
+        "ci": [
+         0.07462014702544201,
+         0.17143549454488283
+        ],
+        "met": true
+       },
+       "granite3.3-8b": {
+        "auroc_diff": 0.2311889554940847,
+        "ci": [
+         0.18686692177619474,
+         0.2761959594783924
+        ],
+        "met": true
+       }
+      },
+      "met": true
+     },
+     "2_yield_preserved_pooled": {
+      "rule": "pooled, k=2: delta correct yield point >= 0 and 95% CI lower bound >= -2.0 points",
+      "delta_yield_pp": -0.19444444444444153,
+      "ci_pp": [
+       -1.0,
+       0.6111111111111112
+      ],
+      "met": false
+     },
+     "3_selective_accuracy_pooled": {
+      "rule": "pooled, k=2: selective accuracy - ungated accuracy, 95% CI above 0",
+      "diff_pp": 13.769821328866549,
+      "ci_pp": [
+       12.696750977928811,
+       14.876995705287952
+      ],
+      "met": true
+     },
+     "4_k_report_only": {
+      "rule": "report k=2 and k=4 and the pick of the registered adoption rule",
+      "k2": {
+       "correct_yield": 0.6777777777777778,
+       "selective_acc": 0.8174204355108877,
+       "gens_per_item": 4.504444444444444
+      },
+      "k4": {
+       "correct_yield": 0.6794444444444444,
+       "selective_acc": 0.8411279229711142,
+       "gens_per_item": 6.041111111111111
+      },
+      "rule_pick": null,
+      "met": null
+     }
+    },
+    "per_cell": {
+     "gsm8k_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 277,
+      "auroc_mome": 0.717312823732538,
+      "auroc_mome_ci": [
+       0.5821646817037361,
+       0.8430012242485646
+      ],
+      "auroc_mean_logprob": 0.680897818238895,
+      "auroc_mean_logprob_ci": [
+       0.5558839285714287,
+       0.8023137567576173
+      ],
+      "auroc_diff": 0.03641500549364307,
+      "auroc_diff_ci": [
+       -0.09638784793072779,
+       0.17273156767947445
+      ],
+      "ungated_acc": 0.9233333333333333,
+      "stage1_serve_frac": 0.6733333333333333,
+      "stage1_serve_precision": 0.9554455445544554,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9966666666666667,
+        "selective_acc": 0.9264214046822743,
+        "correct_yield": 0.9233333333333333,
+        "ungated_acc": 0.9233333333333333,
+        "delta_yield_pp": 0.0,
+        "delta_yield_ci_pp": [
+         -1.0,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 0.3088071348940957,
+        "sel_minus_ungated_ci_pp": [
+         -0.6945652173913105,
+         1.5500000000000036
+        ],
+        "gens_per_item": 3.6399999999999983,
+        "stage2_frac": 0.32666666666666666,
+        "n_unobserved": 0,
+        "served": 299,
+        "correct": 277
+       },
+       "k=4": {
+        "coverage": 0.9833333333333333,
+        "selective_acc": 0.9355932203389831,
+        "correct_yield": 0.92,
+        "ungated_acc": 0.9233333333333333,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -1.6666666666666667,
+         0.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 1.2259887005649728,
+        "sel_minus_ungated_ci_pp": [
+         0.22596961368147847,
+         2.549966061952357
+        ],
+        "gens_per_item": 4.293333333333333,
+        "stage2_frac": 0.32666666666666666,
+        "n_unobserved": 0,
+        "served": 295,
+        "correct": 276
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2"
+       ]
+      }
+     },
+     "gsm8k_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 270,
+      "auroc_mome": 0.7616049382716049,
+      "auroc_mome_ci": [
+       0.6486699143696092,
+       0.8628010357621638
+      ],
+      "auroc_mean_logprob": 0.6082716049382716,
+      "auroc_mean_logprob_ci": [
+       0.4943906486588795,
+       0.7229640515301894
+      ],
+      "auroc_diff": 0.15333333333333332,
+      "auroc_diff_ci": [
+       0.019036644609415905,
+       0.28312561803357916
+      ],
+      "ungated_acc": 0.9,
+      "stage1_serve_frac": 0.36,
+      "stage1_serve_precision": 0.9537037037037037,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9833333333333333,
+        "selective_acc": 0.911864406779661,
+        "correct_yield": 0.8966666666666666,
+        "ungated_acc": 0.9,
+        "delta_yield_pp": -0.33333333333334103,
+        "delta_yield_ci_pp": [
+         -2.3333333333333335,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 1.186440677966094,
+        "sel_minus_ungated_ci_pp": [
+         -0.49152542372881136,
+         2.974712130236248
+        ],
+        "gens_per_item": 4.266666666666665,
+        "stage2_frac": 0.64,
+        "n_unobserved": 0,
+        "served": 295,
+        "correct": 269
+       },
+       "k=4": {
+        "coverage": 0.9733333333333334,
+        "selective_acc": 0.9315068493150684,
+        "correct_yield": 0.9066666666666666,
+        "ungated_acc": 0.9,
+        "delta_yield_pp": 0.6666666666666599,
+        "delta_yield_ci_pp": [
+         -1.0,
+         2.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 3.150684931506842,
+        "sel_minus_ungated_ci_pp": [
+         1.1492744538088335,
+         5.430021329541404
+        ],
+        "gens_per_item": 5.546666666666665,
+        "stage2_frac": 0.64,
+        "n_unobserved": 0,
+        "served": 292,
+        "correct": 272
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "gsm8k_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 227,
+      "auroc_mome": 0.7887272946714139,
+      "auroc_mome_ci": [
+       0.7129364273776038,
+       0.8538908237277802
+      ],
+      "auroc_mean_logprob": 0.6071450123710096,
+      "auroc_mean_logprob_ci": [
+       0.5280146848042011,
+       0.6887638319122501
+      ],
+      "auroc_diff": 0.1815822823004043,
+      "auroc_diff_ci": [
+       0.08740436385900303,
+       0.2722522834173747
+      ],
+      "ungated_acc": 0.7566666666666667,
+      "stage1_serve_frac": 0.21333333333333335,
+      "stage1_serve_precision": 0.890625,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9266666666666666,
+        "selective_acc": 0.8381294964028777,
+        "correct_yield": 0.7766666666666666,
+        "ungated_acc": 0.7566666666666667,
+        "delta_yield_pp": 1.9999999999999907,
+        "delta_yield_ci_pp": [
+         -1.0,
+         5.0
+        ],
+        "sel_minus_ungated_pp": 8.1462829736211,
+        "sel_minus_ungated_ci_pp": [
+         4.713160603980788,
+         11.672168767971684
+        ],
+        "gens_per_item": 4.559999999999999,
+        "stage2_frac": 0.7866666666666666,
+        "n_unobserved": 0,
+        "served": 278,
+        "correct": 233
+       },
+       "k=4": {
+        "coverage": 0.8933333333333333,
+        "selective_acc": 0.8656716417910447,
+        "correct_yield": 0.7733333333333333,
+        "ungated_acc": 0.7566666666666667,
+        "delta_yield_pp": 1.6666666666666607,
+        "delta_yield_ci_pp": [
+         -1.6666666666666667,
+         4.666666666666667
+        ],
+        "sel_minus_ungated_pp": 10.900497512437802,
+        "sel_minus_ungated_ci_pp": [
+         7.269148454541706,
+         14.459283666296704
+        ],
+        "gens_per_item": 6.133333333333332,
+        "stage2_frac": 0.7866666666666666,
+        "n_unobserved": 0,
+        "served": 268,
+        "correct": 232
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "gsm8k_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 263,
+      "auroc_mome": 0.7305518446202857,
+      "auroc_mome_ci": [
+       0.6161016467064248,
+       0.835769218525796
+      ],
+      "auroc_mean_logprob": 0.6897543931764464,
+      "auroc_mean_logprob_ci": [
+       0.578649370335821,
+       0.791489429543612
+      ],
+      "auroc_diff": 0.04079745144383928,
+      "auroc_diff_ci": [
+       -0.045673436210234154,
+       0.13211331935201795
+      ],
+      "ungated_acc": 0.8766666666666667,
+      "stage1_serve_frac": 0.15,
+      "stage1_serve_precision": 0.9333333333333333,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9533333333333334,
+        "selective_acc": 0.9230769230769231,
+        "correct_yield": 0.88,
+        "ungated_acc": 0.8766666666666667,
+        "delta_yield_pp": 0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -2.0,
+         2.666666666666667
+        ],
+        "sel_minus_ungated_pp": 4.641025641025642,
+        "sel_minus_ungated_ci_pp": [
+         2.298019438841006,
+         7.339429992732365
+        ],
+        "gens_per_item": 4.686666666666665,
+        "stage2_frac": 0.85,
+        "n_unobserved": 0,
+        "served": 286,
+        "correct": 264
+       },
+       "k=4": {
+        "coverage": 0.97,
+        "selective_acc": 0.9278350515463918,
+        "correct_yield": 0.9,
+        "ungated_acc": 0.8766666666666667,
+        "delta_yield_pp": 2.3333333333333317,
+        "delta_yield_ci_pp": [
+         0.33333333333333337,
+         4.666666666666667
+        ],
+        "sel_minus_ungated_pp": 5.116838487972508,
+        "sel_minus_ungated_ci_pp": [
+         2.836635439158599,
+         7.7468858131487845
+        ],
+        "gens_per_item": 6.386666666666665,
+        "stage2_frac": 0.85,
+        "n_unobserved": 0,
+        "served": 291,
+        "correct": 270
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 248,
+      "auroc_mome": 0.7929590570719603,
+      "auroc_mome_ci": [
+       0.7141238606557377,
+       0.8690546784409786
+      ],
+      "auroc_mean_logprob": 0.6933933002481389,
+      "auroc_mean_logprob_ci": [
+       0.609352709530507,
+       0.7775393014607144
+      ],
+      "auroc_diff": 0.0995657568238214,
+      "auroc_diff_ci": [
+       0.03238588700234201,
+       0.16976200000000002
+      ],
+      "ungated_acc": 0.8266666666666667,
+      "stage1_serve_frac": 0.44666666666666666,
+      "stage1_serve_precision": 0.9253731343283582,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.9466666666666667,
+        "selective_acc": 0.8838028169014085,
+        "correct_yield": 0.8366666666666667,
+        "ungated_acc": 0.8266666666666667,
+        "delta_yield_pp": 1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -0.6666666666666667,
+         2.666666666666667
+        ],
+        "sel_minus_ungated_pp": 5.713615023474183,
+        "sel_minus_ungated_ci_pp": [
+         3.260251905492331,
+         8.50547087321281
+        ],
+        "gens_per_item": 4.1,
+        "stage2_frac": 0.5533333333333333,
+        "n_unobserved": 0,
+        "served": 284,
+        "correct": 251
+       },
+       "k=4": {
+        "coverage": 0.96,
+        "selective_acc": 0.875,
+        "correct_yield": 0.84,
+        "ungated_acc": 0.8266666666666667,
+        "delta_yield_pp": 1.3333333333333308,
+        "delta_yield_ci_pp": [
+         0.0,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 4.833333333333334,
+        "sel_minus_ungated_ci_pp": [
+         2.4234463276836165,
+         7.4143039005377265
+        ],
+        "gens_per_item": 5.206666666666667,
+        "stage2_frac": 0.5533333333333333,
+        "n_unobserved": 0,
+        "served": 288,
+        "correct": 252
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2",
+        "k=4"
+       ]
+      }
+     },
+     "hrm8k-gsm8k-ko_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 202,
+      "auroc_mome": 0.7780359668619923,
+      "auroc_mome_ci": [
+       0.7178817775861852,
+       0.8329958622685185
+      ],
+      "auroc_mean_logprob": 0.5803192564154375,
+      "auroc_mean_logprob_ci": [
+       0.5103531956810531,
+       0.6526222128695189
+      ],
+      "auroc_diff": 0.1977167104465548,
+      "auroc_diff_ci": [
+       0.11428382313669785,
+       0.27902765483124214
+      ],
+      "ungated_acc": 0.6733333333333333,
+      "stage1_serve_frac": 0.0,
+      "stage1_serve_precision": null,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8533333333333334,
+        "selective_acc": 0.78515625,
+        "correct_yield": 0.67,
+        "ungated_acc": 0.6733333333333333,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -4.333333333333334,
+         3.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 11.182291666666666,
+        "sel_minus_ungated_ci_pp": [
+         7.260327469852866,
+         15.129378960709758
+        ],
+        "gens_per_item": 4.993333333333333,
+        "stage2_frac": 1.0,
+        "n_unobserved": 0,
+        "served": 256,
+        "correct": 201
+       },
+       "k=4": {
+        "coverage": 0.8166666666666667,
+        "selective_acc": 0.7877551020408163,
+        "correct_yield": 0.6433333333333333,
+        "ungated_acc": 0.6733333333333333,
+        "delta_yield_pp": -3.0000000000000027,
+        "delta_yield_ci_pp": [
+         -7.333333333333333,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 11.4421768707483,
+        "sel_minus_ungated_ci_pp": [
+         6.936224489795922,
+         16.070388455811507
+        ],
+        "gens_per_item": 6.993333333333333,
+        "stage2_frac": 1.0,
+        "n_unobserved": 0,
+        "served": 245,
+        "correct": 193
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "hrm8k-gsm8k-ko_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 124,
+      "auroc_mome": 0.766449780058651,
+      "auroc_mome_ci": [
+       0.7103063940093925,
+       0.8230609377436592
+      ],
+      "auroc_mean_logprob": 0.45110887096774194,
+      "auroc_mean_logprob_ci": [
+       0.3881820614781186,
+       0.5154198790260329
+      ],
+      "auroc_diff": 0.3153409090909091,
+      "auroc_diff_ci": [
+       0.24253273330201006,
+       0.3885776171955437
+      ],
+      "ungated_acc": 0.41333333333333333,
+      "stage1_serve_frac": 0.006666666666666667,
+      "stage1_serve_precision": 0.5,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.61,
+        "selective_acc": 0.6557377049180327,
+        "correct_yield": 0.4,
+        "ungated_acc": 0.41333333333333333,
+        "delta_yield_pp": -1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -5.333333333333334,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 24.24043715846994,
+        "sel_minus_ungated_ci_pp": [
+         18.8734555984556,
+         29.828766201127344
+        ],
+        "gens_per_item": 4.98,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 183,
+        "correct": 120
+       },
+       "k=4": {
+        "coverage": 0.5633333333333334,
+        "selective_acc": 0.6804733727810651,
+        "correct_yield": 0.38333333333333336,
+        "ungated_acc": 0.41333333333333333,
+        "delta_yield_pp": -2.9999999999999973,
+        "delta_yield_ci_pp": [
+         -7.333333333333333,
+         1.0
+        ],
+        "sel_minus_ungated_pp": 26.71400394477318,
+        "sel_minus_ungated_ci_pp": [
+         20.90832496233049,
+         32.36821984577331
+        ],
+        "gens_per_item": 6.966666666666667,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 169,
+        "correct": 115
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "hrm8k-gsm8k-ko_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 164,
+      "auroc_mome": 0.8262195121951219,
+      "auroc_mome_ci": [
+       0.7789928959034519,
+       0.8701787401370432
+      ],
+      "auroc_mean_logprob": 0.707855093256815,
+      "auroc_mean_logprob_ci": [
+       0.646183825614426,
+       0.7655697378231751
+      ],
+      "auroc_diff": 0.11836441893830696,
+      "auroc_diff_ci": [
+       0.06002347531786732,
+       0.18061556589974503
+      ],
+      "ungated_acc": 0.5466666666666666,
+      "stage1_serve_frac": 0.006666666666666667,
+      "stage1_serve_precision": 1.0,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.76,
+        "selective_acc": 0.7017543859649122,
+        "correct_yield": 0.5333333333333333,
+        "ungated_acc": 0.5466666666666666,
+        "delta_yield_pp": -1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -5.0,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 15.508771929824562,
+        "sel_minus_ungated_ci_pp": [
+         11.041810344827585,
+         20.113447270800204
+        ],
+        "gens_per_item": 4.98,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 228,
+        "correct": 160
+       },
+       "k=4": {
+        "coverage": 0.74,
+        "selective_acc": 0.7657657657657657,
+        "correct_yield": 0.5666666666666667,
+        "ungated_acc": 0.5466666666666666,
+        "delta_yield_pp": 2.0000000000000018,
+        "delta_yield_ci_pp": [
+         -1.3333333333333335,
+         5.666666666666666
+        ],
+        "sel_minus_ungated_pp": 21.909909909909906,
+        "sel_minus_ungated_ci_pp": [
+         17.220601620601624,
+         26.807850164595937
+        ],
+        "gens_per_item": 6.966666666666667,
+        "stage2_frac": 0.9933333333333333,
+        "n_unobserved": 0,
+        "served": 222,
+        "correct": 170
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "math500_exaone3.5-7.8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 209,
+      "auroc_mome": 0.7651296072348704,
+      "auroc_mome_ci": [
+       0.6974420933143233,
+       0.8266796985357604
+      ],
+      "auroc_mean_logprob": 0.7326883642673117,
+      "auroc_mean_logprob_ci": [
+       0.6683127295290834,
+       0.7933884719860895
+      ],
+      "auroc_diff": 0.03244124296755879,
+      "auroc_diff_ci": [
+       -0.03475879522601119,
+       0.09923049933213353
+      ],
+      "ungated_acc": 0.6966666666666667,
+      "stage1_serve_frac": 0.4066666666666667,
+      "stage1_serve_precision": 0.8688524590163934,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.8866666666666667,
+        "selective_acc": 0.7819548872180451,
+        "correct_yield": 0.6933333333333334,
+        "ungated_acc": 0.6966666666666667,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -2.666666666666667,
+         2.0
+        ],
+        "sel_minus_ungated_pp": 8.52882205513784,
+        "sel_minus_ungated_ci_pp": [
+         5.348093480934812,
+         11.783333333333337
+        ],
+        "gens_per_item": 4.11,
+        "stage2_frac": 0.5933333333333334,
+        "n_unobserved": 0,
+        "served": 266,
+        "correct": 208
+       },
+       "k=4": {
+        "coverage": 0.87,
+        "selective_acc": 0.8084291187739464,
+        "correct_yield": 0.7033333333333334,
+        "ungated_acc": 0.6966666666666667,
+        "delta_yield_pp": 0.666666666666671,
+        "delta_yield_ci_pp": [
+         -1.3416666666666663,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 11.176245210727975,
+        "sel_minus_ungated_ci_pp": [
+         7.647183483729836,
+         14.799397590361444
+        ],
+        "gens_per_item": 5.296666666666667,
+        "stage2_frac": 0.5933333333333334,
+        "n_unobserved": 0,
+        "served": 261,
+        "correct": 211
+       }
+      },
+      "adoption": {
+       "pick": "k=4",
+       "eligible": [
+        "k=4"
+       ]
+      }
+     },
+     "math500_granite3.3-8b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 189,
+      "auroc_mome": 0.7722484389151055,
+      "auroc_mome_ci": [
+       0.7070228008464472,
+       0.8350245759132847
+      ],
+      "auroc_mean_logprob": 0.5647552314218981,
+      "auroc_mean_logprob_ci": [
+       0.49732035550753717,
+       0.6316622938530734
+      ],
+      "auroc_diff": 0.20749320749320743,
+      "auroc_diff_ci": [
+       0.13484865535594387,
+       0.2839984673273618
+      ],
+      "ungated_acc": 0.63,
+      "stage1_serve_frac": 0.31333333333333335,
+      "stage1_serve_precision": 0.8085106382978723,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7866666666666666,
+        "selective_acc": 0.809322033898305,
+        "correct_yield": 0.6366666666666667,
+        "ungated_acc": 0.63,
+        "delta_yield_pp": 0.666666666666671,
+        "delta_yield_ci_pp": [
+         -2.0,
+         3.6666666666666665
+        ],
+        "sel_minus_ungated_pp": 17.932203389830505,
+        "sel_minus_ungated_ci_pp": [
+         13.677316540290457,
+         21.894736842105267
+        ],
+        "gens_per_item": 4.296666666666667,
+        "stage2_frac": 0.6866666666666666,
+        "n_unobserved": 0,
+        "served": 236,
+        "correct": 191
+       },
+       "k=4": {
+        "coverage": 0.7533333333333333,
+        "selective_acc": 0.831858407079646,
+        "correct_yield": 0.6266666666666667,
+        "ungated_acc": 0.63,
+        "delta_yield_pp": -0.33333333333332993,
+        "delta_yield_ci_pp": [
+         -3.6666666666666665,
+         2.666666666666667
+        ],
+        "sel_minus_ungated_pp": 20.185840707964598,
+        "sel_minus_ungated_ci_pp": [
+         15.852308644775903,
+         24.651376146788994
+        ],
+        "gens_per_item": 5.67,
+        "stage2_frac": 0.6866666666666666,
+        "n_unobserved": 0,
+        "served": 226,
+        "correct": 188
+       }
+      },
+      "adoption": {
+       "pick": "k=2",
+       "eligible": [
+        "k=2"
+       ]
+      }
+     },
+     "math500_llama3.2-3b": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 113,
+      "auroc_mome": 0.8082438124083101,
+      "auroc_mome_ci": [
+       0.7579855469496282,
+       0.8594912484330748
+      ],
+      "auroc_mean_logprob": 0.5484359471865979,
+      "auroc_mean_logprob_ci": [
+       0.4848479690898481,
+       0.6132145336300717
+      ],
+      "auroc_diff": 0.2598078652217122,
+      "auroc_diff_ci": [
+       0.18896236126029353,
+       0.32973414432262266
+      ],
+      "ungated_acc": 0.37666666666666665,
+      "stage1_serve_frac": 0.09666666666666666,
+      "stage1_serve_precision": 0.7931034482758621,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.5466666666666666,
+        "selective_acc": 0.676829268292683,
+        "correct_yield": 0.37,
+        "ungated_acc": 0.37666666666666665,
+        "delta_yield_pp": -0.6666666666666654,
+        "delta_yield_ci_pp": [
+         -3.6666666666666665,
+         2.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 30.016260162601633,
+        "sel_minus_ungated_ci_pp": [
+         24.83322072072072,
+         35.81962444463072
+        ],
+        "gens_per_item": 4.73,
+        "stage2_frac": 0.9033333333333333,
+        "n_unobserved": 0,
+        "served": 164,
+        "correct": 111
+       },
+       "k=4": {
+        "coverage": 0.5066666666666667,
+        "selective_acc": 0.7171052631578947,
+        "correct_yield": 0.36333333333333334,
+        "ungated_acc": 0.37666666666666665,
+        "delta_yield_pp": -1.3333333333333308,
+        "delta_yield_ci_pp": [
+         -4.666666666666667,
+         1.6666666666666667
+        ],
+        "sel_minus_ungated_pp": 34.0438596491228,
+        "sel_minus_ungated_ci_pp": [
+         28.332947976878607,
+         40.21783930355358
+        ],
+        "gens_per_item": 6.536666666666665,
+        "stage2_frac": 0.9033333333333333,
+        "n_unobserved": 0,
+        "served": 152,
+        "correct": 109
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     },
+     "math500_phi4-mini": {
+      "n": 300,
+      "n_cells": 1,
+      "n_correct": 161,
+      "auroc_mome": 0.8594217793467089,
+      "auroc_mome_ci": [
+       0.8101748842604528,
+       0.9028064508711353
+      ],
+      "auroc_mean_logprob": 0.5184324590017427,
+      "auroc_mean_logprob_ci": [
+       0.4522322963242843,
+       0.5833191201910157
+      ],
+      "auroc_diff": 0.3409893203449662,
+      "auroc_diff_ci": [
+       0.268771894653104,
+       0.41165945352300326
+      ],
+      "ungated_acc": 0.5366666666666666,
+      "stage1_serve_frac": 0.10666666666666667,
+      "stage1_serve_precision": 0.8125,
+      "no_samples": 0,
+      "gate": {
+       "k=2": {
+        "coverage": 0.7,
+        "selective_acc": 0.7380952380952381,
+        "correct_yield": 0.5166666666666667,
+        "ungated_acc": 0.5366666666666666,
+        "delta_yield_pp": -1.9999999999999907,
+        "delta_yield_ci_pp": [
+         -5.0,
+         1.3333333333333335
+        ],
+        "sel_minus_ungated_pp": 20.142857142857153,
+        "sel_minus_ungated_ci_pp": [
+         15.301751373626374,
+         25.228147644927525
+        ],
+        "gens_per_item": 4.71,
+        "stage2_frac": 0.8933333333333333,
+        "n_unobserved": 0,
+        "served": 210,
+        "correct": 155
+       },
+       "k=4": {
+        "coverage": 0.6633333333333333,
+        "selective_acc": 0.7939698492462312,
+        "correct_yield": 0.5266666666666666,
+        "ungated_acc": 0.5366666666666666,
+        "delta_yield_pp": -1.0000000000000009,
+        "delta_yield_ci_pp": [
+         -4.666666666666667,
+         3.0
+        ],
+        "sel_minus_ungated_pp": 25.73031825795645,
+        "sel_minus_ungated_ci_pp": [
+         20.587095303237568,
+         31.08129930448584
+        ],
+        "gens_per_item": 6.496666666666667,
+        "stage2_frac": 0.8933333333333333,
+        "n_unobserved": 0,
+        "served": 199,
+        "correct": 158
+       }
+      },
+      "adoption": {
+       "pick": null,
+       "eligible": [],
+       "note": "no variant reaches the ungated yield"
+      }
+     }
+    },
+    "criteria_by_k": {
+     "k=2": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": -0.19444444444444153,
+       "ci_pp": [
+        -1.0,
+        0.6111111111111112
+       ],
+       "met": false
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 13.769821328866549,
+       "ci_pp": [
+        12.696750977928811,
+        14.876995705287952
+       ],
+       "met": true
+      }
+     },
+     "k=4": {
+      "2_yield_preserved_pooled": {
+       "delta_yield_pp": -0.02777777777778212,
+       "ci_pp": [
+        -0.9166666666666666,
+        0.8611111111111112
+       ],
+       "met": false
+      },
+      "3_selective_accuracy_pooled": {
+       "diff_pp": 16.140570074889194,
+       "ci_pp": [
+        14.999198243513534,
+        17.3854311384747
+       ],
+       "met": true
+      }
+     }
+    }
+   }
+  }
+ },
+ "sec26": {
+  "T0.7": {
+   "per_backbone": {
+    "gemma4-e2b": {
+     "n": 900,
+     "ungated_acc": 0.7744444444444445,
+     "coverage": 0.8955555555555555,
+     "selective_acc": 0.8746898263027295,
+     "correct_yield": 0.7833333333333333,
+     "delta_yield_pp": 0.8888888888888835,
+     "delta_yield_ci_pp": [
+      -0.6666666666666667,
+      2.555555555555556
+     ],
+     "sel_minus_ungated_pp": 10.024538185828503,
+     "sel_minus_ungated_ci_pp": [
+      8.00772817191797,
+      12.053475834477998
+     ],
+     "n_unobserved": 0
+    },
+    "gemma4-e4b": {
+     "n": 900,
+     "ungated_acc": 0.8377777777777777,
+     "coverage": 0.9333333333333333,
+     "selective_acc": 0.9011904761904762,
+     "correct_yield": 0.8411111111111111,
+     "delta_yield_pp": 0.33333333333334103,
+     "delta_yield_ci_pp": [
+      -0.7777777777777778,
+      1.6666666666666667
+     ],
+     "sel_minus_ungated_pp": 6.341269841269847,
+     "sel_minus_ungated_ci_pp": [
+      4.877913542573613,
+      7.984827315066834
+     ],
+     "n_unobserved": 0
+    },
+    "qwen2-math-1.5b": {
+     "n": 898,
+     "ungated_acc": 0.522271714922049,
+     "coverage": 0.6514476614699332,
+     "selective_acc": 0.770940170940171,
+     "correct_yield": 0.5022271714922049,
+     "delta_yield_pp": -2.0044543429844186,
+     "delta_yield_ci_pp": [
+      -3.5634743875278394,
+      -0.5567928730512249
+     ],
+     "sel_minus_ungated_pp": 24.866845601812194,
+     "sel_minus_ungated_ci_pp": [
+      22.283007508435816,
+      27.6794268994828
+     ],
+     "n_unobserved": 0
+    },
+    "qwen3.5-9b": {
+     "n": 899,
+     "ungated_acc": 0.864293659621802,
+     "coverage": 0.9221357063403782,
+     "selective_acc": 0.9420989143546441,
+     "correct_yield": 0.8687430478309233,
+     "delta_yield_pp": 0.4449388209121219,
+     "delta_yield_ci_pp": [
+      -0.6674082313681869,
+      1.557285873192436
+     ],
+     "sel_minus_ungated_pp": 7.7805254732842055,
+     "sel_minus_ungated_ci_pp": [
+      6.087492973225305,
+      9.566078837866318
+     ],
+     "n_unobserved": 0
+    },
+    "solar-10.7b": {
+     "n": 900,
+     "ungated_acc": 0.4777777777777778,
+     "coverage": 0.6577777777777778,
+     "selective_acc": 0.7398648648648649,
+     "correct_yield": 0.4866666666666667,
+     "delta_yield_pp": 0.8888888888888891,
+     "delta_yield_ci_pp": [
+      -1.0,
+      2.666666666666667
+     ],
+     "sel_minus_ungated_pp": 26.208708708708713,
+     "sel_minus_ungated_ci_pp": [
+      23.424531164715557,
+      29.131973478384523
+     ],
+     "n_unobserved": 0
+    }
+   },
+   "pooled": {
+    "n": 4497,
+    "ungated_acc": 0.6953524571936847,
+    "coverage": 0.8120969535245719,
+    "selective_acc": 0.8576122672508215,
+    "correct_yield": 0.6964643095396932,
+    "delta_yield_pp": 0.11118523460085239,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ],
+    "sel_minus_ungated_pp": 16.225981005713685,
+    "sel_minus_ungated_ci_pp": [
+     15.299173458680084,
+     17.167834559559935
+    ],
+    "n_unobserved": 0
+   }
+  },
+  "T0.3": {
+   "per_backbone": {
+    "gemma4-e2b": {
+     "n": 900,
+     "ungated_acc": 0.7744444444444445,
+     "coverage": 0.8933333333333333,
+     "selective_acc": 0.8818407960199005,
+     "correct_yield": 0.7877777777777778,
+     "delta_yield_pp": 1.3333333333333308,
+     "delta_yield_ci_pp": [
+      -0.33333333333333337,
+      3.0
+     ],
+     "sel_minus_ungated_pp": 10.739635157545601,
+     "sel_minus_ungated_ci_pp": [
+      8.649541901731682,
+      12.761956307356753
+     ],
+     "n_unobserved": 0
+    },
+    "gemma4-e4b": {
+     "n": 900,
+     "ungated_acc": 0.8377777777777777,
+     "coverage": 0.9388888888888889,
+     "selective_acc": 0.893491124260355,
+     "correct_yield": 0.8388888888888889,
+     "delta_yield_pp": 0.11111111111111738,
+     "delta_yield_ci_pp": [
+      -1.2222222222222223,
+      1.4444444444444444
+     ],
+     "sel_minus_ungated_pp": 5.57133464825773,
+     "sel_minus_ungated_ci_pp": [
+      4.004464520759946,
+      7.186220087943711
+     ],
+     "n_unobserved": 0
+    },
+    "qwen2-math-1.5b": {
+     "n": 898,
+     "ungated_acc": 0.522271714922049,
+     "coverage": 0.6904231625835189,
+     "selective_acc": 0.7467741935483871,
+     "correct_yield": 0.5155902004454342,
+     "delta_yield_pp": -0.6681514476614803,
+     "delta_yield_ci_pp": [
+      -1.7817371937639197,
+      0.5567928730512249
+     ],
+     "sel_minus_ungated_pp": 22.45024786263381,
+     "sel_minus_ungated_ci_pp": [
+      20.205939997603895,
+      24.825944448238
+     ],
+     "n_unobserved": 0
+    },
+    "qwen3.5-9b": {
+     "n": 899,
+     "ungated_acc": 0.864293659621802,
+     "coverage": 0.9365962180200222,
+     "selective_acc": 0.9358669833729216,
+     "correct_yield": 0.8765294771968855,
+     "delta_yield_pp": 1.2235817575083408,
+     "delta_yield_ci_pp": [
+      0.22246941045606228,
+      2.3359288097886544
+     ],
+     "sel_minus_ungated_pp": 7.157332375111958,
+     "sel_minus_ungated_ci_pp": [
+      5.479165083274147,
+      8.792090178140413
+     ],
+     "n_unobserved": 0
+    },
+    "solar-10.7b": {
+     "n": 900,
+     "ungated_acc": 0.4777777777777778,
+     "coverage": 0.6944444444444444,
+     "selective_acc": 0.704,
+     "correct_yield": 0.4888888888888889,
+     "delta_yield_pp": 1.1111111111111072,
+     "delta_yield_ci_pp": [
+      -0.5555555555555556,
+      2.888888888888889
+     ],
+     "sel_minus_ungated_pp": 22.622222222222216,
+     "sel_minus_ungated_ci_pp": [
+      20.003799458641826,
+      25.534861297066218
+     ],
+     "n_unobserved": 0
+    }
+   },
+   "pooled": {
+    "n": 4497,
+    "ungated_acc": 0.6953524571936847,
+    "coverage": 0.8307760729375139,
+    "selective_acc": 0.8444860813704497,
+    "correct_yield": 0.701578830331332,
+    "delta_yield_pp": 0.622637313764729,
+    "delta_yield_ci_pp": [
+     0.021681120747164807,
+     1.2458305537024652
+    ],
+    "sel_minus_ungated_pp": 14.9133624176765,
+    "sel_minus_ungated_ci_pp": [
+     13.934560202822265,
+     15.844503026644155
+    ],
+    "n_unobserved": 0
+   }
+  }
+ },
+ "sec26_k4": {
+  "T0.7": {
+   "per_backbone": {
+    "gemma4-e2b": {
+     "n": 900,
+     "ungated_acc": 0.7744444444444445,
+     "coverage": 0.8733333333333333,
+     "selective_acc": 0.8956743002544529,
+     "correct_yield": 0.7822222222222223,
+     "delta_yield_pp": 0.7777777777777772,
+     "delta_yield_ci_pp": [
+      -1.0,
+      2.555555555555556
+     ],
+     "sel_minus_ungated_pp": 12.122985581000844,
+     "sel_minus_ungated_ci_pp": [
+      9.93792633614627,
+      14.294812395109089
+     ],
+     "n_unobserved": 0
+    },
+    "gemma4-e4b": {
+     "n": 900,
+     "ungated_acc": 0.8377777777777777,
+     "coverage": 0.93,
+     "selective_acc": 0.9080047789725209,
+     "correct_yield": 0.8444444444444444,
+     "delta_yield_pp": 0.666666666666671,
+     "delta_yield_ci_pp": [
+      -0.7777777777777778,
+      2.111111111111111
+     ],
+     "sel_minus_ungated_pp": 7.022700119474312,
+     "sel_minus_ungated_ci_pp": [
+      5.33663985743238,
+      8.801472777020228
+     ],
+     "n_unobserved": 0
+    },
+    "qwen2-math-1.5b": {
+     "n": 898,
+     "ungated_acc": 0.522271714922049,
+     "coverage": 0.6135857461024499,
+     "selective_acc": 0.8257713248638838,
+     "correct_yield": 0.5066815144766147,
+     "delta_yield_pp": -1.5590200445434355,
+     "delta_yield_ci_pp": [
+      -3.11804008908686,
+      -0.11135857461024498
+     ],
+     "sel_minus_ungated_pp": 30.349960994183476,
+     "sel_minus_ungated_ci_pp": [
+      27.80059057758474,
+      33.100596627498824
+     ],
+     "n_unobserved": 0
+    },
+    "qwen3.5-9b": {
+     "n": 899,
+     "ungated_acc": 0.864293659621802,
+     "coverage": 0.9210233592880979,
+     "selective_acc": 0.9504830917874396,
+     "correct_yield": 0.8754171301446051,
+     "delta_yield_pp": 1.1123470522803047,
+     "delta_yield_ci_pp": [
+      0.0,
+      2.3359288097886544
+     ],
+     "sel_minus_ungated_pp": 8.618943216563757,
+     "sel_minus_ungated_ci_pp": [
+      6.882938831606769,
+      10.39187015244749
+     ],
+     "n_unobserved": 0
+    },
+    "solar-10.7b": {
+     "n": 900,
+     "ungated_acc": 0.4777777777777778,
+     "coverage": 0.6133333333333333,
+     "selective_acc": 0.769927536231884,
+     "correct_yield": 0.4722222222222222,
+     "delta_yield_pp": -0.5555555555555591,
+     "delta_yield_ci_pp": [
+      -2.555555555555556,
+      1.5555555555555556
+     ],
+     "sel_minus_ungated_pp": 29.214975845410624,
+     "sel_minus_ungated_ci_pp": [
+      26.031674895244667,
+      32.46160110503263
+     ],
+     "n_unobserved": 0
+    }
+   },
+   "pooled": {
+    "n": 4497,
+    "ungated_acc": 0.6953524571936847,
+    "coverage": 0.7903046475428063,
+    "selective_acc": 0.8809791783905458,
+    "correct_yield": 0.6962419390704915,
+    "delta_yield_pp": 0.08894818768068191,
+    "delta_yield_ci_pp": [
+     -0.600400266844563,
+     0.8227707360462531
+    ],
+    "sel_minus_ungated_pp": 18.56267211968612,
+    "sel_minus_ungated_ci_pp": [
+     17.56653427916243,
+     19.58252325557861
+    ],
+    "n_unobserved": 0
+   }
+  },
+  "T0.3": {
+   "per_backbone": {
+    "gemma4-e2b": {
+     "n": 900,
+     "ungated_acc": 0.7744444444444445,
+     "coverage": 0.8944444444444445,
+     "selective_acc": 0.8894409937888199,
+     "correct_yield": 0.7955555555555556,
+     "delta_yield_pp": 2.111111111111108,
+     "delta_yield_ci_pp": [
+      0.4444444444444444,
+      3.7777777777777777
+     ],
+     "sel_minus_ungated_pp": 11.499654934437542,
+     "sel_minus_ungated_ci_pp": [
+      9.469003094003089,
+      13.628769965129992
+     ],
+     "n_unobserved": 0
+    },
+    "gemma4-e4b": {
+     "n": 900,
+     "ungated_acc": 0.8377777777777777,
+     "coverage": 0.9355555555555556,
+     "selective_acc": 0.9002375296912114,
+     "correct_yield": 0.8422222222222222,
+     "delta_yield_pp": 0.4444444444444473,
+     "delta_yield_ci_pp": [
+      -0.8888888888888888,
+      1.6666666666666667
+     ],
+     "sel_minus_ungated_pp": 6.245975191343367,
+     "sel_minus_ungated_ci_pp": [
+      4.637418019347434,
+      7.939127392625388
+     ],
+     "n_unobserved": 0
+    },
+    "qwen2-math-1.5b": {
+     "n": 898,
+     "ungated_acc": 0.522271714922049,
+     "coverage": 0.6469933184855234,
+     "selective_acc": 0.7882960413080895,
+     "correct_yield": 0.5100222717149221,
+     "delta_yield_pp": -1.2249443207126953,
+     "delta_yield_ci_pp": [
+      -2.4498886414253898,
+      0.11135857461024498
+     ],
+     "sel_minus_ungated_pp": 26.602432638604046,
+     "sel_minus_ungated_ci_pp": [
+      24.192733581058622,
+      29.20423624784757
+     ],
+     "n_unobserved": 0
+    },
+    "qwen3.5-9b": {
+     "n": 899,
+     "ungated_acc": 0.864293659621802,
+     "coverage": 0.92880978865406,
+     "selective_acc": 0.9401197604790419,
+     "correct_yield": 0.8731924360400445,
+     "delta_yield_pp": 0.8898776418242438,
+     "delta_yield_ci_pp": [
+      -0.22246941045606228,
+      2.0022246941045605
+     ],
+     "sel_minus_ungated_pp": 7.582610085723984,
+     "sel_minus_ungated_ci_pp": [
+      5.935111826292083,
+      9.285077939496519
+     ],
+     "n_unobserved": 0
+    },
+    "solar-10.7b": {
+     "n": 900,
+     "ungated_acc": 0.4777777777777778,
+     "coverage": 0.6533333333333333,
+     "selective_acc": 0.7431972789115646,
+     "correct_yield": 0.4855555555555556,
+     "delta_yield_pp": 0.7777777777777772,
+     "delta_yield_ci_pp": [
+      -1.1111111111111112,
+      2.7777777777777777
+     ],
+     "sel_minus_ungated_pp": 26.541950113378682,
+     "sel_minus_ungated_ci_pp": [
+      23.757537340753668,
+      29.614682713170765
+     ],
+     "n_unobserved": 0
+    }
+   },
+   "pooled": {
+    "n": 4497,
+    "ungated_acc": 0.6953524571936847,
+    "coverage": 0.8118745830553702,
+    "selective_acc": 0.8638729115310874,
+    "correct_yield": 0.7013564598621304,
+    "delta_yield_pp": 0.6004002668445696,
+    "delta_yield_ci_pp": [
+     -0.06671114076050699,
+     1.267511674449633
+    ],
+    "sel_minus_ungated_pp": 16.85204543374027,
+    "sel_minus_ungated_ci_pp": [
+     15.867561362274445,
+     17.790604621665164
+    ],
+    "n_unobserved": 0
+   }
+  }
+ }
+}

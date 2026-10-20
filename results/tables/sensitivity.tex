@@ -1,0 +1,26 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\begin{adjustwidth}{-\extralength}{0cm}
+\caption{Sensitivity of the gate ($k=2$) to the stage-1 threshold and the stage-2 vote rule (4497 items, registered MOME scores). Upper block: every backbone's $\tau_{\mathrm{high}}$ shifted by the same amount. A higher threshold sends items to stage~2 that were served at stage~1 in the evaluation and therefore have no stage-2 samples (Unobs.). For these items, the table uses the outcome of the 50 observed stage-2 items closest to the serve band, and the last column gives the $\Delta$yield if all were declined or all served with the greedy answer. Lower block: vote rules at the registered thresholds; 3 votes is $k=2$, 5 votes is $k=4$. $^{*}$With five votes, a share of $0.6$ requires three agreeing votes. $\Delta$yield in percentage points against the ungated model.\label{tab:sensitivity}}
+\begin{tabularx}{\fulllength}{llcccccC}
+\toprule
+\textbf{Threshold} & \textbf{Vote rule} & \textbf{Cov.} & \textbf{Sel. acc.} & $\boldsymbol{\Delta}$\textbf{yield} & \textbf{Gen./item} & \textbf{Unobs.} & \textbf{Range} \\
+\midrule
+$\tau_{\mathrm{high}}-0.10$ & 3 votes, $\geq 2$ agree & 82.6\% & 84.9\% & $+0.58$ & 3.73 & 0 & --- \\
+$\tau_{\mathrm{high}}-0.05$ & 3 votes, $\geq 2$ agree & 82.1\% & 85.3\% & $+0.49$ & 3.90 & 0 & --- \\
+$\tau_{\mathrm{high}}-0.02$ & 3 votes, $\geq 2$ agree & 81.7\% & 85.5\% & $+0.29$ & 4.10 & 0 & --- \\
+$\tau_{\mathrm{high}}+0.00$ & 3 votes, $\geq 2$ agree & 81.2\% & 85.8\% & $+0.11$ & 4.34 & 0 & --- \\
+$\tau_{\mathrm{high}}+0.01$ & 3 votes, $\geq 2$ agree & 80.9\% & 85.9\% & $-0.06$ & 4.47 & 299 & $[-6.0, +0.1]$ \\
+$\tau_{\mathrm{high}}+0.02$ & 3 votes, $\geq 2$ agree & 80.6\% & 85.9\% & $-0.26$ & 4.63 & 645 & $[-13.1, +0.1]$ \\
+$\tau_{\mathrm{high}}+0.03$ & 3 votes, $\geq 2$ agree & 80.3\% & 86.0\% & $-0.49$ & 4.79 & 1012 & $[-20.7, +0.1]$ \\
+\midrule
+registered & 3 votes, plurality & 81.9\% & 85.0\% & $+0.13$ & 4.34 & 0 & --- \\
+registered & 3 votes, $\geq 2$ agree & 81.2\% & 85.8\% & $+0.11$ & 4.34 & 0 & --- \\
+registered & 3 votes, unanimous & 66.0\% & 92.2\% & $-8.67$ & 4.34 & 0 & --- \\
+registered & 5 votes, $\geq 3$ agree$^{*}$ & 79.0\% & 88.1\% & $+0.09$ & 5.70 & 0 & --- \\
+registered & 5 votes, $\geq 4$ agree & 70.3\% & 91.9\% & $-4.94$ & 5.70 & 0 & --- \\
+registered & 5 votes, unanimous & 61.7\% & 93.3\% & $-11.94$ & 5.70 & 0 & --- \\
+\bottomrule
+\end{tabularx}
+\end{adjustwidth}
+\end{table}

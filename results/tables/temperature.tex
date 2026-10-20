@@ -1,0 +1,30 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\begin{adjustwidth}{-\extralength}{0cm}
+\caption{The gate at stage-2 temperature $T$ of 0.7 (the setting of the main evaluation) and 0.3, with $k$ stage-2 samples. Stage~1 is the same in every row of a block. The five backbones of the main evaluation use their backbone-out thresholds; their samples at 0.3 were drawn for the items that their gate sends to stage~2, with the same prompts and seeds as at 0.7. The four further backbones use the predictor and $\tau_{\mathrm{high}} = 0.911$ fitted on the five; per-backbone rows show $k=2$. $\Delta$yield is correct yield minus the ungated accuracy in percentage points, with its 95\% interval (2000 replicates within cells).\label{tab:temperature}}
+\begin{tabularx}{\fulllength}{lccccCc}
+\toprule
+\textbf{Backbones} & $\boldsymbol{T}$ & $\boldsymbol{k}$ & \textbf{Cov.} & \textbf{Sel. acc.} & $\boldsymbol{\Delta}$\textbf{yield} & \textbf{Gen./item} \\
+\midrule
+Main evaluation, five backbones & 0.7 & 2 & 81.2\% & 85.8\% & $+0.11$ $[-0.53, +0.78]$ & 4.34 \\
+Main evaluation, five backbones & 0.7 & 4 & 79.0\% & 88.1\% & $+0.09$ $[-0.60, +0.82]$ & 5.70 \\
+Main evaluation, five backbones & 0.3 & 2 & 83.1\% & 84.4\% & $+0.62$ $[+0.02, +1.25]$ & 4.34 \\
+Main evaluation, five backbones & 0.3 & 4 & 81.2\% & 86.4\% & $+0.60$ $[-0.07, +1.27]$ & 5.70 \\
+\midrule
+Four further families & 0.7 & 2 & 77.9\% & 85.0\% & $-1.81$ $[-2.72, -0.89]$ & 4.50 \\
+Four further families & 0.7 & 4 & 75.9\% & 87.6\% & $-1.42$ $[-2.36, -0.47]$ & 6.04 \\
+Four further families & 0.3 & 2 & 82.9\% & 81.7\% & $-0.19$ $[-1.00, +0.61]$ & 4.50 \\
+Four further families & 0.3 & 4 & 80.8\% & 84.1\% & $-0.03$ $[-0.92, +0.86]$ & 6.04 \\
+\midrule
+\texttt{llama3.2-3b} & 0.7 & 2 & 58.3\% & 77.9\% & $-6.11$ $[-8.44, -4.00]$ & 4.76 \\
+\texttt{llama3.2-3b} & 0.3 & 2 & 69.4\% & 74.2\% & $+0.00$ $[-2.00, +2.00]$ & 4.76 \\
+\texttt{phi4-mini} & 0.7 & 2 & 76.1\% & 84.1\% & $-1.33$ $[-3.11, +0.67]$ & 4.79 \\
+\texttt{phi4-mini} & 0.3 & 2 & 80.4\% & 80.0\% & $-1.00$ $[-2.78, +0.89]$ & 4.79 \\
+\texttt{exaone3.5-7.8b} & 0.7 & 2 & 92.3\% & 89.0\% & $+0.67$ $[-0.44, +1.78]$ & 3.95 \\
+\texttt{exaone3.5-7.8b} & 0.3 & 2 & 94.3\% & 86.7\% & $+0.22$ $[-0.89, +1.22]$ & 3.95 \\
+\texttt{granite3.3-8b} & 0.7 & 2 & 84.8\% & 86.1\% & $-0.44$ $[-2.33, +1.33]$ & 4.52 \\
+\texttt{granite3.3-8b} & 0.3 & 2 & 87.4\% & 84.0\% & $+0.00$ $[-1.67, +1.56]$ & 4.52 \\
+\bottomrule
+\end{tabularx}
+\end{adjustwidth}
+\end{table}

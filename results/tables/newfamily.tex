@@ -1,0 +1,18 @@
+\begin{table}[t]
+\small\setlength{\tabcolsep}{3pt}
+\begin{adjustwidth}{-\extralength}{0cm}
+\caption{Four backbones of further families, 900 items each (the same problems as Table~\ref{tab:backbones-result}). The predictor and $\tau_{\mathrm{high}}$ were fitted once on the five backbones of the main evaluation and not changed. Ungated is the accuracy of the greedy answer. The last column is the item-paired difference in AUROC between the MOME score and mean token log-probability, with its 95\% interval (2000 replicates within cells). All four backbones are served with four-bit weights (Q4\_K\_M).\label{tab:newfamily}}
+\begin{tabularx}{\fulllength}{llcccCC}
+\toprule
+\textbf{Backbone} & \textbf{Family (developer)} & \textbf{Parameters} & \textbf{Ungated} & \textbf{AUROC, MOME} & \textbf{AUROC, mean log-prob.} & $\boldsymbol{\Delta}$\textbf{AUROC} \\
+\midrule
+\texttt{llama3.2-3b} & Llama 3.2 (Meta) & 3.2 B & 51.6\% & 0.823 & 0.547 & $+0.276$ $[+0.240, +0.319]$ \\
+\texttt{phi4-mini} & Phi-4 (Microsoft) & 3.8 B & 65.3\% & 0.852 & 0.629 & $+0.223$ $[+0.183, +0.264]$ \\
+\texttt{exaone3.5-7.8b} & EXAONE 3.5 (LG AI Research) & 7.8 B & 81.6\% & 0.785 & 0.662 & $+0.124$ $[+0.075, +0.171]$ \\
+\texttt{granite3.3-8b} & Granite 3.3 (IBM) & 8.2 B & 73.4\% & 0.782 & 0.551 & $+0.231$ $[+0.187, +0.276]$ \\
+\midrule
+All four & --- & --- & 68.0\% & 0.829 & 0.629 & $+0.200$ $[+0.180, +0.219]$ \\
+\bottomrule
+\end{tabularx}
+\end{adjustwidth}
+\end{table}

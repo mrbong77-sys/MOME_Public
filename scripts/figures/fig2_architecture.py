@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import style as S  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle  # noqa: E402
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch  # noqa: E402
 
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT / "mome"))
@@ -37,33 +37,39 @@ import paths                                    # noqa: E402
 DEC = paths.DECISIONS
 OUT = paths.FIGURES / "fig2-architecture"
 
-#: Pale fills with a matching border. Border weight carries the distinction
-#: too, so color is never the only cue.
-SERVED_BG, SERVED_EDGE = "#eaf5ef", "#2f8a5f"
-DECL_BG, DECL_EDGE = "#fdeee8", "#c2552b"
-PROC_BG, PROC_EDGE = "#eef3fa", "#3f6ea8"
-LANE = "#f6f6f4"
-FS = 7.4
+#: One font size (FS), only the first line bold. Every box has the same height
+#: and line weight, on a fixed column/row grid. Color carries meaning only:
+#: processing (grey), served (green), declined (red).
+PROC_BG, PROC_EDGE = "#f2f2f2", "#4d4d4d"
+SERVED_BG, SERVED_EDGE = "#e6f2ea", "#2e7d4f"
+DECL_BG, DECL_EDGE = "#fbe9e4", "#b5452a"
+FS = 7.5
+LW = 0.8
+H = 0.25                                  # height of every box
+PITCH = 0.072                             # line pitch inside a box
+COLS = {"in": (0.00, 0.10), "s1": (0.145, 0.245), "route": (0.46, 0.24), "out": (0.795, 0.205)}
+ROWS = {"top": 0.78, "mid": 0.47, "bot": 0.16}   # row centres
 
 
-def box(ax, x, y, w, h, lines, bg, edge, lw=1.0, bold_first=False):
+def box(ax, col, row, lines, bg, edge):
+    x, w = COLS[col]
+    y = ROWS[row] - H / 2
     ax.add_patch(FancyBboxPatch(
-        (x, y), w, h, boxstyle="round,pad=0.006,rounding_size=0.028",
-        linewidth=lw, edgecolor=edge, facecolor=bg, zorder=3))
+        (x, y), w, H, boxstyle="round,pad=0,rounding_size=0.012",
+        linewidth=LW, edgecolor=edge, facecolor=bg, zorder=3))
     n = len(lines)
     for i, ln in enumerate(lines):
-        ax.text(x + w / 2, y + h * (n - i - 0.5) / n, ln, ha="center", va="center",
-                fontsize=FS + (0.6 if (bold_first and i == 0) else 0),
-                fontweight=("bold" if (bold_first and i == 0) else "normal"),
+        #: Same pitch in every box, so lines align whatever the line count.
+        ax.text(x + w / 2, ROWS[row] + PITCH * ((n - 1) / 2 - i), ln, ha="center", va="center",
+                fontsize=FS, fontweight=("bold" if i == 0 else "normal"),
                 color=S.INK, zorder=4)
-    return (x, y, w, h)
+    return x, y, w
 
 
-def elbow(ax, p, q, color=S.INK2, lw=1.0, rad=0.0):
+def arrow(ax, p, q, color=PROC_EDGE):
     ax.add_patch(FancyArrowPatch(
-        p, q, arrowstyle="-|>", mutation_scale=9, linewidth=lw, color=color,
-        zorder=2, shrinkA=2, shrinkB=3,
-        connectionstyle=f"arc3,rad={rad}"))
+        p, q, arrowstyle="-|>", mutation_scale=8, linewidth=LW, color=color,
+        zorder=2, shrinkA=0, shrinkB=0))
 
 
 def main() -> None:
@@ -77,64 +83,50 @@ def main() -> None:
     stage2 = (c["RETRY"] + c["DECLINE"]) / n
 
     S.setup()
-    fig, ax = plt.subplots(figsize=(S.FULL_W, 2.75))
-    #: Leave the edges empty; this is where an earlier version clipped.
-    ax.set_xlim(-0.030, 1.050)
-    ax.set_ylim(-0.11, 0.99)
+    fig, ax = plt.subplots(figsize=(S.FULL_W, 2.55))
+    ax.set_xlim(-0.02, 1.02)
+    ax.set_ylim(-0.10, 1.02)
     ax.axis("off")
 
-    #: No vertical bands. SERVE is a first-stage outcome, and a band would
-    #: make it look like it sits inside the second stage -- the diagram would
-    #: then teach the structure wrongly. The labels go above their boxes.
+    # ---- Column heads -------------------------------------------------------------
+    for col, label in (("in", "Input"), ("s1", "Stage 1"), ("route", "Route"),
+                       ("out", "Final state")):
+        x, w = COLS[col]
+        ax.text(x + w / 2, 0.98, label, ha="center", va="center", fontsize=FS,
+                color=S.INK2, fontweight="bold")
 
-    # ---- Input ---------------------------------------------------------------
-    b_in = box(ax, 0.000, 0.425, 0.140, 0.150, ["item $x$"], "#ffffff", S.INK2, lw=0.9)
+    # ---- Boxes ---------------------------------------------------------------
+    box(ax, "in", "mid", ["Item $x$"], "#ffffff", PROC_EDGE)
+    box(ax, "s1", "mid", ["Score", "answer + $\\leq$2 probes",
+                          r"fingerprint $\rightarrow$ $c_{\mathrm{safe}}$"], PROC_BG, PROC_EDGE)
+    box(ax, "route", "top", [f"Serve ({serve:.1%})", "no samples drawn"],
+        SERVED_BG, SERVED_EDGE)
+    box(ax, "route", "bot", [f"Verify ({stage2:.1%})", "2 samples, 3 votes",
+                             r"serve if share $\geq 0.6$"], PROC_BG, PROC_EDGE)
+    box(ax, "out", "top", ["Served", "greedy answer"], SERVED_BG, SERVED_EDGE)
+    box(ax, "out", "mid", ["Served", "majority answer"], SERVED_BG, SERVED_EDGE)
+    box(ax, "out", "bot", ["Declined", "no majority"], DECL_BG, DECL_EDGE)
 
-    # ---- First stage -----------------------------------------------------------
-    b_s1 = box(ax, 0.185, 0.335, 0.225, 0.330,
-               ["greedy answer", "+ 2 probes", r"$\rightarrow$ fingerprint",
-                r"$\rightarrow$ $c_{\mathrm{safe}}$"], PROC_BG, PROC_EDGE, lw=1.1)
-    elbow(ax, (b_in[0] + b_in[2], 0.500), (0.185, 0.500))
-    #: A stage label on this column would be wrong: the third column holds
-    #: both a first-stage outcome (SERVE) and the second stage (VERIFY). The
-    #: split between fixed and conditional cost is already stated by the cost
-    #: expression below, so nothing is said here.
+    # ---- Arrows -------------------------------------------------------------
+    xr = lambda col: COLS[col][0] + COLS[col][1]          # right edge
+    xl = lambda col: COLS[col][0]                          # left edge
+    arrow(ax, (xr("in"), ROWS["mid"]), (xl("s1"), ROWS["mid"]))
+    arrow(ax, (xr("s1"), ROWS["mid"] + 0.06), (xl("route"), ROWS["top"]), SERVED_EDGE)
+    arrow(ax, (xr("s1"), ROWS["mid"] - 0.06), (xl("route"), ROWS["bot"]))
+    arrow(ax, (xr("route"), ROWS["top"]), (xl("out"), ROWS["top"]), SERVED_EDGE)
+    arrow(ax, (xr("route"), ROWS["bot"] + 0.06), (xl("out"), ROWS["mid"]), SERVED_EDGE)
+    arrow(ax, (xr("route"), ROWS["bot"]), (xl("out"), ROWS["bot"]), DECL_EDGE)
+    #: Stage-1 branch conditions sit outside the arrows, same font size; the
+    #: stage-2 conditions are written inside the final-state boxes.
+    ax.text(0.425, 0.70, r"$c_{\mathrm{safe}} \geq \tau_{\mathrm{high}}$", ha="right",
+            va="center", fontsize=FS, color=SERVED_EDGE)
+    ax.text(0.425, 0.25, "otherwise", ha="right", va="center", fontsize=FS, color=S.INK2)
 
-    # ---- Branches --------------------------------------------------------------
-    b_serve1 = box(ax, 0.470, 0.700, 0.245, 0.210,
-                   [f"SERVE  ·  {serve:.1%}", "no samples bought"],
-                   SERVED_BG, SERVED_EDGE, lw=1.1, bold_first=True)
-    b_ver = box(ax, 0.470, 0.075, 0.245, 0.235,
-                [f"VERIFY  ·  {stage2:.1%}", "+2 samples", r"3 votes, share $\geq 0.6$"],
-                PROC_BG, PROC_EDGE, lw=1.1, bold_first=True)
-
-    elbow(ax, (0.412, 0.612), (0.468, 0.792), rad=-0.16)
-    elbow(ax, (0.412, 0.392), (0.468, 0.212), rad=0.16)
-    #: Branch conditions sit OUTSIDE the arrows; inside they always collide
-    #: with the lines.
-    ax.text(0.404, 0.760, r"$c_{\mathrm{safe}} \geq \tau_{\mathrm{high}}$",
-            ha="right", va="center", fontsize=FS - 0.4, color=SERVED_EDGE, zorder=4)
-    ax.text(0.404, 0.245, "otherwise", ha="right", va="center",
-            fontsize=FS - 0.4, color=S.INK2, zorder=4)
-
-    # ---- Final states ------------------------------------------------------------
-    b_out1 = box(ax, 0.762, 0.700, 0.265, 0.210, ["ANSWER SERVED"],
-                 SERVED_BG, SERVED_EDGE, lw=1.3, bold_first=True)
-    b_out2 = box(ax, 0.762, 0.340, 0.265, 0.195, ["ANSWER SERVED", "majority held"],
-                 SERVED_BG, SERVED_EDGE, lw=1.3, bold_first=True)
-    b_out3 = box(ax, 0.762, 0.030, 0.265, 0.210,
-                 ["DECLINE", "with a reason", "the device can show"],
-                 DECL_BG, DECL_EDGE, lw=1.3, bold_first=True)
-
-    elbow(ax, (0.715, 0.805), (0.762, 0.805), color=SERVED_EDGE)
-    elbow(ax, (0.715, 0.255), (0.762, 0.418), color=SERVED_EDGE, rad=-0.16)
-    elbow(ax, (0.715, 0.148), (0.762, 0.132), color=DECL_EDGE, rad=0.10)
-
-    # ---- Cost ------------------------------------------------------------------
-    ax.text(0.5, -0.085,
-            r"cost per item  $=$  1 answer  $+$  $p$ probes (fixed)  $+$  "
-            r"2 $\times$ (verify share)",
-            ha="center", va="bottom", fontsize=FS + 0.3, color=S.INK2, zorder=4)
+    # ---- Cost ---------------------------------------------------------------
+    ax.text(0.5, -0.06,
+            r"Generations per item $= 1 + p + 2 \times$ (share routed to verify),"
+            r"   $p$ = mean probes per item",
+            ha="center", va="center", fontsize=FS, color=S.INK2)
 
     S.save(fig, OUT)
 

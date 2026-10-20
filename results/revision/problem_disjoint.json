@@ -1,0 +1,513 @@
+{
+ "n_items": 4497,
+ "n_folds": 5,
+ "seed": 0,
+ "registered": {
+  "auroc": 0.862625496324688,
+  "n": 4497,
+  "coverage": 0.8120969535245719,
+  "selective_acc": 0.8576122672508215,
+  "yield": 0.6964643095396932,
+  "delta_yield_pp": 0.11118523460085239,
+  "gens_per_item": 4.338229931065154,
+  "stage2_frac": 0.6853457860796086,
+  "n_unobserved": 0,
+  "ungated_acc": 0.6953524571936847,
+  "delta_yield_ci_pp": [
+   -0.5342450522570601,
+   0.778296642205915
+  ]
+ },
+ "schemes": {
+  "backbone_out_refit": {
+   "auroc": 0.8626247960429413,
+   "auroc_ci": [
+    0.8498498577295075,
+    0.8748988936899348
+   ],
+   "auroc_minus_registered": -7.002817467016698e-07,
+   "auroc_minus_registered_ci": [
+    -1.137379624239765e-05,
+    9.886905467615378e-06
+   ],
+   "per_backbone_auroc": {
+    "gemma4-e2b": {
+     "new": 0.8653907315659654,
+     "registered": 0.8653942653596342
+    },
+    "gemma4-e4b": {
+     "new": 0.8215635333018422,
+     "registered": 0.8215226554267651
+    },
+    "qwen3.5-9b": {
+     "new": 0.9068611937464397,
+     "registered": 0.9068664683418782
+    },
+    "solar-10.7b": {
+     "new": 0.8490648193963385,
+     "registered": 0.8490524492825334
+    },
+    "qwen2-math-1.5b": {
+     "new": 0.8942251778072674,
+     "registered": 0.8942202076530434
+    }
+   },
+   "tau_rederived": {
+    "gemma4-e2b": 0.9189216357778788,
+    "gemma4-e4b": 0.9044345180761295,
+    "qwen3.5-9b": 0.9103690089884625,
+    "solar-10.7b": 0.9209981789153607,
+    "qwen2-math-1.5b": 0.9331717175820813
+   },
+   "gate": {
+    "registered_tau/unobserved=decline": {
+     "n": 4497,
+     "coverage": 0.8120969535245719,
+     "selective_acc": 0.8576122672508215,
+     "yield": 0.6964643095396932,
+     "delta_yield_pp": 0.11118523460085239,
+     "gens_per_item": 4.338229931065154,
+     "stage2_frac": 0.6853457860796086,
+     "n_unobserved": 0,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.5342450522570601,
+      0.778296642205915
+     ],
+     "stage1_serve_frac": 0.3146542139203914,
+     "stage1_serve_precision": 0.9314487632508834
+    },
+    "registered_tau/unobserved=greedy": {
+     "n": 4497,
+     "coverage": 0.8120969535245719,
+     "selective_acc": 0.8576122672508215,
+     "yield": 0.6964643095396932,
+     "delta_yield_pp": 0.11118523460085239,
+     "gens_per_item": 4.338229931065154,
+     "stage2_frac": 0.6853457860796086,
+     "n_unobserved": 0,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.5342450522570601,
+      0.778296642205915
+     ],
+     "stage1_serve_frac": 0.3146542139203914,
+     "stage1_serve_precision": 0.9314487632508834
+    },
+    "registered_tau/unobserved=nearest": {
+     "n": 4497,
+     "coverage": 0.8120969535245719,
+     "selective_acc": 0.8576122672508215,
+     "yield": 0.6964643095396932,
+     "delta_yield_pp": 0.11118523460085239,
+     "gens_per_item": 4.338229931065154,
+     "stage2_frac": 0.6853457860796086,
+     "n_unobserved": 0,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.5342450522570601,
+      0.778296642205915
+     ],
+     "stage1_serve_frac": 0.3146542139203914,
+     "stage1_serve_precision": 0.9314487632508834
+    },
+    "rederived_tau/unobserved=decline": {
+     "n": 4497,
+     "coverage": 0.8116522125861686,
+     "selective_acc": 0.8575342465753425,
+     "yield": 0.6960195686012898,
+     "delta_yield_pp": 0.06671114076051143,
+     "gens_per_item": 4.339119412941961,
+     "stage2_frac": 0.685790527018012,
+     "n_unobserved": 2,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.600400266844563,
+      0.7560595952857461
+     ],
+     "stage1_serve_frac": 0.314209472981988,
+     "stage1_serve_precision": 0.9313517338995047
+    },
+    "rederived_tau/unobserved=greedy": {
+     "n": 4497,
+     "coverage": 0.8120969535245719,
+     "selective_acc": 0.8576122672508215,
+     "yield": 0.6964643095396932,
+     "delta_yield_pp": 0.11118523460085239,
+     "gens_per_item": 4.339119412941961,
+     "stage2_frac": 0.685790527018012,
+     "n_unobserved": 2,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.5342450522570601,
+      0.778296642205915
+     ],
+     "stage1_serve_frac": 0.314209472981988,
+     "stage1_serve_precision": 0.9313517338995047
+    },
+    "rederived_tau/unobserved=nearest": {
+     "n": 4497,
+     "coverage": 0.8120880587058039,
+     "selective_acc": 0.8576052311635396,
+     "yield": 0.696450967311541,
+     "delta_yield_pp": 0.10985101178563328,
+     "gens_per_item": 4.339119412941961,
+     "stage2_frac": 0.685790527018012,
+     "n_unobserved": 2,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.5403380031131867,
+      0.7778630197909717
+     ],
+     "stage1_serve_frac": 0.314209472981988,
+     "stage1_serve_precision": 0.9313517338995047
+    }
+   }
+  },
+  "problem_disjoint_5fold": {
+   "auroc": 0.8593500451681727,
+   "auroc_ci": [
+    0.8460923246404036,
+    0.8720051845847336
+   ],
+   "auroc_minus_registered": -0.0032754511565152855,
+   "auroc_minus_registered_ci": [
+    -0.005042562771611581,
+    -0.0015923620948442828
+   ],
+   "per_backbone_auroc": {
+    "gemma4-e2b": {
+     "new": 0.8588178753418946,
+     "registered": 0.8653942653596342
+    },
+    "gemma4-e4b": {
+     "new": 0.8114803241161295,
+     "registered": 0.8215226554267651
+    },
+    "qwen3.5-9b": {
+     "new": 0.9030634850306981,
+     "registered": 0.9068664683418782
+    },
+    "solar-10.7b": {
+     "new": 0.8476843146956952,
+     "registered": 0.8490524492825334
+    },
+    "qwen2-math-1.5b": {
+     "new": 0.8920581905656533,
+     "registered": 0.8942202076530434
+    }
+   },
+   "tau_rederived": {
+    "gemma4-e2b": [
+     0.9436068339022394,
+     0.9470351178371073,
+     0.9011733228575212,
+     0.8800570150277183,
+     0.907271409227059
+    ],
+    "gemma4-e4b": [
+     0.9435369015955992,
+     0.9376697098659023,
+     0.895128311488995,
+     0.9094594004370781,
+     0.896059549166399
+    ],
+    "qwen3.5-9b": [
+     0.9154928436982881,
+     0.9104871942544039,
+     0.9068103755450474,
+     0.8533897325636284,
+     0.9077541562217242
+    ],
+    "solar-10.7b": [
+     0.9275080940076168,
+     0.9252111715783672,
+     0.9276192498958261,
+     0.9070079910617175,
+     0.9165649982630597
+    ],
+    "qwen2-math-1.5b": [
+     0.9346038903697262,
+     0.9307316092038478,
+     0.9353951276886572,
+     0.9148791052640677,
+     0.9243262543890874
+    ]
+   },
+   "gate": {
+    "registered_tau/unobserved=decline": {
+     "n": 4497,
+     "coverage": 0.7943073159884367,
+     "selective_acc": 0.8563829787234043,
+     "yield": 0.6802312652879697,
+     "delta_yield_pp": -1.5121191905714926,
+     "gens_per_item": 4.337340449188347,
+     "stage2_frac": 0.6849010451412052,
+     "n_unobserved": 82,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -2.245941738937069,
+      -0.8005336891260841
+     ],
+     "stage1_serve_frac": 0.31509895485879474,
+     "stage1_serve_precision": 0.9301340860973889
+    },
+    "registered_tau/unobserved=greedy": {
+     "n": 4497,
+     "coverage": 0.8125416944629753,
+     "selective_acc": 0.8574165298303229,
+     "yield": 0.6966866800088948,
+     "delta_yield_pp": 0.13342228152101177,
+     "gens_per_item": 4.337340449188347,
+     "stage2_frac": 0.6849010451412052,
+     "n_unobserved": 82,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.5114520791638871,
+      0.8005336891260841
+     ],
+     "stage1_serve_frac": 0.31509895485879474,
+     "stage1_serve_precision": 0.9301340860973889
+    },
+    "registered_tau/unobserved=nearest": {
+     "n": 4497,
+     "coverage": 0.8116877918612408,
+     "selective_acc": 0.8577432222149166,
+     "yield": 0.6962197020235713,
+     "delta_yield_pp": 0.08672448298866486,
+     "gens_per_item": 4.337340449188347,
+     "stage2_frac": 0.6849010451412052,
+     "n_unobserved": 82,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.5586057371581055,
+      0.757049143873693
+     ],
+     "stage1_serve_frac": 0.31509895485879474,
+     "stage1_serve_precision": 0.9301340860973889
+    },
+    "rederived_tau/unobserved=decline": {
+     "n": 4497,
+     "coverage": 0.7569490771625528,
+     "selective_acc": 0.8510575793184488,
+     "yield": 0.644207249277296,
+     "delta_yield_pp": -5.114520791638865,
+     "gens_per_item": 4.355130086724483,
+     "stage2_frac": 0.6937958639092728,
+     "n_unobserved": 252,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -5.9817656215254615,
+      -4.202801867911941
+     ],
+     "stage1_serve_frac": 0.30620413609072716,
+     "stage1_serve_precision": 0.9215686274509803
+    },
+    "rederived_tau/unobserved=greedy": {
+     "n": 4497,
+     "coverage": 0.8129864354013787,
+     "selective_acc": 0.8572210065645515,
+     "yield": 0.6969090504780965,
+     "delta_yield_pp": 0.15565932844118224,
+     "gens_per_item": 4.355130086724483,
+     "stage2_frac": 0.6937958639092728,
+     "n_unobserved": 252,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.4892150322437181,
+      0.8010896152990853
+     ],
+     "stage1_serve_frac": 0.30620413609072716,
+     "stage1_serve_precision": 0.9215686274509803
+    },
+    "rederived_tau/unobserved=nearest": {
+     "n": 4497,
+     "coverage": 0.811051812319324,
+     "selective_acc": 0.8575494201189922,
+     "yield": 0.6955170113408939,
+     "delta_yield_pp": 0.016455414720928374,
+     "gens_per_item": 4.355130086724483,
+     "stage2_frac": 0.6937958639092728,
+     "n_unobserved": 252,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.6329997776295309,
+      0.671692239270624
+     ],
+     "stage1_serve_frac": 0.30620413609072716,
+     "stage1_serve_precision": 0.9215686274509803
+    }
+   },
+   "auroc_minus_refit": -0.003274750874768584,
+   "auroc_minus_refit_ci": [
+    -0.005037665244961215,
+    -0.0015940293018085398
+   ]
+  },
+  "benchmark_disjoint": {
+   "auroc": 0.8349524625407623,
+   "auroc_ci": [
+    0.8204441209842005,
+    0.8489048430378656
+   ],
+   "auroc_minus_registered": -0.027673033783925716,
+   "auroc_minus_registered_ci": [
+    -0.03426326528892493,
+    -0.02165183543982153
+   ],
+   "per_backbone_auroc": {
+    "gemma4-e2b": {
+     "new": 0.8340459817232192,
+     "registered": 0.8653942653596342
+    },
+    "gemma4-e4b": {
+     "new": 0.7728916100432397,
+     "registered": 0.8215226554267651
+    },
+    "qwen3.5-9b": {
+     "new": 0.908865540013081,
+     "registered": 0.9068664683418782
+    },
+    "solar-10.7b": {
+     "new": 0.8430380999505196,
+     "registered": 0.8490524492825334
+    },
+    "qwen2-math-1.5b": {
+     "new": 0.8827391513958678,
+     "registered": 0.8942202076530434
+    }
+   },
+   "tau_rederived": {
+    "gemma4-e2b": {
+     "gsm": 0.9308259594244255,
+     "math": 0.7555697490393662
+    },
+    "gemma4-e4b": {
+     "gsm": 0.050836810421932055,
+     "math": 0.9174906161405413
+    },
+    "qwen3.5-9b": {
+     "gsm": 0.9430553463491882,
+     "math": 0.8975380249218322
+    },
+    "solar-10.7b": {
+     "gsm": 0.9383284444764678,
+     "math": 0.8176786254084265
+    },
+    "qwen2-math-1.5b": {
+     "gsm": 0.5327657387621114,
+     "math": 0.8567087138332397
+    }
+   },
+   "gate": {
+    "registered_tau/unobserved=decline": {
+     "n": 4497,
+     "coverage": 0.5790527018012008,
+     "selective_acc": 0.8198924731182796,
+     "yield": 0.4747609517456082,
+     "delta_yield_pp": -22.05915054480765,
+     "gens_per_item": 4.750060040026684,
+     "stage2_frac": 0.8912608405603736,
+     "n_unobserved": 1058,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -23.282188125416944,
+      -20.858350011118524
+     ],
+     "stage1_serve_frac": 0.10873915943962642,
+     "stage1_serve_precision": 0.8732106339468303
+    },
+    "registered_tau/unobserved=greedy": {
+     "n": 4497,
+     "coverage": 0.8143206582165888,
+     "selective_acc": 0.8560895685417804,
+     "yield": 0.6971314209472982,
+     "delta_yield_pp": 0.17789637536135272,
+     "gens_per_item": 4.750060040026684,
+     "stage2_frac": 0.8912608405603736,
+     "n_unobserved": 1058,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.46697798532354906,
+      0.8450077829664221
+     ],
+     "stage1_serve_frac": 0.10873915943962642,
+     "stage1_serve_precision": 0.8732106339468303
+    },
+    "registered_tau/unobserved=nearest": {
+     "n": 4497,
+     "coverage": 0.8058839226150767,
+     "selective_acc": 0.8569725666793597,
+     "yield": 0.6906204136090728,
+     "delta_yield_pp": -0.4732043584611878,
+     "gens_per_item": 4.750060040026684,
+     "stage2_frac": 0.8912608405603736,
+     "n_unobserved": 1058,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -1.1199021569935517,
+      0.1912497220369131
+     ],
+     "stage1_serve_frac": 0.10873915943962642,
+     "stage1_serve_precision": 0.8732106339468303
+    },
+    "rederived_tau/unobserved=decline": {
+     "n": 4497,
+     "coverage": 0.7042472759617523,
+     "selective_acc": 0.8313861698768551,
+     "yield": 0.5855014454080498,
+     "delta_yield_pp": -10.985101178563482,
+     "gens_per_item": 4.303984878808094,
+     "stage2_frac": 0.6682232599510785,
+     "n_unobserved": 533,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -11.964087169223927,
+      -9.962197020235712
+     ],
+     "stage1_serve_frac": 0.3317767400489215,
+     "stage1_serve_precision": 0.8672922252010724
+    },
+    "rederived_tau/unobserved=greedy": {
+     "n": 4497,
+     "coverage": 0.8227707360462531,
+     "selective_acc": 0.8462162162162162,
+     "yield": 0.6962419390704915,
+     "delta_yield_pp": 0.08894818768068191,
+     "gens_per_item": 4.303984878808094,
+     "stage2_frac": 0.6682232599510785,
+     "n_unobserved": 533,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.5114520791638871,
+      0.6893484545252391
+     ],
+     "stage1_serve_frac": 0.3317767400489215,
+     "stage1_serve_precision": 0.8672922252010724
+    },
+    "rederived_tau/unobserved=nearest": {
+     "n": 4497,
+     "coverage": 0.8178252168112076,
+     "selective_acc": 0.8465914034629775,
+     "yield": 0.692363798087614,
+     "delta_yield_pp": -0.29886591060707124,
+     "gens_per_item": 4.303984878808094,
+     "stage2_frac": 0.6682232599510785,
+     "n_unobserved": 533,
+     "ungated_acc": 0.6953524571936847,
+     "delta_yield_ci_pp": [
+      -0.8935067822993108,
+      0.3011118523460083
+     ],
+     "stage1_serve_frac": 0.3317767400489215,
+     "stage1_serve_precision": 0.8672922252010724
+    }
+   },
+   "auroc_minus_refit": -0.027672333502179014,
+   "auroc_minus_refit_ci": [
+    -0.034262950587926826,
+    -0.021659024112134537
+   ]
+  }
+ }
+}

@@ -1,0 +1,1136 @@
+{
+ "n_items": 4497,
+ "decision_mismatch_vs_record": 0,
+ "registered_tau": {
+  "gemma4-e2b": 0.9189,
+  "gemma4-e4b": 0.9044,
+  "qwen3.5-9b": 0.9104,
+  "solar-10.7b": 0.921,
+  "qwen2-math-1.5b": 0.9332
+ },
+ "nearest_band_rates": {
+  "solar-10.7b": {
+   "0": [
+    0.68,
+    0.06
+   ],
+   "1": [
+    0.94,
+    0.92
+   ]
+  },
+  "gemma4-e2b": {
+   "0": [
+    0.9,
+    0.16
+   ],
+   "1": [
+    0.98,
+    0.96
+   ]
+  },
+  "qwen2-math-1.5b": {
+   "0": [
+    0.64,
+    0.02
+   ],
+   "1": [
+    0.98,
+    0.96
+   ]
+  },
+  "gemma4-e4b": {
+   "0": [
+    0.86,
+    0.12
+   ],
+   "1": [
+    0.98,
+    0.98
+   ]
+  },
+  "qwen3.5-9b": {
+   "0": [
+    0.84,
+    0.12
+   ],
+   "1": [
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "target": {
+  "0.90": {
+   "tau": {
+    "gemma4-e2b": 0.5987031371102016,
+    "gemma4-e4b": 0.6248911454528501,
+    "qwen3.5-9b": 0.6298401951428468,
+    "solar-10.7b": 0.4306894805743933,
+    "qwen2-math-1.5b": 0.4228571118998524
+   },
+   "decline": {
+    "n": 4497,
+    "coverage": 0.846564,
+    "selective_acc": 0.827686,
+    "yield": 0.700689,
+    "delta_yield_pp": 0.533689,
+    "gens_per_item": 3.528801,
+    "stage2_frac": 0.280632,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.022237046920169,
+     1.089615299088281
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.846564,
+    "selective_acc": 0.827686,
+    "yield": 0.700689,
+    "delta_yield_pp": 0.533689,
+    "gens_per_item": 3.528801,
+    "stage2_frac": 0.280632,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.022237046920169,
+     1.089615299088281
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.846564,
+    "selective_acc": 0.827686,
+    "yield": 0.700689,
+    "delta_yield_pp": 0.533689,
+    "gens_per_item": 3.528801,
+    "stage2_frac": 0.280632,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.022237046920169,
+     1.089615299088281
+    ]
+   }
+  },
+  "0.92": {
+   "tau": {
+    "gemma4-e2b": 0.7172302801933225,
+    "gemma4-e4b": 0.7809212052270094,
+    "qwen3.5-9b": 0.7992073185452523,
+    "solar-10.7b": 0.7297491224972175,
+    "qwen2-math-1.5b": 0.7599278471957479
+   },
+   "decline": {
+    "n": 4497,
+    "coverage": 0.82833,
+    "selective_acc": 0.84698,
+    "yield": 0.701579,
+    "delta_yield_pp": 0.622637,
+    "gens_per_item": 3.681792,
+    "stage2_frac": 0.357127,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     0.044474093840338,
+     1.200800533689126
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.82833,
+    "selective_acc": 0.84698,
+    "yield": 0.701579,
+    "delta_yield_pp": 0.622637,
+    "gens_per_item": 3.681792,
+    "stage2_frac": 0.357127,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     0.044474093840338,
+     1.200800533689126
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.82833,
+    "selective_acc": 0.84698,
+    "yield": 0.701579,
+    "delta_yield_pp": 0.622637,
+    "gens_per_item": 3.681792,
+    "stage2_frac": 0.357127,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     0.044474093840338,
+     1.200800533689126
+    ]
+   }
+  },
+  "0.94": {
+   "tau": {
+    "gemma4-e2b": 0.8915585229111214,
+    "gemma4-e4b": 0.8970984252535816,
+    "qwen3.5-9b": 0.8968206515177986,
+    "solar-10.7b": 0.8957858176234654,
+    "qwen2-math-1.5b": 0.9143835473623414
+   },
+   "decline": {
+    "n": 4497,
+    "coverage": 0.8161,
+    "selective_acc": 0.855858,
+    "yield": 0.698466,
+    "delta_yield_pp": 0.311319,
+    "gens_per_item": 4.12431,
+    "stage2_frac": 0.578386,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.311318656882366,
+     0.956193017567267
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.8161,
+    "selective_acc": 0.855858,
+    "yield": 0.698466,
+    "delta_yield_pp": 0.311319,
+    "gens_per_item": 4.12431,
+    "stage2_frac": 0.578386,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.311318656882366,
+     0.956193017567267
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.8161,
+    "selective_acc": 0.855858,
+    "yield": 0.698466,
+    "delta_yield_pp": 0.311319,
+    "gens_per_item": 4.12431,
+    "stage2_frac": 0.578386,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.311318656882366,
+     0.956193017567267
+    ]
+   }
+  },
+  "0.95": {
+   "tau": {
+    "gemma4-e2b": 0.9189216357778788,
+    "gemma4-e4b": 0.9044345180761295,
+    "qwen3.5-9b": 0.9103690089884625,
+    "solar-10.7b": 0.9209981789153607,
+    "qwen2-math-1.5b": 0.9331717175820813
+   },
+   "decline": {
+    "n": 4497,
+    "coverage": 0.811652,
+    "selective_acc": 0.857534,
+    "yield": 0.69602,
+    "delta_yield_pp": 0.066711,
+    "gens_per_item": 4.339119,
+    "stage2_frac": 0.685791,
+    "n_unobserved": 2,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.600400266844563,
+     0.7560595952857461
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.812097,
+    "selective_acc": 0.857612,
+    "yield": 0.696464,
+    "delta_yield_pp": 0.111185,
+    "gens_per_item": 4.339119,
+    "stage2_frac": 0.685791,
+    "n_unobserved": 2,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.812088,
+    "selective_acc": 0.857605,
+    "yield": 0.696451,
+    "delta_yield_pp": 0.109851,
+    "gens_per_item": 4.339119,
+    "stage2_frac": 0.685791,
+    "n_unobserved": 2,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5403380031131867,
+     0.7778630197909717
+    ]
+   }
+  },
+  "0.96": {
+   "tau": {
+    "gemma4-e2b": 0.9213970688496335,
+    "gemma4-e4b": 0.9093555763591377,
+    "qwen3.5-9b": 0.9171087820222902,
+    "solar-10.7b": 0.9353589933758921,
+    "qwen2-math-1.5b": 0.9548562256157928
+   },
+   "decline": {
+    "n": 4497,
+    "coverage": 0.740049,
+    "selective_acc": 0.853065,
+    "yield": 0.63131,
+    "delta_yield_pp": -6.40427,
+    "gens_per_item": 4.482326,
+    "stage2_frac": 0.757394,
+    "n_unobserved": 324,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -7.315988436735601,
+     -5.448076495441406
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.812097,
+    "selective_acc": 0.857612,
+    "yield": 0.696464,
+    "delta_yield_pp": 0.111185,
+    "gens_per_item": 4.482326,
+    "stage2_frac": 0.757394,
+    "n_unobserved": 324,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.808214,
+    "selective_acc": 0.858799,
+    "yield": 0.694094,
+    "delta_yield_pp": -0.125862,
+    "gens_per_item": 4.482326,
+    "stage2_frac": 0.757394,
+    "n_unobserved": 324,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.7718256615521459,
+     0.5511452079163879
+    ]
+   }
+  },
+  "0.97": {
+   "tau": {
+    "gemma4-e2b": 0.9318878446377111,
+    "gemma4-e4b": 0.865309759364949,
+    "qwen3.5-9b": 0.927306329233258,
+    "solar-10.7b": 0.951940314691085,
+    "qwen2-math-1.5b": 0.9616680468627832
+   },
+   "decline": {
+    "n": 4497,
+    "coverage": 0.683567,
+    "selective_acc": 0.84743,
+    "yield": 0.579275,
+    "delta_yield_pp": -11.607738,
+    "gens_per_item": 4.516571,
+    "stage2_frac": 0.774516,
+    "n_unobserved": 582,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -12.675672670669336,
+     -10.540360240160107
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.812986,
+    "selective_acc": 0.856947,
+    "yield": 0.696687,
+    "delta_yield_pp": 0.133422,
+    "gens_per_item": 4.516571,
+    "stage2_frac": 0.774516,
+    "n_unobserved": 582,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5114520791638871,
+     0.8005336891260841
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.806173,
+    "selective_acc": 0.858723,
+    "yield": 0.692279,
+    "delta_yield_pp": -0.307316,
+    "gens_per_item": 4.516571,
+    "stage2_frac": 0.774516,
+    "n_unobserved": 582,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.9528574605292419,
+     0.36427618412274826
+    ]
+   }
+  },
+  "0.98": {
+   "tau": {
+    "gemma4-e2b": 0.9381968235429105,
+    "gemma4-e4b": 0.8805485348580517,
+    "qwen3.5-9b": 0.9389758202213323,
+    "solar-10.7b": 0.9594414649855285,
+    "qwen2-math-1.5b": 0.9748288813980963
+   },
+   "decline": {
+    "n": 4497,
+    "coverage": 0.645319,
+    "selective_acc": 0.842178,
+    "yield": 0.543473,
+    "delta_yield_pp": -15.187903,
+    "gens_per_item": 4.618417,
+    "stage2_frac": 0.825439,
+    "n_unobserved": 753,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -16.366466533244388,
+     -14.03157660662664
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.812764,
+    "selective_acc": 0.857182,
+    "yield": 0.696687,
+    "delta_yield_pp": 0.133422,
+    "gens_per_item": 4.618417,
+    "stage2_frac": 0.825439,
+    "n_unobserved": 753,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5114520791638871,
+     0.8005336891260841
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.804585,
+    "selective_acc": 0.859119,
+    "yield": 0.691234,
+    "delta_yield_pp": -0.41183,
+    "gens_per_item": 4.618417,
+    "stage2_frac": 0.825439,
+    "n_unobserved": 753,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -1.047954191683345,
+     0.2655436957971977
+    ]
+   }
+  }
+ },
+ "shift": {
+  "-0.10": {
+   "decline": {
+    "n": 4497,
+    "coverage": 0.826106,
+    "selective_acc": 0.848721,
+    "yield": 0.701134,
+    "delta_yield_pp": 0.578163,
+    "gens_per_item": 3.733382,
+    "stage2_frac": 0.382922,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.0005559261730041934,
+     1.156326439848788
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.826106,
+    "selective_acc": 0.848721,
+    "yield": 0.701134,
+    "delta_yield_pp": 0.578163,
+    "gens_per_item": 3.733382,
+    "stage2_frac": 0.382922,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.0005559261730041934,
+     1.156326439848788
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.826106,
+    "selective_acc": 0.848721,
+    "yield": 0.701134,
+    "delta_yield_pp": 0.578163,
+    "gens_per_item": 3.733382,
+    "stage2_frac": 0.382922,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.0005559261730041934,
+     1.156326439848788
+    ]
+   }
+  },
+  "-0.05": {
+   "decline": {
+    "n": 4497,
+    "coverage": 0.820547,
+    "selective_acc": 0.853388,
+    "yield": 0.700245,
+    "delta_yield_pp": 0.489215,
+    "gens_per_item": 3.896602,
+    "stage2_frac": 0.464532,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.11118523460084502,
+     1.0901712252612823
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.820547,
+    "selective_acc": 0.853388,
+    "yield": 0.700245,
+    "delta_yield_pp": 0.489215,
+    "gens_per_item": 3.896602,
+    "stage2_frac": 0.464532,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.11118523460084502,
+     1.0901712252612823
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.820547,
+    "selective_acc": 0.853388,
+    "yield": 0.700245,
+    "delta_yield_pp": 0.489215,
+    "gens_per_item": 3.896602,
+    "stage2_frac": 0.464532,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.11118523460084502,
+     1.0901712252612823
+    ]
+   }
+  },
+  "-0.02": {
+   "decline": {
+    "n": 4497,
+    "coverage": 0.816544,
+    "selective_acc": 0.85512,
+    "yield": 0.698243,
+    "delta_yield_pp": 0.289082,
+    "gens_per_item": 4.099849,
+    "stage2_frac": 0.566155,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.333555703802535,
+     0.9339559706470981
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.816544,
+    "selective_acc": 0.85512,
+    "yield": 0.698243,
+    "delta_yield_pp": 0.289082,
+    "gens_per_item": 4.099849,
+    "stage2_frac": 0.566155,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.333555703802535,
+     0.9339559706470981
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.816544,
+    "selective_acc": 0.85512,
+    "yield": 0.698243,
+    "delta_yield_pp": 0.289082,
+    "gens_per_item": 4.099849,
+    "stage2_frac": 0.566155,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.333555703802535,
+     0.9339559706470981
+    ]
+   }
+  },
+  "+0.00": {
+   "decline": {
+    "n": 4497,
+    "coverage": 0.812097,
+    "selective_acc": 0.857612,
+    "yield": 0.696464,
+    "delta_yield_pp": 0.111185,
+    "gens_per_item": 4.33823,
+    "stage2_frac": 0.685346,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.812097,
+    "selective_acc": 0.857612,
+    "yield": 0.696464,
+    "delta_yield_pp": 0.111185,
+    "gens_per_item": 4.33823,
+    "stage2_frac": 0.685346,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.812097,
+    "selective_acc": 0.857612,
+    "yield": 0.696464,
+    "delta_yield_pp": 0.111185,
+    "gens_per_item": 4.33823,
+    "stage2_frac": 0.685346,
+    "n_unobserved": 0,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ]
+   }
+  },
+  "+0.01": {
+   "decline": {
+    "n": 4497,
+    "coverage": 0.745608,
+    "selective_acc": 0.852669,
+    "yield": 0.635757,
+    "delta_yield_pp": -5.959529,
+    "gens_per_item": 4.471207,
+    "stage2_frac": 0.751835,
+    "n_unobserved": 299,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -6.915721592172559,
+     -5.025572603958194
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.812097,
+    "selective_acc": 0.857612,
+    "yield": 0.696464,
+    "delta_yield_pp": 0.111185,
+    "gens_per_item": 4.471207,
+    "stage2_frac": 0.751835,
+    "n_unobserved": 299,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.809179,
+    "selective_acc": 0.858561,
+    "yield": 0.69473,
+    "delta_yield_pp": -0.062264,
+    "gens_per_item": 4.471207,
+    "stage2_frac": 0.751835,
+    "n_unobserved": 299,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.7144096064042696,
+     0.6057371581054034
+    ]
+   }
+  },
+  "+0.02": {
+   "decline": {
+    "n": 4497,
+    "coverage": 0.668668,
+    "selective_acc": 0.843698,
+    "yield": 0.564154,
+    "delta_yield_pp": -13.119858,
+    "gens_per_item": 4.625088,
+    "stage2_frac": 0.828775,
+    "n_unobserved": 645,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -14.231710028908163,
+     -11.962975316877921
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.812097,
+    "selective_acc": 0.857612,
+    "yield": 0.696464,
+    "delta_yield_pp": 0.111185,
+    "gens_per_item": 4.625088,
+    "stage2_frac": 0.828775,
+    "n_unobserved": 645,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.806258,
+    "selective_acc": 0.85919,
+    "yield": 0.692728,
+    "delta_yield_pp": -0.262397,
+    "gens_per_item": 4.625088,
+    "stage2_frac": 0.828775,
+    "n_unobserved": 645,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.9103847009117192,
+     0.4100622637313762
+    ]
+   }
+  },
+  "+0.03": {
+   "decline": {
+    "n": 4497,
+    "coverage": 0.587058,
+    "selective_acc": 0.831061,
+    "yield": 0.487881,
+    "delta_yield_pp": -20.747165,
+    "gens_per_item": 4.788308,
+    "stage2_frac": 0.910385,
+    "n_unobserved": 1012,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -22.036913497887483,
+     -19.41294196130754
+    ]
+   },
+   "greedy": {
+    "n": 4497,
+    "coverage": 0.812097,
+    "selective_acc": 0.857612,
+    "yield": 0.696464,
+    "delta_yield_pp": 0.111185,
+    "gens_per_item": 4.788308,
+    "stage2_frac": 0.910385,
+    "n_unobserved": 1012,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -0.5342450522570601,
+     0.778296642205915
+    ]
+   },
+   "nearest": {
+    "n": 4497,
+    "coverage": 0.803113,
+    "selective_acc": 0.85973,
+    "yield": 0.69046,
+    "delta_yield_pp": -0.489215,
+    "gens_per_item": 4.788308,
+    "stage2_frac": 0.910385,
+    "n_unobserved": 1012,
+    "ungated_acc": 0.695352,
+    "delta_yield_ci_pp": [
+     -1.148376695574828,
+     0.18147653991549884
+    ]
+   }
+  }
+ },
+ "vote": {
+  "k=1/share>=0.34": {
+   "n": 4497,
+   "coverage": 0.999555,
+   "selective_acc": 0.696329,
+   "yield": 0.69602,
+   "delta_yield_pp": 0.066711,
+   "gens_per_item": 3.653107,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    0.0,
+    0.155659328441183
+   ]
+  },
+  "k=1/share>=0.50": {
+   "n": 4497,
+   "coverage": 0.999555,
+   "selective_acc": 0.696329,
+   "yield": 0.69602,
+   "delta_yield_pp": 0.066711,
+   "gens_per_item": 3.653107,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    0.0,
+    0.155659328441183
+   ]
+  },
+  "k=1/share>=0.60": {
+   "n": 4497,
+   "coverage": 0.718924,
+   "selective_acc": 0.889576,
+   "yield": 0.639537,
+   "delta_yield_pp": -5.581499,
+   "gens_per_item": 3.653107,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -6.270847231487658,
+    -4.91438736935735
+   ]
+  },
+  "k=1/share>=0.70": {
+   "n": 4497,
+   "coverage": 0.718924,
+   "selective_acc": 0.889576,
+   "yield": 0.639537,
+   "delta_yield_pp": -5.581499,
+   "gens_per_item": 3.653107,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -6.270847231487658,
+    -4.91438736935735
+   ]
+  },
+  "k=1/share>=0.80": {
+   "n": 4497,
+   "coverage": 0.718924,
+   "selective_acc": 0.889576,
+   "yield": 0.639537,
+   "delta_yield_pp": -5.581499,
+   "gens_per_item": 3.653107,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -6.270847231487658,
+    -4.91438736935735
+   ]
+  },
+  "k=1/share>=1.00": {
+   "n": 4497,
+   "coverage": 0.718924,
+   "selective_acc": 0.889576,
+   "yield": 0.639537,
+   "delta_yield_pp": -5.581499,
+   "gens_per_item": 3.653107,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -6.270847231487658,
+    -4.91438736935735
+   ]
+  },
+  "k=2/share>=0.34": {
+   "n": 4497,
+   "coverage": 0.819435,
+   "selective_acc": 0.850204,
+   "yield": 0.696687,
+   "delta_yield_pp": 0.133422,
+   "gens_per_item": 4.33823,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -0.5114520791638871,
+    0.8005336891260841
+   ]
+  },
+  "k=2/share>=0.50": {
+   "n": 4497,
+   "coverage": 0.819435,
+   "selective_acc": 0.850204,
+   "yield": 0.696687,
+   "delta_yield_pp": 0.133422,
+   "gens_per_item": 4.33823,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -0.5114520791638871,
+    0.8005336891260841
+   ]
+  },
+  "k=2/share>=0.60": {
+   "n": 4497,
+   "coverage": 0.812097,
+   "selective_acc": 0.857612,
+   "yield": 0.696464,
+   "delta_yield_pp": 0.111185,
+   "gens_per_item": 4.33823,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -0.5342450522570601,
+    0.778296642205915
+   ]
+  },
+  "k=2/share>=0.70": {
+   "n": 4497,
+   "coverage": 0.659773,
+   "selective_acc": 0.922481,
+   "yield": 0.608628,
+   "delta_yield_pp": -8.672448,
+   "gens_per_item": 4.33823,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -9.472981987991995,
+    -7.849677562819657
+   ]
+  },
+  "k=2/share>=0.80": {
+   "n": 4497,
+   "coverage": 0.659773,
+   "selective_acc": 0.922481,
+   "yield": 0.608628,
+   "delta_yield_pp": -8.672448,
+   "gens_per_item": 4.33823,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -9.472981987991995,
+    -7.849677562819657
+   ]
+  },
+  "k=2/share>=1.00": {
+   "n": 4497,
+   "coverage": 0.659773,
+   "selective_acc": 0.922481,
+   "yield": 0.608628,
+   "delta_yield_pp": -8.672448,
+   "gens_per_item": 4.33823,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -9.472981987991995,
+    -7.849677562819657
+   ]
+  },
+  "k=3/share>=0.34": {
+   "n": 4497,
+   "coverage": 0.86213,
+   "selective_acc": 0.828476,
+   "yield": 0.714254,
+   "delta_yield_pp": 1.890149,
+   "gens_per_item": 5.022686,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    1.267511674449633,
+    2.579497442739604
+   ]
+  },
+  "k=3/share>=0.50": {
+   "n": 4497,
+   "coverage": 0.86213,
+   "selective_acc": 0.828476,
+   "yield": 0.714254,
+   "delta_yield_pp": 1.890149,
+   "gens_per_item": 5.022686,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    1.267511674449633,
+    2.579497442739604
+   ]
+  },
+  "k=3/share>=0.60": {
+   "n": 4497,
+   "coverage": 0.736936,
+   "selective_acc": 0.901328,
+   "yield": 0.664221,
+   "delta_yield_pp": -3.113187,
+   "gens_per_item": 5.022686,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -3.824772070269068,
+    -2.334889926617745
+   ]
+  },
+  "k=3/share>=0.70": {
+   "n": 4497,
+   "coverage": 0.735379,
+   "selective_acc": 0.902933,
+   "yield": 0.663998,
+   "delta_yield_pp": -3.135424,
+   "gens_per_item": 5.022686,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -3.8475650433622417,
+    -2.3793640204580835
+   ]
+  },
+  "k=3/share>=0.80": {
+   "n": 4497,
+   "coverage": 0.633756,
+   "selective_acc": 0.930526,
+   "yield": 0.589726,
+   "delta_yield_pp": -10.562597,
+   "gens_per_item": 5.022686,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -11.429842116966867,
+    -9.695352457193685
+   ]
+  },
+  "k=3/share>=1.00": {
+   "n": 4497,
+   "coverage": 0.633756,
+   "selective_acc": 0.930526,
+   "yield": 0.589726,
+   "delta_yield_pp": -10.562597,
+   "gens_per_item": 5.022686,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -11.429842116966867,
+    -9.695352457193685
+   ]
+  },
+  "k=4/share>=0.34": {
+   "n": 4497,
+   "coverage": 0.893707,
+   "selective_acc": 0.814133,
+   "yield": 0.727596,
+   "delta_yield_pp": 3.224372,
+   "gens_per_item": 5.697136,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    2.512786301979097,
+    3.935957304869913
+   ]
+  },
+  "k=4/share>=0.50": {
+   "n": 4497,
+   "coverage": 0.796753,
+   "selective_acc": 0.874965,
+   "yield": 0.697131,
+   "delta_yield_pp": 0.177896,
+   "gens_per_item": 5.697136,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -0.5336891260840559,
+    0.8900378029797613
+   ]
+  },
+  "k=4/share>=0.60": {
+   "n": 4497,
+   "coverage": 0.790305,
+   "selective_acc": 0.880979,
+   "yield": 0.696242,
+   "delta_yield_pp": 0.088948,
+   "gens_per_item": 5.697136,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -0.600400266844563,
+    0.8227707360462531
+   ]
+  },
+  "k=4/share>=0.70": {
+   "n": 4497,
+   "coverage": 0.703803,
+   "selective_acc": 0.918167,
+   "yield": 0.646209,
+   "delta_yield_pp": -4.914387,
+   "gens_per_item": 5.697136,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -5.670446964643095,
+    -4.136090727151434
+   ]
+  },
+  "k=4/share>=0.80": {
+   "n": 4497,
+   "coverage": 0.702691,
+   "selective_acc": 0.919304,
+   "yield": 0.645986,
+   "delta_yield_pp": -4.936624,
+   "gens_per_item": 5.697136,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -5.714921058483434,
+    -4.158327774071603
+   ]
+  },
+  "k=4/share>=1.00": {
+   "n": 4497,
+   "coverage": 0.617078,
+   "selective_acc": 0.933333,
+   "yield": 0.57594,
+   "delta_yield_pp": -11.941294,
+   "gens_per_item": 5.697136,
+   "stage2_frac": 0.685346,
+   "n_unobserved": 0,
+   "ungated_acc": 0.695352,
+   "delta_yield_ci_pp": [
+    -12.875250166777851,
+    -11.051812319323993
+   ]
+  }
+ }
+}

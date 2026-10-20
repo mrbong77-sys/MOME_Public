@@ -1,0 +1,145 @@
+{
+ "families": {
+  "gemma4-e2b": "gemma4",
+  "gemma4-e4b": "gemma4",
+  "qwen2-math-1.5b": "qwen",
+  "qwen3.5-9b": "qwen",
+  "solar-10.7b": "solar"
+ },
+ "tau_rederived": {
+  "gemma4": 0.5381139498991673,
+  "qwen": 0.90014775935465,
+  "solar": 0.9209981789153607
+ },
+ "auroc": 0.8632851617300694,
+ "auroc_ci": [
+  0.8511971561899337,
+  0.8754133987519952
+ ],
+ "auroc_refit_backbone_out": 0.8626247960429413,
+ "auroc_minus_refit_ci": [
+  -0.002095507281401976,
+  0.0037196116070630694
+ ],
+ "per_family": {
+  "gemma4": {
+   "n": 1800,
+   "auroc": 0.8367315101333138,
+   "auroc_refit_backbone_out": 0.8476162077729221
+  },
+  "qwen": {
+   "n": 1797,
+   "auroc": 0.8917683592942061,
+   "auroc_refit_backbone_out": 0.8752057400378125
+  },
+  "solar": {
+   "n": 900,
+   "auroc": 0.8490648193963385,
+   "auroc_refit_backbone_out": 0.8490648193963385
+  }
+ },
+ "gate": {
+  "registered_tau/unobserved=decline": {
+   "n": 4497,
+   "coverage": 0.7587280409161663,
+   "selective_acc": 0.8534583821805393,
+   "yield": 0.6475428063153214,
+   "delta_yield_pp": -4.78096508783633,
+   "gens_per_item": 4.394712030242383,
+   "stage2_frac": 0.7135868356682232,
+   "n_unobserved": 243,
+   "ungated_acc": 0.6953524571936847,
+   "delta_yield_ci_pp": [
+    -5.6710028908161,
+    -3.8914832110295756
+   ],
+   "stage1_serve_frac": 0.2864131643317767,
+   "stage1_serve_precision": 0.937111801242236
+  },
+  "registered_tau/unobserved=greedy": {
+   "n": 4497,
+   "coverage": 0.812764064932177,
+   "selective_acc": 0.8571819425444597,
+   "yield": 0.6966866800088948,
+   "delta_yield_pp": 0.13342228152101177,
+   "gens_per_item": 4.394712030242383,
+   "stage2_frac": 0.7135868356682232,
+   "n_unobserved": 243,
+   "ungated_acc": 0.6953524571936847,
+   "delta_yield_ci_pp": [
+    -0.5114520791638871,
+    0.8005336891260841
+   ],
+   "stage1_serve_frac": 0.2864131643317767,
+   "stage1_serve_precision": 0.937111801242236
+  },
+  "registered_tau/unobserved=nearest": {
+   "n": 4497,
+   "coverage": 0.8104469646430954,
+   "selective_acc": 0.8579699169726004,
+   "yield": 0.6953391149655326,
+   "delta_yield_pp": -0.0013342228152080082,
+   "gens_per_item": 4.394712030242383,
+   "stage2_frac": 0.7135868356682232,
+   "n_unobserved": 243,
+   "ungated_acc": 0.6953524571936847,
+   "delta_yield_ci_pp": [
+    -0.6471981320880589,
+    0.6555926173004221
+   ],
+   "stage1_serve_frac": 0.2864131643317767,
+   "stage1_serve_precision": 0.937111801242236
+  },
+  "rederived_tau/unobserved=decline": {
+   "n": 4497,
+   "coverage": 0.8154325105625972,
+   "selective_acc": 0.8551949822743387,
+   "yield": 0.6973537914164999,
+   "delta_yield_pp": 0.2001334222815232,
+   "gens_per_item": 3.9553079830998437,
+   "stage2_frac": 0.4938848120969535,
+   "n_unobserved": 6,
+   "ungated_acc": 0.6953524571936847,
+   "delta_yield_ci_pp": [
+    -0.42250389148321105,
+    0.8227707360462531
+   ],
+   "stage1_serve_frac": 0.5061151879030464,
+   "stage1_serve_precision": 0.9156414762741653
+  },
+  "rederived_tau/unobserved=greedy": {
+   "n": 4497,
+   "coverage": 0.8167667333778075,
+   "selective_acc": 0.8548870133405935,
+   "yield": 0.6982432732933066,
+   "delta_yield_pp": 0.289081609962194,
+   "gens_per_item": 3.9553079830998437,
+   "stage2_frac": 0.4938848120969535,
+   "n_unobserved": 6,
+   "ungated_acc": 0.6953524571936847,
+   "delta_yield_ci_pp": [
+    -0.333555703802535,
+    0.9117189237269291
+   ],
+   "stage1_serve_frac": 0.5061151879030464,
+   "stage1_serve_precision": 0.9156414762741653
+  },
+  "rederived_tau/unobserved=nearest": {
+   "n": 4497,
+   "coverage": 0.816588837002446,
+   "selective_acc": 0.8550405751320735,
+   "yield": 0.6982165888370024,
+   "delta_yield_pp": 0.286413164331778,
+   "gens_per_item": 3.9553079830998437,
+   "stage2_frac": 0.4938848120969535,
+   "n_unobserved": 6,
+   "ungated_acc": 0.6953524571936847,
+   "delta_yield_ci_pp": [
+    -0.3344563042028019,
+    0.9068490104514119
+   ],
+   "stage1_serve_frac": 0.5061151879030464,
+   "stage1_serve_precision": 0.9156414762741653
+  }
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "what": "greedy vs stage-2 sample accuracy (seeds 0-1) on the stage-2 items",
+ "backbones": {
+  "exaone3.5-7.8b": {
+   "family": "new",
+   "n_stage2": 442,
+   "greedy_acc": 0.7036199095022625,
+   "sample_acc_T0.7": 0.7013574660633484,
+   "n_samples_T0.7": 884,
+   "sample_acc_T0.3": 0.7036199095022625,
+   "n_samples_T0.3": 884
+  },
+  "gemma4-e2b": {
+   "family": "registered",
+   "n_stage2": 590,
+   "greedy_acc": 0.6779661016949152,
+   "sample_acc_T0.7": 0.6923728813559322,
+   "n_samples_T0.7": 1180,
+   "sample_acc_T0.3": 0.6974576271186441,
+   "n_samples_T0.3": 1180
+  },
+  "gemma4-e4b": {
+   "family": "registered",
+   "n_stage2": 442,
+   "greedy_acc": 0.7217194570135747,
+   "sample_acc_T0.7": 0.7104072398190046,
+   "n_samples_T0.7": 884,
+   "sample_acc_T0.3": 0.7251131221719457,
+   "n_samples_T0.3": 884
+  },
+  "granite3.3-8b": {
+   "family": "new",
+   "n_stage2": 698,
+   "greedy_acc": 0.6905444126074498,
+   "sample_acc_T0.7": 0.6762177650429799,
+   "n_samples_T0.7": 1396,
+   "sample_acc_T0.3": 0.6941260744985673,
+   "n_samples_T0.3": 1396
+  },
+  "llama3.2-3b": {
+   "family": "new",
+   "n_stage2": 805,
+   "greedy_acc": 0.47577639751552797,
+   "sample_acc_T0.7": 0.39751552795031053,
+   "n_samples_T0.7": 1610,
+   "sample_acc_T0.3": 0.47701863354037266,
+   "n_samples_T0.3": 1610
+  },
+  "phi4-mini": {
+   "family": "new",
+   "n_stage2": 821,
+   "greedy_acc": 0.630937880633374,
+   "sample_acc_T0.7": 0.5986601705237515,
+   "n_samples_T0.7": 1642,
+   "sample_acc_T0.3": 0.6193666260657734,
+   "n_samples_T0.3": 1642
+  },
+  "qwen2-math-1.5b": {
+   "family": "registered",
+   "n_stage2": 608,
+   "greedy_acc": 0.3404605263157895,
+   "sample_acc_T0.7": 0.33875106928999144,
+   "n_samples_T0.7": 1169,
+   "sample_acc_T0.3": 0.34361610968294776,
+   "n_samples_T0.3": 1167
+  },
+  "qwen3.5-9b": {
+   "family": "registered",
+   "n_stage2": 735,
+   "greedy_acc": 0.8353741496598639,
+   "sample_acc_T0.7": 0.8399182561307902,
+   "n_samples_T0.7": 1468,
+   "sample_acc_T0.3": 0.8466257668711656,
+   "n_samples_T0.3": 1467
+  },
+  "solar-10.7b": {
+   "family": "registered",
+   "n_stage2": 707,
+   "greedy_acc": 0.38048090523338046,
+   "sample_acc_T0.7": 0.40594059405940597,
+   "n_samples_T0.7": 1414,
+   "sample_acc_T0.3": 0.4087694483734088,
+   "n_samples_T0.3": 1414
+  }
+ }
+}

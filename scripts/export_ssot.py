@@ -91,9 +91,37 @@ def strata_block() -> dict:
     au = {k: auroc([r[k] for r in a if r.get(k) is not None],
                    [r[k] for r in b if r.get(k) is not None]) for k in keys}
     sizes = collections.Counter(r["stratum"] for r in rows)
+    #: The uncertainty statistics are expected below 0.5; the reversed reading
+    #: is kept beside them.
+    ori = {k: (1 - v if k in REVERSED else v) for k, v in au.items()}
     return {"n_items": len(rows), "n_A": len(a), "n_B": len(b),
-            "auroc": au, "auroc_min": min(au.values()), "auroc_max": max(au.values()),
+            "auroc": au, "auroc_oriented": ori,
+            "auroc_oriented_min": min(ori.values()), "auroc_oriented_max": max(ori.values()),
+            "auroc_min": min(au.values()), "auroc_max": max(au.values()),
             "sizes": dict(sizes)}
+
+
+#: Statistics of uncertainty, not of confidence: a larger value points to a
+#: wrong answer, so they are ranked in reverse.
+REVERSED = {"ans_entropy", "n_tokens"}
+
+
+def output_stats_at_coverage(dec) -> dict:
+    """Selective accuracy when each of the five output statistics selects among
+    all items, at the coverage of the gate. This is not the stratum AUROC of
+    Figure 1; it supports using mean log-probability as the matched-coverage
+    baseline of Section 4.1. Uncertainty statistics (REVERSED) are ranked in
+    reverse."""
+    rows = [json.loads(l) for l in (P5OUT / "s0_rows.jsonl").read_text(encoding="utf-8").splitlines()]
+    out = {}
+    for key in ["mean_logprob", "min_logprob", "ans_logprob", "ans_entropy", "n_tokens"]:
+        sign = -1 if key in REVERSED else 1
+        s = sorted(((sign * r[key], dec[(r["cell"], r["item"])][1]) for r in rows
+                    if r.get(key) is not None and (r["cell"], r["item"]) in dec),
+                   key=lambda t: -t[0])
+        k = round(COVERAGES["k2"] * len(s))
+        out[key] = {"n": len(s), "coverage": k / len(s), "acc": sum(y for _, y in s[:k]) / k}
+    return out
 
 
 def bands_and_cost(dec) -> dict:
@@ -135,14 +163,19 @@ def curves(dec, lp) -> dict:
     cs = [(dec[k][0], dec[k][1]) for k in keys]
     ml = [(lp[k], dec[k][1]) for k in keys]
     base = sum(y for _, y in cs) / len(cs)
-    at = {}
-    rows = sorted(ml, key=lambda t: -t[0])
-    for name, cov in COVERAGES.items():
-        k = round(cov * len(rows))
-        c = sum(y for _, y in rows[:k])
-        at[name] = {"coverage": k / len(rows), "acc": c / k, "yield": c / len(rows)}
+    #: The two scores selecting the same greedy answers at the same coverage: a
+    #: comparison of signals alone. The c_safe side is kept apart so that it is not
+    #: read against the gate's selective accuracy, which includes stage 2.
+    def at_cov(scored):
+        at = {}
+        rows = sorted(scored, key=lambda t: -t[0])
+        for name, cov in COVERAGES.items():
+            k = round(cov * len(rows))
+            c = sum(y for _, y in rows[:k])
+            at[name] = {"coverage": k / len(rows), "acc": c / k, "yield": c / len(rows)}
+        return at
     return {"n": len(keys), "base_acc": base, "c_safe": curve(cs),
-            "mean_logprob": curve(ml), "logprob_at": at}
+            "mean_logprob": curve(ml), "logprob_at": at_cov(ml), "c_safe_at": at_cov(cs)}
 
 
 def crosslingual() -> dict:
@@ -345,12 +378,26 @@ def gate_results() -> dict:
     sc = EG.baseline_sc_always(allb, True)
     #: Truncation: items whose greedy generation hit the token limit.
     trunc = sum(1 for b in allb if b["paths"][0].get("truncated"))
+    #: By truncation stratum: does the direction hold without the truncated items?
+    tr_split = {"not_truncated": row([b for b in allb if not b["paths"][0].get("truncated")]),
+                "truncated": row([b for b in allb if b["paths"][0].get("truncated")])}
+
+    #: Discrimination of the MOME score itself: AUROC of c_safe on the greedy
+    #: answer's correctness. Base accuracy differs widely between cells, so the
+    #: pooled value and the cell mean are both given.
+    def _au(bs):
+        return auroc([b["c_safe"] for b in bs if b["label"]], [b["c_safe"] for b in bs if not b["label"]])
+    cell_au = [a for a in (_au(v) for v in by_cell.values()) if a is not None]
+    score_auroc = {"pooled": _au(allb), "cell_mean": sum(cell_au) / len(cell_au),
+                   "cell_min": min(cell_au), "cell_max": max(cell_au), "n_cells": len(cell_au)}
     recs = per_item_outcomes(allb, K_FINAL)
     return {"missing": missing, "n": len(allb), "vanilla": van,
             "uncertainty": stratified_ci(recs),
             "cells_ci": per_cell_ci(recs),
             "confusion": confusion(recs),
             "sc_always": sc, "truncated": trunc, "truncated_frac": trunc / len(allb),
+            "truncation_strata": tr_split,
+            "score_auroc": score_auroc,
             "overall": row(allb),
             "ksweep": ksweep, "variants": variants,
             "backbones": [{"backbone": k, **row(v)} for k, v in sorted(by_bb.items())],
@@ -427,6 +474,21 @@ def parsing() -> dict:
     return {"all": allb, "by_benchmark": dict(tot)}
 
 
+def review_r1() -> dict:
+    """The round-1 review analyses. Each script in scripts/revision/ writes its own
+    JSON under results/revision/; this block only collects them, so that the
+    manuscript reads every new number from ssot.json like every other number."""
+    src = {name: REVISION / f"{name}.json" for name in REVIEW_BLOCKS}
+    return {k: json.loads(v.read_text(encoding="utf-8")) for k, v in src.items() if v.exists()}
+
+
+#: The analyses of the round-1 revision, in the order of results/revision/.
+REVIEW_BLOCKS = ["output_stats_full", "xai_stratum_logprob", "problem_disjoint", "family_out",
+                 "feature_drift", "feature_ablation", "budget_arm", "sensitivity",
+                 "latency_per_item", "serve_precision_heldout", "new_family", "stage2_samples"]
+REVISION = paths.RESULTS / "revision"
+
+
 def main() -> None:
     if not DEC.exists():
         raise SystemExit(
@@ -452,6 +514,7 @@ def main() -> None:
     data = {
         "k_final": K_FINAL,
         "strata": strata_block(),
+        "output_stats_at_coverage": output_stats_at_coverage(dec),
         "bands": bands_and_cost(dec),
         "curves": curves({k: (v[0], v[1]) for k, v in dec.items()}, lp),
         "crosslingual": crosslingual(),
@@ -460,6 +523,7 @@ def main() -> None:
         "thresholds": th,
         "gate": gate_results(),
         "xai": xai(),
+        "review_r1": review_r1(),
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -471,6 +535,15 @@ def main() -> None:
     import verify_results
     raise SystemExit(verify_results.main())
 
+
+if __name__ == "__main__" and "--review-only" in sys.argv:
+    #: Refresh only the review block of an existing ssot.json; the rest needs the
+    #: generation records and does not change.
+    _d = json.loads(OUT.read_text(encoding="utf-8"))
+    _d["review_r1"] = review_r1()
+    OUT.write_text(json.dumps(_d, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"written: {OUT} (review_r1 block: {sorted(_d['review_r1'])})")
+    raise SystemExit(0)
 
 if __name__ == "__main__":
     from quiet_mp import drop_spawn_bootstrap_noise
