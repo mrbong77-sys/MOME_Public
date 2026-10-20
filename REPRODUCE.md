@@ -48,7 +48,7 @@ model/                          the frozen predictors and thresholds
 ### The analyses added in the revision (release 1.1)
 
 ```
-python3 scripts/verify_revision.py           # about 15 minutes on one core
+python3 scripts/verify_revision.py           # about 4 minutes on one core
 python3 scripts/verify_revision.py --fast    # without the four re-fitting analyses
 ```
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Recompute every number of the round-1 revision and check it against results/ssot.json.
 
-    python3 scripts/verify_revision.py              # all analyses, about 15 minutes on one core
+    python3 scripts/verify_revision.py              # all analyses, about 4 minutes on one core
     python3 scripts/verify_revision.py --fast       # skip the four re-fitting analyses
 
 The revision added analyses that the manuscript reads from the `review_r1` block of
@@ -62,27 +62,27 @@ class Audit:
         return ok
 
 
-def leaves(x, p=""):
-    """(path, value) of every number, flag and string in a JSON value."""
+def leaves(x, p=()):
+    """(key path, value) of every number, flag and string in a JSON value. Keys may
+    themselves contain '/', so the path is a tuple, not a string."""
     if isinstance(x, dict):
         for k, v in x.items():
-            yield from leaves(v, f"{p}/{k}")
+            yield from leaves(v, p + (k,))
     elif isinstance(x, list):
         for i, v in enumerate(x):
-            yield from leaves(v, f"{p}[{i}]")
+            yield from leaves(v, p + (i,))
     else:
         yield p, x
 
 
-def lookup(x, path: str):
-    for part in path.strip("/").replace("[", "/[").split("/"):
-        if not part:
-            continue
-        if part.startswith("["):
-            x = x[int(part[1:-1])]
-        else:
-            x = x[part]
+def lookup(x, path: tuple):
+    for part in path:
+        x = x[part]
     return x
+
+
+def shown(path: tuple) -> str:
+    return "".join(f"[{k}]" if isinstance(k, int) else f"/{k}" for k in path)
 
 
 def compare(a: Audit, name: str, mine: dict, published: dict) -> None:
@@ -93,9 +93,9 @@ def compare(a: Audit, name: str, mine: dict, published: dict) -> None:
         try:
             pub = lookup(published, path)
         except (KeyError, IndexError, TypeError):
-            a.check(f"{name}{path} published", "present", "missing")
+            a.check(f"{name}{shown(path)} published", "present", "missing")
             continue
-        a.check(f"{name}{path}", v, pub)
+        a.check(f"{name}{shown(path)}", v, pub)
     print(f"{'ok' if a.failed == f0 else 'XX'}  {name:<26} {a.checked - n0:6d} numbers, "
           f"{a.failed - f0} mismatches")
 
