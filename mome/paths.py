@@ -10,7 +10,7 @@ layout is stated in a single place and can be read at a glance:
       mome/          the code
       model/         frozen predictors and the registered thresholds
       configs/       generated campaign configurations
-      data/          generation records -- large, fetched separately
+      data/          generation records -- large, written by a rerun
         benchmarks/    benchmark item files, rebuilt locally
         items/         the item lists each cell ran
         manifests/     probe manifests (committed; they pin the probe set)
@@ -21,8 +21,8 @@ layout is stated in a single place and can be read at a glance:
       results/       published outputs and regenerated reports
 
 Only `results/`, `model/` and the probe manifests are small enough to be
-committed.  `data/` holds the generation records and is fetched separately;
-see REPRODUCE.md.
+committed.  `data/` holds the generation records, which a rerun writes
+locally; see REPRODUCE.md.
 """
 
 from __future__ import annotations

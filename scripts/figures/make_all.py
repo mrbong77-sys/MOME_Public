@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "mome"))
 import paths                                    # noqa: E402
 
 FIGURES = [
-    (["fig1_indistinguishable.py"], "Figure 1, the indistinguishable strata"),
+    (["fig1_output_statistics.py"], "Figure 1, output statistics against the MOME score"),
     (["fig2_architecture.py"], "Figure 2, the two-stage architecture"),
     (["fig4_risk_coverage.py"], "Figure 4, risk-coverage"),
     (["fig5_layer_sweep.py"], "Figure 5, the layer sweep"),

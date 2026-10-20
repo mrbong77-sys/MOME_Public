@@ -71,7 +71,7 @@ def main() -> None:
     ax.axvline(lp_med, color=S.INK2, linewidth=0.8, zorder=2)
 
     #: Just inside that quadrant, below the 0.5 line, away from the dense cloud.
-    note = (f"internally wrong,\noutwardly confident\n"
+    note = (f"probe-predicted wrong,\nhigh log-probability\n"
             f"{len(cell)} items, {wrong_in_cell} wrong ({wrong_in_cell / len(cell):.0%})\n"
             f"gate declined {declined}" if cell else "no items in this quadrant")
     ax.text(0.985, 0.475, note, transform=ax.transAxes, ha="right", va="top",
@@ -79,8 +79,8 @@ def main() -> None:
     ax.text(0.015, 0.03, f"base error rate {base_wrong:.0%}", transform=ax.transAxes,
             ha="left", va="bottom", fontsize=7, color=S.MUTED, zorder=4)
 
-    ax.set_xlabel("outward confidence   (mean log-probability)")
-    ax.set_ylabel("internal probe   $P(\\mathrm{correct})$")
+    ax.set_xlabel("mean token log-probability")
+    ax.set_ylabel("linear-probe score")
     ax.set_ylim(-0.02, 1.02)
     ax.grid(axis="y", zorder=0)
     ax.set_axisbelow(True)

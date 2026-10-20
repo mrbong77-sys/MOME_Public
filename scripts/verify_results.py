@@ -21,7 +21,9 @@ What it checks, in order:
    by counting per-item outcomes.
 4. **The confusion matrix adds up**, and the difference in correct yield
    decomposes exactly into rescued minus lost minus withheld-but-correct.
-5. **The AUROC panel** is recomputed from the stratum records.
+5. **The AUROC panel** is recomputed from the stratum records, together with
+   the selection by each output statistic and by the MOME score at the gate's
+   coverage, the score's own AUROC, and the truncation strata.
 6. **The stratified bootstrap** is rerun with the published seed, and its
    intervals are checked to reproduce and to cover their point estimates.
 7. **The file is internally consistent** -- per-cell rows sum to the total,
@@ -197,6 +199,66 @@ def check_strata(a: Audit, ss: dict) -> None:
         a.check(f"AUROC {key}", mine, published)
 
 
+def _top_share(scored: list[tuple[float, int]], cov: float) -> dict:
+    """Select the top `cov` share by score; the same rounding as export_ssot."""
+    rows = sorted(scored, key=lambda t: -t[0])
+    k = round(cov * len(rows))
+    c = sum(y for _, y in rows[:k])
+    return {"coverage": k / len(rows), "acc": c / k, "yield": c / len(rows)}
+
+
+def check_selection(a: Audit, ss: dict, rows: list[dict]) -> None:
+    print("\n## 5b. Selection at matched coverage, the score's AUROC, truncation\n")
+    labels = {(d["cell"], d["item_id"]): int(d["label"]) for d in jsonl(paths.DECISIONS)}
+    cov = ss["gate"]["overall"]["coverage"]
+    reversed_ = {"ans_entropy", "n_tokens"}
+    for key, pub in ss.get("output_stats_at_coverage", {}).items():
+        sign = -1 if key in reversed_ else 1
+        s = [(sign * r[key], labels[(r["cell"], r["item"])]) for r in jsonl(paths.STRATA_ROWS)
+             if r.get(key) is not None and (r["cell"], r["item"]) in labels]
+        got = _top_share(s, round(cov, 3))
+        a.check(f"{key} selecting at the gate's coverage, acc", got["acc"], pub["acc"])
+    for key, pub in ss["strata"].get("auroc_oriented", {}).items():
+        raw = ss["strata"]["auroc"][key]
+        a.check(f"oriented AUROC {key}", 1 - raw if key in reversed_ else raw, pub)
+
+    print()
+    by_score = {"c_safe_at": [(r["c_safe"], r["label"]) for r in rows],
+                "logprob_at": [(r["mean_logprob"] if r["mean_logprob"] is not None else -99.0,
+                                r["label"]) for r in rows]}
+    for block, scored in by_score.items():
+        for name, pub in ss["curves"].get(block, {}).items():
+            got = _top_share(scored, pub["coverage"])
+            for key in ("acc", "yield"):
+                a.check(f"{block} {name} {key}", got[key], pub[key])
+
+    sa = ss["gate"].get("score_auroc")
+    if sa:
+        print()
+        def au(rs):
+            return auroc([r["c_safe"] for r in rs if r["label"]],
+                         [r["c_safe"] for r in rs if not r["label"]])
+        by_cell: dict[str, list[dict]] = collections.defaultdict(list)
+        for r in rows:
+            by_cell[r["cell"]].append(r)
+        cells = [x for x in (au(v) for v in by_cell.values()) if x is not None]
+        a.check("MOME score AUROC, pooled", au(rows), sa["pooled"])
+        a.check("MOME score AUROC, cell mean", sum(cells) / len(cells), sa["cell_mean"])
+        a.check("MOME score AUROC, lowest cell", min(cells), sa["cell_min"])
+        a.check("MOME score AUROC, highest cell", max(cells), sa["cell_max"])
+
+    ts = ss["gate"].get("truncation_strata")
+    if ts:
+        print()
+        for name, sel in (("not_truncated", False), ("truncated", True)):
+            rs = [r for r in rows if bool(r["truncated"]) == sel]
+            cov_, acc, yld, delta = _rates(rs)
+            a.check(f"{name} items", len(rs), ts[name]["n"])
+            a.check(f"{name} coverage", cov_, ts[name]["coverage"])
+            a.check(f"{name} selective accuracy", acc, ts[name]["acc"])
+            a.check(f"{name} correct yield - ungated", delta, ts[name]["delta"])
+
+
 # ---- 6: the stratified bootstrap ----------------------------------------------
 
 def _rates(rows: list[dict]) -> tuple[float, float, float, float]:
@@ -320,6 +382,7 @@ def main() -> int:
     check_predictor(a)
     state = check_rates(a, ss)
     check_strata(a, ss)
+    check_selection(a, ss, state["rows"])
     check_bootstrap(a, ss, state["rows"])
     check_internal(a, ss)
     check_readme(a, ss)

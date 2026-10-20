@@ -7,7 +7,8 @@ Everything needed is in this repository.
 
 **Level 2 — rerun the experiment from generation.** Days of GPU time, a local
 serving runtime, and the benchmark datasets. This regenerates the records that
-level 1 checks.
+level 1 checks. The generation records of our runs are not distributed; a rerun
+writes its own under `data/`.
 
 ---
 
@@ -44,26 +45,67 @@ results/stage1_decisions.jsonl  the first-stage decision for every item
 model/                          the frozen predictors and thresholds
 ```
 
+### The analyses added in the revision (release 1.1)
+
+```
+python3 scripts/verify_revision.py           # about 15 minutes on one core
+python3 scripts/verify_revision.py --fast    # without the four re-fitting analyses
+```
+
+The revision added analyses in reply to the reviewers: output statistics over
+all items (Figure 1), held-out problems, families and benchmarks, feature
+groups, thresholds and vote rules, the token limit, per-item latency, four
+backbones of further families, and stage-2 sampling at temperature 0.3. Each has
+a script in `scripts/revision/` that writes one JSON into `results/revision/`;
+`results/ssot.json` carries them in its `review_r1` block, and the manuscript
+reads them from there. `verify_revision.py` runs every script into a temporary
+directory and compares each recomputed number with `ssot.json`. It also
+recomputes the MOME score of every further-family item from its 26 features
+with the frozen predictor.
+
+The scripts read these per-item files, written once from the generation records:
+
+```
+results/revision/items.jsonl                    the 4,497 evaluated items: c_safe,
+                                                first-stage band, label, probe
+                                                generations, and the ballot of the
+                                                greedy answer plus k = 1..4 samples
+results/revision/newfamily_items.jsonl          the 3,600 items of the four
+                                                further-family backbones: the 26
+                                                features, c_safe, label, mean
+                                                log-probability, and the ballots at
+                                                stage-2 temperature 0.7 and 0.3
+results/revision/registered_temperature.jsonl   the five backbones of the main
+                                                evaluation: the ballots of k = 2
+                                                and k = 4 at 0.7 and at 0.3
+results/revision/budget_b4096_items.jsonl       the 4096-token run of the MATH-500
+                                                cells, k = 2
+results/revision/latency_items.jsonl            seconds of every generation the
+                                                gate buys, per item
+results/revision/stage2_samples_items.jsonl     correctness of the greedy answer and
+                                                of the first two samples at 0.7 and
+                                                0.3, on the items sent to stage 2
+model/frozen_predictor_newfamily.json           the predictor and tau_high that score
+                                                the further-family backbones
+```
+
+A ballot is the vote share of the plurality answer and whether that answer is
+correct, counted with the registered answer equivalence. The re-fitting
+analyses read the features in `results/fingerprints.jsonl`; on them, the
+backbone-out refit reproduces the registered scores. The frozen
+further-family predictor was fitted once, before any further-family answer
+was generated, on features rebuilt from the generation records at the time.
+Those differed from `results/fingerprints.jsonl` on some MATH-500 items (the
+symbolic comparison has a wall-clock timeout, see below), so the fit itself is
+not repeated here; its coefficients, tau_high and the SHA-256 of its fitting
+rows are in the model file.
+
 ## Level 2: rerun the experiment
 
 ### What you need
 
 - A local serving runtime exposing generated tokens and the top token
   log-probabilities, with the five quantized backbones loaded.
-- The generation records, archived alongside this repository at
-  [doi:10.5281/zenodo.22854894](https://doi.org/10.5281/zenodo.22854894).
-  They are one file, about 2.2 GB, and unpack into the layout this code
-  already expects:
-
-  ```
-  unzip mome-data-v1.0.zip -d /path/to/MOME_Public/
-  ```
-
-  That gives `data/ungated/`, `data/probes/` and `data/retry/`, one directory
-  per cell, for the 15 cells the paper reports. The archive carries a
-  `MANIFEST.json` with a SHA-256 for every file. It holds no benchmark problem
-  text: a record stores `prompt_sha256` and `prompt_chars`, never the prompt,
-  so problems are referenced by item id and nothing is redistributed.
 - The benchmark items. They are not redistributed here; rebuild them from the
   public sources into `data/benchmarks/`. The probe manifests in
   `data/manifests/` carry a SHA-256 of every edited problem, so a rebuild that

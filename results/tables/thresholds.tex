@@ -1,6 +1,6 @@
 \begin{table}[t]
 \small\setlength{\tabcolsep}{3pt}
-\caption{Backbone-out thresholds and the resulting first-stage bands. The values applied to a backbone were selected on the remaining backbones under the registered constraints (serve-band precision $\geq 0.95$, decline-band accuracy $\leq 0.20$). Both constraints bind on the selection set, the four backbones a threshold was chosen on; the last column is the precision realized afterwards on the held-out backbone, which is a measurement and not a constraint.\label{tab:thresholds}}
+\caption{Backbone-out thresholds and the stage-1 score bands that result from them. \textbf{The two-band gate serves only items in the Serve band at stage 1. Items in the Verify band and in the Decline band both go to stage 2.} The Decline band is reported for diagnosis and for the three-band variants of Table~\ref{tab:variants}. The thresholds for each backbone were selected on the other four backbones. The selection used the registered constraints of serve-band precision $\geq 0.95$ and decline-band accuracy $\leq 0.20$. These constraints apply to the four selection backbones only. Serve, Verify and Decline are the shares of items in each band. Serve prec. is the serve-band precision measured on the held-out backbone.\label{tab:thresholds}}
 \begin{tabularx}{\textwidth}{lCCCCCC}
 \toprule
 \textbf{Backbone} & $\boldsymbol{\tau_{\mathrm{high}}}$ & $\boldsymbol{\tau_{\mathrm{low}}}$ & \textbf{Serve} & \textbf{Verify} & \textbf{Decline} & \textbf{Serve prec.} \\

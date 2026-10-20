@@ -3,7 +3,7 @@ __pycache__/
 .venv/
 venv/
 
-# Generation records: too large for git, published with the archived dataset.
+# Generation records: too large for git, and written locally by a rerun.
 data/ungated/
 data/probes/
 data/fingerprints/

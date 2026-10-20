@@ -76,7 +76,7 @@ def main() -> None:
     va = [r["mean_logprob"] for r in a if r.get("mean_logprob") is not None]
     vb = [r["mean_logprob"] for r in b if r.get("mean_logprob") is not None]
     ecdf(ax1, va, S.S1, "-", f"served & correct (n={len(va)})")
-    ecdf(ax1, vb, S.S2, "--", f"confidently wrong (n={len(vb)})")
+    ecdf(ax1, vb, S.S2, "--", f"served & wrong (n={len(vb)})")
     below = sum(1 for v in vb if v < XLO)
     ax1.set_xlim(XLO, 0)
     ax1.set_ylim(0, 1.02)
@@ -86,9 +86,6 @@ def main() -> None:
     ax1.set_axisbelow(True)
     ax1.legend(loc="upper left", handlelength=1.6, fontsize=7.5, borderaxespad=0.2)
     ax1.set_title("(a) the two strata overlap", loc="left", color=S.INK)
-    if below:
-        ax1.text(0.03, 0.62, f"{below} confidently-wrong items\nfall below the axis",
-                 transform=ax1.transAxes, ha="left", va="top", fontsize=7, color=S.MUTED)
 
     # (b) AUROC bars ---------------------------------------------------------
     vals = []
@@ -114,7 +111,7 @@ def main() -> None:
     ax2.set_xlabel("AUROC  (0.5 = no discrimination)")
     ax2.grid(axis="x", zorder=0)
     ax2.set_axisbelow(True)
-    ax2.set_title("(b) no indicator departs from 0.5", loc="left", color=S.INK)
+    ax2.set_title("(b) no indicator departs far from 0.5", loc="left", color=S.INK)
 
     S.save(fig, OUT)
 
